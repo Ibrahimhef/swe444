@@ -1,0 +1,63 @@
+import 'package:flutter/material.dart';
+import 'login.dart';
+import 'singup.dart';
+import 'forgetPassword.dart';
+import 'catogory.dart';
+
+void main() {
+  runApp(MyHomePage());
+}
+
+class MyHomePage extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return MyApp();
+  }
+}
+
+class MyApp extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: LoginPage(),
+    );
+  }
+}
+
+class LoginPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final weidth = MediaQuery.of(context).size.width;
+    return Scaffold(backgroundColor: Colors.white, body: Login(weidth, height));
+  }
+}
+
+class SingupPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final weidth = MediaQuery.of(context).size.width;
+    return Scaffold(
+        backgroundColor: Colors.white, body: Singup(weidth, height));
+  }
+}
+
+class ForgetPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final weidth = MediaQuery.of(context).size.width;
+    return Scaffold(
+        backgroundColor: Colors.white, body: ForgetPass(weidth, height));
+  }
+}
+class catogory extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final weidth = MediaQuery.of(context).size.width;
+    return Scaffold(
+        backgroundColor: Colors.white, body: Catogory(weidth, height));
+  }}
