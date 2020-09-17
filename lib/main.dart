@@ -4,7 +4,7 @@ import 'login.dart';
 import 'singup.dart';
 import 'forgetPassword.dart';
 import 'catogory.dart';
-
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 
 void main() {
   // runApp(DevicePreview(builder:(context) => MyHomePage()));
@@ -22,10 +22,17 @@ class MyApp extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // builder: DevicePreview.appBuilder,
-      debugShowCheckedModeBanner: false,
-      home: LoginPage(),
-    );
+         // builder: DevicePreview.appBuilder,
+        debugShowCheckedModeBanner: false,
+        home: AnimatedSplashScreen(
+          splashTransition: SplashTransition.rotationTransition,
+          duration: 3000,
+          splashIconSize: 280,
+          splash: Image(
+            image: AssetImage('assets/welcome.png'),
+          ),
+          nextScreen: LoginPage(),
+        ));
   }
 }
 
@@ -57,6 +64,7 @@ class ForgetPage extends StatelessWidget {
         backgroundColor: Colors.white, body: ForgetPass(weidth, height));
   }
 }
+
 class catogory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -64,4 +72,5 @@ class catogory extends StatelessWidget {
     final weidth = MediaQuery.of(context).size.width;
     return Scaffold(
         backgroundColor: Colors.white, body: Catogory(weidth, height));
-  }}
+  }
+}
