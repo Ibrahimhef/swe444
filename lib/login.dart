@@ -10,7 +10,7 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
+    print(height);
     return Container(
         height: height,
         width: weidth,
@@ -22,14 +22,15 @@ class Login extends StatelessWidget {
               top: -7,
               child: Image(
                   width: weidth + 25,
-                  height: 330,
+                  height: height/2.5,
                   image: AssetImage('assets/headOfLoginPage@3x.png'),
                   fit: BoxFit.fill),
             ),
             // Login area
             Positioned(
-              top: 647,
-              right: 120,
+              top: height*0.69,
+              left: weidth*0.50,
+              right: weidth*0.10,
               child: Center(
                 child: InkWell(
                   onTap: () {
@@ -39,28 +40,30 @@ class Login extends StatelessWidget {
                             builder: (context) => new catogory()));
                   },
                   child: Image(
-                    width: 40,
-                    height: 40,
+                    width: weidth*0.1,
+                    height: height*0.05,
                     image: AssetImage('assets/loginSingupArrow@3x.png'),
                   ),
                 ),
               ),
             ),
             Positioned(
-              top: 652,
-              right: 240,
-              child: Text("Sign-in", style: textStyle().style2),
+              top: height*0.694,
+              left: weidth*0.25,
+              right: weidth*0.10,
+              child: Text("Sign-in", style: textStyle().Size(weidth)),
             ),
             //Username and password area
             Positioned(
-              top: 520,
-              right: 100,
+              top: height*0.55,
+              left: weidth*0.15,
+              right: weidth*0.15,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    width: 250,
-                    height: 40,
+                    width: weidth*0.75,
+                    height: height/20,
                     child: TextField(
                       decoration: InputDecoration(
                           icon: Icon(
@@ -76,8 +79,8 @@ class Login extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: 250,
-                    height: 40,
+                    width: weidth*0.75,
+                    height: height/20,
                     child: TextField(
                       obscureText: true,
                       decoration: InputDecoration(
@@ -93,7 +96,7 @@ class Login extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: 820,
+              top: height*0.9,
               child: Container(
                 width: weidth,
                 child: Row(

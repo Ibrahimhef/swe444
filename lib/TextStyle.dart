@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 class textStyle{
   TextStyle style1 = new TextStyle(
       fontSize: 20,
@@ -12,4 +11,9 @@ class textStyle{
       color: Colors.black54,
       fontWeight: FontWeight.bold,
       fontSize: 20);
+
+  TextStyle Size(double x){
+    return  style1 = new TextStyle(
+        color: Colors.black54, fontWeight: FontWeight.bold, fontSize: x*0.067);
+  }
 }
