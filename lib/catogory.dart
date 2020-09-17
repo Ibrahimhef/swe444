@@ -18,19 +18,19 @@ class Catogory extends StatelessWidget {
             //header of ForgetPass
             Positioned(
               right: -2,
-              top: -1,
+              top: -2,
               child: Image(
-                  width: weidth + 30,
-                  height: 310,
+                  width: weidth +20,
+                  height: height/2.9,
                   image: AssetImage('assets/catogory@3x.png'),
                   fit: BoxFit.fill),
             ),
             Positioned(
-              top: 32,
+              top: height*0.35,
               right: 0,
               child: Container(
                 width: weidth,
-                height: 500,
+                height: height,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -44,8 +44,8 @@ class Catogory extends StatelessWidget {
                             child: InkWell(
                               onTap: () {},
                               child: Image(
-                                width: 140,
-                                height: 160,
+                                width: weidth*0.39,
+                                height: height/4.623,
                                 image: AssetImage('assets/salad@3x.png'),
                               ),
                             ),
@@ -55,8 +55,8 @@ class Catogory extends StatelessWidget {
                             child: InkWell(
                               onTap: () {},
                               child: Image(
-                                width: 140,
-                                height: 99,
+                                width: weidth*0.39,
+                                height: height/7.41,
                                 image: AssetImage('assets/Soup@3x.png'),
                               ),
                             ),
@@ -64,8 +64,8 @@ class Catogory extends StatelessWidget {
                           InkWell(
                             onTap: () {},
                             child: Image(
-                              width: 140,
-                              height: 160,
+                              width: weidth*0.39,
+                              height: height/4.623,
                               image: AssetImage('assets/mainD@3x.png'),
                             ),
                           ),
@@ -74,7 +74,7 @@ class Catogory extends StatelessWidget {
                     ),
                     Container(
 
-                      height: 500,
+
                       margin: EdgeInsets.only(left: 10),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -84,8 +84,8 @@ class Catogory extends StatelessWidget {
                             child: InkWell(
                               onTap: () {},
                               child: Image(
-                                width: 140,
-                                height: 99,
+                                width: weidth*0.39,
+                                height: height/7.41,
                                 image: AssetImage('assets/Appatazer@3x.png'),
                               ),
                             ),
@@ -95,8 +95,8 @@ class Catogory extends StatelessWidget {
                             child: InkWell(
                               onTap: () {},
                               child: Image(
-                                width: 140,
-                                height: 160,
+                                width: weidth*0.39,
+                                height: height/4.623,
                                 image: AssetImage('assets/Sweet@3x.png'),
                               ),
                             ),
@@ -104,8 +104,8 @@ class Catogory extends StatelessWidget {
                           InkWell(
                             onTap: () {},
                             child: Image(
-                              width: 140,
-                              height: 99,
+                              width: weidth*0.39,
+                              height: height/7.41,
                               image: AssetImage('assets/Jusic@3x.png'),
                             ),
                           ),

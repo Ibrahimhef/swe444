@@ -21,44 +21,39 @@ class ForgetPass extends StatelessWidget {
               top: -7,
               child: Image(
                   width: weidth,
-                  height: 250,
+                  height: height/3.5,
                   image: AssetImage('assets/forgethead@3x.png'),
                   fit: BoxFit.fill),
             ),
             // Arrow for submit
             Positioned(
-              top: 650,
-              right: 100,
+              top: height*0.683,
+              left: weidth*0.10,
+              right: weidth*0.10,
               child: Center(
                 child: InkWell(
                   onTap: () {},
                   child: Image(
-                    width: 40,
-                    height: 40,
-                    image: AssetImage('assets/loginSingupArrow@3x.png'),
+                    width: weidth*0.48,
+                    height: height*0.06,
+                    image: AssetImage('assets/sendpass.png'),
                   ),
                 ),
               ),
             ),
             // text right to Arrow for submit
-            Positioned(
-              top: 662,
-              right: 200,
-              child: Text(
-                "Send Password",
-                style: textStyle().style3,
-              ),
-            ),
+
             //Email submit area
             Positioned(
-              top: 500,
-              right: 100,
+              top: height*0.55,
+              left: weidth*0.15,
+              right: weidth*0.15,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    width: 250,
-                    height: 40,
+                    width: weidth*0.75,
+                    height: height/20,
                     child: TextField(
                       decoration: InputDecoration(
                           icon: Icon(

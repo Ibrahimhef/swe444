@@ -21,41 +21,38 @@ class Singup extends StatelessWidget {
               top: -7,
               child: Image(
                   width: weidth + 25,
-                  height: 430,
+                  height: height/2,
                   image: AssetImage('assets/singupHeder@3x.png'),
                   fit: BoxFit.fill),
             ),
             // Arrow for submit
             Positioned(
-              top: 657,
-              right: 120,
+              top: height*0.798,
+              left: weidth*0.10,
+              right: weidth*0.10,
               child: Center(
                 child: InkWell(
                   onTap: () {},
                   child: Image(
-                    width: 40,
-                    height: 40,
-                    image: AssetImage('assets/loginSingupArrow@3x.png'),
+                    width: weidth*0.4,
+                    height: height*0.05,
+                    image: AssetImage('assets/singup.png'),
                   ),
                 ),
               ),
             ),
-            // text right to Arrow for submit
-            Positioned(
-              top: 662,
-              right: 240,
-              child: Text("Sign-up", style: textStyle().style2),
-            ),
+
             //Registration area
             Positioned(
-              top: 460,
-              right: 100,
+              top: height*0.55,
+              left: weidth*0.15,
+              right: weidth*0.15,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    width: 250,
-                    height: 40,
+                    width: weidth*0.75,
+                    height: height/20,
                     child: TextField(
                       decoration: InputDecoration(
                           icon: Icon(
@@ -71,8 +68,8 @@ class Singup extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: 250,
-                    height: 40,
+                    width: weidth*0.75,
+                    height: height/20,
                     child: TextField(
                       decoration: InputDecoration(
                           icon: Icon(
@@ -84,8 +81,8 @@ class Singup extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: 250,
-                    height: 40,
+                    width: weidth*0.75,
+                    height: height/20,
                     child: TextField(
                       obscureText: true,
                       decoration: InputDecoration(
@@ -98,8 +95,8 @@ class Singup extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: 250,
-                    height: 40,
+                    width: weidth*0.75,
+                    height: height/20,
                     child: TextField(
                       obscureText: true,
                       decoration: InputDecoration(
@@ -116,7 +113,7 @@ class Singup extends StatelessWidget {
             ),
             //Have account action
             Positioned(
-              top: 820,
+              top: height*0.9,
               child: Container(
                 width: weidth,
                 child: Row(
@@ -129,7 +126,7 @@ class Singup extends StatelessWidget {
                             new MaterialPageRoute(
                                 builder: (context) => new LoginPage()));
                       },
-                      child: Text("Have account?", style: textStyle().style1),
+                      child: Text("Have account?", style: textStyle().style1(weidth)),
                     ),
                   ],
                 ),

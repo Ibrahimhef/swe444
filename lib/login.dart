@@ -28,8 +28,8 @@ class Login extends StatelessWidget {
             ),
             // Login area
             Positioned(
-              top: height*0.69,
-              left: weidth*0.50,
+              top: height*0.683,
+              left: weidth*0.10,
               right: weidth*0.10,
               child: Center(
                 child: InkWell(
@@ -40,19 +40,14 @@ class Login extends StatelessWidget {
                             builder: (context) => new catogory()));
                   },
                   child: Image(
-                    width: weidth*0.1,
+                    width: weidth*0.4,
                     height: height*0.05,
-                    image: AssetImage('assets/loginSingupArrow@3x.png'),
+                    image: AssetImage('assets/singin.png'),
                   ),
                 ),
               ),
             ),
-            Positioned(
-              top: height*0.694,
-              left: weidth*0.25,
-              right: weidth*0.10,
-              child: Text("Sign-in", style: textStyle().Size(weidth)),
-            ),
+
             //Username and password area
             Positioned(
               top: height*0.55,
@@ -109,7 +104,7 @@ class Login extends StatelessWidget {
                             new MaterialPageRoute(
                                 builder: (context) => new SingupPage()));
                       },
-                      child: Text("Sign-up", style: textStyle().style1),
+                      child: Text("Sign-up", style: textStyle().style1(weidth)),
                     ),
                     InkWell(
                       onTap: () {
@@ -118,7 +113,7 @@ class Login extends StatelessWidget {
                             new MaterialPageRoute(
                                 builder: (context) => new ForgetPage()));
                       },
-                      child: Text(" Forget password?", style: textStyle().style1),
+                      child: Text(" Forget password?", style: textStyle().style1(weidth)),
                     ),
                   ],
                 ),

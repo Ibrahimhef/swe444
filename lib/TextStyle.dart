@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
-class textStyle{
-  TextStyle style1 = new TextStyle(
-      fontSize: 20,
-      color: Colors.black54,
-      fontWeight: FontWeight.bold,
-      decoration: TextDecoration.underline);
-  TextStyle style2 = new TextStyle(
-      color: Colors.black54, fontWeight: FontWeight.bold, fontSize: 25);
-  TextStyle style3= new TextStyle(
-      color: Colors.black54,
-      fontWeight: FontWeight.bold,
-      fontSize: 20);
 
-  TextStyle Size(double x){
-    return  style1 = new TextStyle(
-        color: Colors.black54, fontWeight: FontWeight.bold, fontSize: x*0.067);
+class textStyle {
+  TextStyle style2(double x) {
+    return new TextStyle(
+        color: Colors.black54,
+        fontWeight: FontWeight.bold,
+        fontSize: x * 0.05);
+  }
+
+  TextStyle style3(double x) {
+    return new TextStyle(
+        color: Colors.black54, fontWeight: FontWeight.bold, fontSize: x * 0.04);
+  }
+
+  TextStyle style1(double x) {
+    return new TextStyle(
+        fontSize: x * 0.04,
+        color: Colors.black54,
+        fontWeight: FontWeight.bold,
+        decoration: TextDecoration.underline);
   }
 }
