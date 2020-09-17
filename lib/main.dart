@@ -4,10 +4,11 @@ import 'login.dart';
 import 'singup.dart';
 import 'forgetPassword.dart';
 import 'catogory.dart';
-import 'package:flutter/services.dart' ;
+
 
 void main() {
-  runApp(DevicePreview(builder:(context) => MyHomePage()));
+  // runApp(DevicePreview(builder:(context) => MyHomePage()));
+  runApp(MyHomePage());
 }
 
 class MyHomePage extends StatefulWidget {
@@ -21,7 +22,7 @@ class MyApp extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      builder: DevicePreview.appBuilder,
+      // builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
       home: LoginPage(),
     );
