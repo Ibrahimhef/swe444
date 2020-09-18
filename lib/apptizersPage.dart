@@ -15,7 +15,7 @@ class Appatizers extends StatelessWidget {
         width: weidth,
         child: Stack(
           children: [
-            //header of ForgetPass
+            //header of Appatizers
             Positioned(
               top: -9,
               right: -15,
