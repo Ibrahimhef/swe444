@@ -11,7 +11,6 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    print(height);
     return Container(
         height: height,
         width: weidth,

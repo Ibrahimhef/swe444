@@ -20,13 +20,13 @@ class Catogory extends StatelessWidget {
               right: -2,
               top: -2,
               child: Image(
-                  width: weidth +20,
-                  height: height/2.9,
+                  width: weidth + 20,
+                  height: height / 2.9,
                   image: AssetImage('assets/catogory@3x.png'),
                   fit: BoxFit.fill),
             ),
             Positioned(
-              top: height*0.35,
+              top: height * 0.35,
               right: 0,
               child: Container(
                 width: weidth,
@@ -35,17 +35,21 @@ class Catogory extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-
                       child: Column(
                         // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Container(
                             margin: EdgeInsets.only(bottom: 10),
                             child: InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    new MaterialPageRoute(
+                                        builder: (context) => new salads()));
+                              },
                               child: Image(
-                                width: weidth*0.39,
-                                height: height/4.623,
+                                width: weidth * 0.39,
+                                height: height / 4.623,
                                 image: AssetImage('assets/salad@3x.png'),
                               ),
                             ),
@@ -53,19 +57,29 @@ class Catogory extends StatelessWidget {
                           Container(
                             margin: EdgeInsets.only(bottom: 10),
                             child: InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    new MaterialPageRoute(
+                                        builder: (context) => new soup()));
+                              },
                               child: Image(
-                                width: weidth*0.39,
-                                height: height/7.41,
+                                width: weidth * 0.39,
+                                height: height / 7.41,
                                 image: AssetImage('assets/Soup@3x.png'),
                               ),
                             ),
                           ),
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  new MaterialPageRoute(
+                                      builder: (context) => new MainDishes()));
+                            },
                             child: Image(
-                              width: weidth*0.39,
-                              height: height/4.623,
+                              width: weidth * 0.39,
+                              height: height / 4.623,
                               image: AssetImage('assets/mainD@3x.png'),
                             ),
                           ),
@@ -73,8 +87,6 @@ class Catogory extends StatelessWidget {
                       ),
                     ),
                     Container(
-
-
                       margin: EdgeInsets.only(left: 10),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -82,10 +94,15 @@ class Catogory extends StatelessWidget {
                           Container(
                             margin: EdgeInsets.only(bottom: 10),
                             child: InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    new MaterialPageRoute(
+                                        builder: (context) => new apptizers()));
+                              },
                               child: Image(
-                                width: weidth*0.39,
-                                height: height/7.41,
+                                width: weidth * 0.39,
+                                height: height / 7.41,
                                 image: AssetImage('assets/Appatazer@3x.png'),
                               ),
                             ),
@@ -93,19 +110,29 @@ class Catogory extends StatelessWidget {
                           Container(
                             margin: EdgeInsets.only(bottom: 10),
                             child: InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    new MaterialPageRoute(
+                                        builder: (context) => new sweets()));
+                              },
                               child: Image(
-                                width: weidth*0.39,
-                                height: height/4.623,
+                                width: weidth * 0.39,
+                                height: height / 4.623,
                                 image: AssetImage('assets/Sweet@3x.png'),
                               ),
                             ),
                           ),
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  new MaterialPageRoute(
+                                      builder: (context) => new jusis()));
+                            },
                             child: Image(
-                              width: weidth*0.39,
-                              height: height/7.41,
+                              width: weidth * 0.39,
+                              height: height / 7.41,
                               image: AssetImage('assets/Jusic@3x.png'),
                             ),
                           ),

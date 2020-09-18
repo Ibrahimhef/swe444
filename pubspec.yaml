@@ -53,7 +53,6 @@ flutter:
      - assets/catogory@3x.png
      - assets/Jusic@3x.png
      - assets/mainD@3x.png
-     - assets/icons8_upward_arrow_52px.png
      - assets/salad@3x.png
      - assets/singupHeder@3x.png
      - assets/Soup@3x.png
@@ -63,6 +62,12 @@ flutter:
      - assets/singup.png
      - assets/sendpass.png
      - assets/welcome.png
+     - assets/Apptizers_page.png
+     - assets/Jusis_page.png
+     - assets/mainDishes_page.png
+     - assets/Salads_page.png
+     - assets/Soup_page.png
+     - assets/Sweets_page.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
