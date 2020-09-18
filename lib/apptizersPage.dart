@@ -13,19 +13,6 @@ class Appatizers extends StatelessWidget {
     return Container(
         height: height,
         width: weidth,
-        child: Stack(
-          children: [
-            //header of Appatizers
-            Positioned(
-              top: -9,
-              right: -15,
-              child: Image(
-                  width: weidth+30,
-                  height: height/4,
-                  image: AssetImage('assets/Apptizers_page.png'),
-                  fit: BoxFit.fill),
-            ),
-          ],
-        ));
+        );
   }
 }

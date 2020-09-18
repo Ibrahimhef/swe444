@@ -11,21 +11,8 @@ class Soup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: height,
-        width: weidth,
-        child: Stack(
-          children: [
-            //header of Soup
-            Positioned(
-              top: -9,
-              right: -15,
-              child: Image(
-                  width: weidth+30,
-                  height: height/4,
-                  image: AssetImage('assets/Soup_page.png'),
-                  fit: BoxFit.fill),
-            ),
-          ],
-        ));
+      width: weidth,
+      height: height,
+    );
   }
 }

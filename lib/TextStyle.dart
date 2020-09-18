@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 class textStyle {
   TextStyle style2(double x) {
     return new TextStyle(
-        color: Colors.black54,
-        fontWeight: FontWeight.bold,
-        fontSize: x * 0.05);
+        color: Colors.black54, fontWeight: FontWeight.bold, fontSize: x * 0.05);
   }
 
   TextStyle style3(double x) {
@@ -19,5 +17,13 @@ class textStyle {
         color: Colors.black54,
         fontWeight: FontWeight.bold,
         decoration: TextDecoration.underline);
+  }
+
+  TextStyle style4(double x) {
+    return new TextStyle(
+        fontSize: x * 0.08,
+        color: Colors.white,
+        // fontWeight: FontWeight.bold,
+        fontFamily: "Mentality");
   }
 }

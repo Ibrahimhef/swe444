@@ -62,12 +62,7 @@ flutter:
      - assets/singup.png
      - assets/sendpass.png
      - assets/welcome.png
-     - assets/Apptizers_page.png
-     - assets/Jusis_page.png
-     - assets/mainDishes_page.png
-     - assets/Salads_page.png
-     - assets/Soup_page.png
-     - assets/Sweets_page.png
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
@@ -79,17 +74,24 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
+#   fonts:
+#     - family: Schyler
+#       fonts:
+#         - asset: fonts/Mentality.ttf
+#         - asset: fonts/Schyler-Italic.ttf
+#           style: italic
+#     - family: Trajan Pro
+#       fonts:
+#         - asset: fonts/TrajanPro.ttf
+#         - asset: fonts/TrajanPro_Bold.ttf
+#           weight: 700
+#     - family: Mentality
+#       fonts:
+#         - asset: fonts/Mentality.ttf
+  fonts:
+    - family: Mentality
+      fonts:
+        - asset: fonts/Mentality.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
