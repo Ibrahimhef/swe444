@@ -1,0 +1,35 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:swe444/login.dart';
+import 'package:swe444/main.dart';
+import 'package:swe444/models/user.dart';
+
+class Wrapper extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final user = Provider.of<User>(context);
+    print(user);
+//check if signin later next screen category otherwise next screen login page
+    if (user == null) {
+      return AnimatedSplashScreen(
+        duration: 3000,
+        splashIconSize: 280,
+        splash: Image(
+          image: AssetImage('assets/welcome.png'),
+        ),
+        nextScreen: LoginPage(),
+      );
+    } else {
+      return AnimatedSplashScreen(
+        duration: 3000,
+        splashIconSize: 280,
+        splash: Image(
+          image: AssetImage('assets/welcome.png'),
+        ),
+        nextScreen: catogory(),
+      );
+    }
+  }
+}

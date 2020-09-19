@@ -1,5 +1,9 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:swe444/Services/auth.dart';
+import 'package:swe444/models/user.dart';
+import 'package:swe444/wrapper.dart';
 import 'login.dart';
 import 'singup.dart';
 import 'forgetPassword.dart';
@@ -28,17 +32,13 @@ class MyHomePage extends StatefulWidget {
 class MyApp extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        // builder: DevicePreview.appBuilder,
-        debugShowCheckedModeBanner: false,
-        home: AnimatedSplashScreen(
-          duration: 3000,
-          splashIconSize: 280,
-          splash: Image(
-            image: AssetImage('assets/welcome.png'),
-          ),
-          nextScreen: LoginPage(),
-        ));
+    return StreamProvider<User>.value(
+      value: AuthServices().user,
+      child: MaterialApp(
+          // builder: DevicePreview.appBuilder,
+          debugShowCheckedModeBanner: false,
+          home: Wrapper()),
+    );
   }
 }
 
