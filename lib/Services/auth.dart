@@ -54,6 +54,17 @@ class AuthServices {
     }
   }
 
+  Future ForgetPassword(String email) async {
+    try {
+      await _auth.sendPasswordResetEmail(email: email);
+      // FirebaseUser user = result.user;
+      // return _userFormFireBaseUser(user);
+    } catch (e) {
+      print(e.toString());
+      // return null;
+    }
+  }
+
   Future SignOut() async {
     try {
       print("Sign out");

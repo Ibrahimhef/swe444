@@ -51,6 +51,7 @@ class Login extends StatelessWidget {
                             await _authServices.SingInWithEmailAndPassword(
                                 email, password);
                         if (result == null) {
+                          error = "email is invalid";
                           print(error);
                         } else {}
                       }
