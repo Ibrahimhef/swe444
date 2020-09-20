@@ -38,8 +38,9 @@ class MyApp extends State<MyHomePage> {
           // builder: DevicePreview.appBuilder,
           debugShowCheckedModeBanner: false,
           home: AnimatedSplashScreen(
+            backgroundColor: Color.fromRGBO(242, 201, 54, 1),
             duration: 3000,
-            splashIconSize: 280,
+            splashIconSize: 380,
             splash: Image(
               image: AssetImage('assets/welcome.png'),
             ),
