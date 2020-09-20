@@ -7,6 +7,7 @@ import 'TextStyle.dart';
 class Catogory extends StatelessWidget {
   final double weidth, height;
   final AuthServices _auth = AuthServices();
+
   Catogory(this.weidth, this.height);
 
   @override
@@ -42,8 +43,7 @@ class Catogory extends StatelessWidget {
                           Container(
                             margin: EdgeInsets.only(bottom: 10),
                             child: InkWell(
-                              onTap: () async {
-                                await _auth.SignOut();
+                              onTap: () {
                                 Navigator.push(
                                     context,
                                     new MaterialPageRoute(
@@ -138,6 +138,16 @@ class Catogory extends StatelessWidget {
                               image: AssetImage('assets/Jusic@3x.png'),
                             ),
                           ),
+                          InkWell(
+                            onTap: () async {
+                              await _auth.SignOut();
+                            },
+                            child: Image(
+                              width: weidth * 0.32,
+                              height: height / 9.8,
+                              image: AssetImage('assets/logout.png'),
+                            ),
+                          )
                         ],
                       ),
                     )

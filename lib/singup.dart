@@ -3,24 +3,25 @@ import 'package:flutter/material.dart';
 import 'package:swe444/Services/auth.dart';
 import 'package:swe444/main.dart';
 import 'TextStyle.dart';
+import 'wrapper.dart';
 
 class Sing extends State<Singup> {
   final Function toggleView;
   final double weidth, height;
-
   Sing(this.weidth, this.height, {this.toggleView});
 
   final AuthServices _authServices = AuthServices();
   static String full_name = '';
   static String email = '';
   static String password = '';
-  static String error = '';
+  String error = '';
   static Text errorMessage = new Text("");
   static final _formKey1 = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+        return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Container(
             height: height,
@@ -186,8 +187,11 @@ class Sing extends State<Singup> {
                       children: [
                         InkWell(
                           onTap: () {
-                            toggleView();
-                            // Navigator.pop(context);
+                            setState(() {
+                              errorMessage = Text("",
+                                  style: textStyle().style5(weidth));
+                            });
+                            widget.toggleView();
                           },
                           child: Text("Have account?",
                               style: textStyle().style1(weidth)),
