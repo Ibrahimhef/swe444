@@ -26,4 +26,11 @@ class textStyle {
         // fontWeight: FontWeight.bold,
         fontFamily: "Mentality");
   }
+  TextStyle style5(double x) {
+    return new TextStyle(
+        fontSize: x * 0.03,
+        color: Colors.red,
+        // fontWeight: FontWeight.bold,
+        );
+  }
 }
