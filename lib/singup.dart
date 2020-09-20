@@ -48,8 +48,7 @@ class Singup extends StatelessWidget {
                             await _authServices.RegisterWithEmailAndPassword(
                                 email, password);
                         if (result == null) {
-                          // setState(() => error = 'please supply a valid email');
-                          print(error);
+                          error = 'please supply a valid email';
                         } else {}
                       }
                     },
