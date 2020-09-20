@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:swe444/login.dart';
 import 'package:swe444/main.dart';
 import 'package:swe444/models/user.dart';
+import 'package:swe444/screens/authenicate/authenticate.dart';
 
 class Wrapper extends StatelessWidget {
   @override
@@ -13,7 +14,7 @@ class Wrapper extends StatelessWidget {
     print(user);
 //check if signin later next screen category otherwise next screen login page
     if (user == null) {
-      return LoginPage();
+      return Authentcate();
     } else {
       return catogory();
     }

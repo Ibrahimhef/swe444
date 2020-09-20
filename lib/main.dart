@@ -50,6 +50,8 @@ class MyApp extends State<MyHomePage> {
 }
 
 class LoginPage extends StatelessWidget {
+  final Function toggleView;
+  LoginPage({this.toggleView});
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -57,11 +59,17 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
         resizeToAvoidBottomPadding: true,
         backgroundColor: Colors.white,
-        body: Login(weidth, height));
+        body: Login(
+          weidth,
+          height,
+          toggleView: toggleView,
+        ));
   }
 }
 
 class SingupPage extends StatelessWidget {
+  final Function toggleView;
+  SingupPage({this.toggleView});
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -69,7 +77,11 @@ class SingupPage extends StatelessWidget {
     return Scaffold(
         resizeToAvoidBottomPadding: true,
         backgroundColor: Colors.white,
-        body: Singup(weidth, height));
+        body: Singup(
+          weidth,
+          height,
+          toggleView: toggleView,
+        ));
   }
 }
 

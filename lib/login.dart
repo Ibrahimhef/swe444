@@ -5,9 +5,10 @@ import 'package:swe444/main.dart';
 import 'TextStyle.dart';
 
 class Login extends StatelessWidget {
+  final Function toggleView;
   final double weidth, height;
 
-  Login(this.weidth, this.height);
+  Login(this.weidth, this.height, {this.toggleView});
 
   final AuthServices _authServices = AuthServices();
   static String email = '';
@@ -126,10 +127,11 @@ class Login extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              new MaterialPageRoute(
-                                  builder: (context) => new SingupPage()));
+                          // Navigator.push(
+                          //     context,
+                          //     new MaterialPageRoute(
+                          //         builder: (context) => new SingupPage()));
+                          toggleView();
                         },
                         child:
                             Text("Sign-up", style: textStyle().style1(weidth)),

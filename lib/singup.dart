@@ -5,9 +5,10 @@ import 'package:swe444/main.dart';
 import 'TextStyle.dart';
 
 class Singup extends StatelessWidget {
+  final Function toggleView;
   final double weidth, height;
 
-  Singup(this.weidth, this.height);
+  Singup(this.weidth, this.height, {this.toggleView});
 
   final AuthServices _authServices = AuthServices();
   static String full_name = '';
@@ -143,12 +144,11 @@ class Singup extends StatelessWidget {
                         height: height / 20,
                         child: TextFormField(
                           validator: (value) {
-                            if (value.isEmpty){
+                            if (value.isEmpty) {
                               return "Enter a password";
-                            }
-                            else if(value != password){
+                            } else if (value != password) {
                               return "Check Password";
-                            // ignore: unnecessary_statements
+                              // ignore: unnecessary_statements
                             }
                             return null;
                           },
@@ -176,7 +176,8 @@ class Singup extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          Navigator.pop(context);
+                          toggleView();
+                          // Navigator.pop(context);
                         },
                         child: Text("Have account?",
                             style: textStyle().style1(weidth)),
