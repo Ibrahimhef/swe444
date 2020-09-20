@@ -10,9 +10,9 @@ class Singup extends StatelessWidget {
   Singup(this.weidth, this.height);
 
   final AuthServices _authServices = AuthServices();
-  String full_name = '';
-  String email = '';
-  String password = '';
+  static String full_name = '';
+  static String email = '';
+  static String password = '';
   String error = '';
   static final _formKey1 = GlobalKey<FormState>();
 
@@ -143,7 +143,7 @@ class Singup extends StatelessWidget {
                         height: height / 20,
                         child: TextFormField(
                           validator: (value) =>
-                              value == password ? "Check the password" : null,
+                           value != password ? "Check the password" : null,
                           obscureText: true,
                           decoration: InputDecoration(
                               icon: Icon(
