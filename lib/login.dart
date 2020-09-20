@@ -10,10 +10,9 @@ class Login extends StatelessWidget {
   Login(this.weidth, this.height);
 
   final AuthServices _authServices = AuthServices();
-  String email = '';
-  String password = '';
+  static String email = '';
+  static String password = '';
   String error = '';
-  var email1 = TextEditingController(), password1 = TextEditingController();
   static final _formKey = GlobalKey<FormState>();
 
   @override
@@ -47,11 +46,9 @@ class Login extends StatelessWidget {
                       //     new MaterialPageRoute(
                       //         builder: (context) => new catogory()));
                       if (_formKey.currentState.validate()) {
-                        print("${email} and ${password}");
-                        print("${email1.text} (and) ${password1.text}");
                         dynamic result =
                             await _authServices.SingInWithEmailAndPassword(
-                                email1.text, password1.text);
+                                email, password);
                         if (result == null) {
                           print(error);
                         } else {}
@@ -82,9 +79,11 @@ class Login extends StatelessWidget {
                           height: height / 20,
                           child: TextFormField(
                             onChanged: (value) => email = value,
-                            controller: email1,
                             validator: (value) =>
                                 value.isEmpty ? "Enter an email" : null,
+                            textInputAction: TextInputAction.next,
+                            onFieldSubmitted: (_) =>
+                                FocusScope.of(context).nextFocus(),
                             decoration: InputDecoration(
                                 icon: Icon(
                                   Icons.perm_identity,
@@ -103,7 +102,6 @@ class Login extends StatelessWidget {
                           height: height / 20,
                           child: TextFormField(
                             onChanged: (value) => password = value,
-                            controller: password1,
                             validator: (value) =>
                                 value.isEmpty ? "Enter a password" : null,
                             obscureText: true,
