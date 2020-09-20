@@ -77,10 +77,12 @@ class SingupPage extends StatelessWidget {
     return Scaffold(
         resizeToAvoidBottomPadding: true,
         backgroundColor: Colors.white,
-        body: Singup(
-          weidth,
-          height,
-          toggleView: toggleView,
+        body: Container(
+          child: Singup(
+            weidth,
+            height,
+            toggleView: toggleView,
+          ),
         ));
   }
 }
