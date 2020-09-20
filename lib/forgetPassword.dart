@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:swe444/Services/auth.dart';
 import 'package:swe444/main.dart';
+import 'package:swe444/screens/authenicate/authenticate.dart';
 import 'TextStyle.dart';
 
 class ForgetPass extends StatelessWidget {
@@ -37,6 +38,10 @@ class ForgetPass extends StatelessWidget {
                   onTap: () async {
                     if (_formKey2.currentState.validate()) {
                       await _authServices.ForgetPassword(email);
+                      Navigator.pop(
+                          context,
+                          new MaterialPageRoute(
+                              builder: (context) => new LoginPage()));
                     }
                   },
                   child: Image(
