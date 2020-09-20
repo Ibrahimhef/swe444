@@ -142,8 +142,16 @@ class Singup extends StatelessWidget {
                         width: weidth * 0.75,
                         height: height / 20,
                         child: TextFormField(
-                          validator: (value) =>
-                           value != password ? "Check the password" : null,
+                          validator: (value) {
+                            if (value.isEmpty){
+                              return "Enter a password";
+                            }
+                            else if(value != password){
+                              return "Check Password";
+                            // ignore: unnecessary_statements
+                            }
+                            return null;
+                          },
                           obscureText: true,
                           decoration: InputDecoration(
                               icon: Icon(
