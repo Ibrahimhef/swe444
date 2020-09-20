@@ -47,7 +47,8 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final weidth = MediaQuery.of(context).size.width;
-    return Scaffold(backgroundColor: Colors.white, body: Login(weidth, height));
+    return Scaffold(resizeToAvoidBottomPadding: true,
+        backgroundColor: Colors.white, body: Login(weidth, height));
   }
 }
 
@@ -56,7 +57,7 @@ class SingupPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final weidth = MediaQuery.of(context).size.width;
-    return Scaffold(
+    return Scaffold(resizeToAvoidBottomPadding: true,
         backgroundColor: Colors.white, body: Singup(weidth, height));
   }
 }
