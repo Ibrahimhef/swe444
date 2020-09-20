@@ -52,7 +52,9 @@ class MyApp extends State<MyHomePage> {
 
 class LoginPage extends StatelessWidget {
   final Function toggleView;
+
   LoginPage({this.toggleView});
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -70,7 +72,9 @@ class LoginPage extends StatelessWidget {
 
 class SingupPage extends StatelessWidget {
   final Function toggleView;
+
   SingupPage({this.toggleView});
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -103,8 +107,7 @@ class catogory extends StatelessWidget {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final weidth = MediaQuery.of(context).size.width;
-    return Scaffold(
-        backgroundColor: Colors.white, body: Catogory(weidth, height));
+    return Catogory(weidth, height);
   }
 }
 
