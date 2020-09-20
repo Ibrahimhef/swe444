@@ -13,23 +13,9 @@ class Wrapper extends StatelessWidget {
     print(user);
 //check if signin later next screen category otherwise next screen login page
     if (user == null) {
-      return AnimatedSplashScreen(
-        duration: 3000,
-        splashIconSize: 280,
-        splash: Image(
-          image: AssetImage('assets/welcome.png'),
-        ),
-        nextScreen: LoginPage(),
-      );
+      return LoginPage();
     } else {
-      return AnimatedSplashScreen(
-        duration: 3000,
-        splashIconSize: 280,
-        splash: Image(
-          image: AssetImage('assets/welcome.png'),
-        ),
-        nextScreen: catogory(),
-      );
+      return catogory();
     }
   }
 }

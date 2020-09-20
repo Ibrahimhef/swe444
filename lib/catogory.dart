@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:swe444/Services/auth.dart';
 import 'package:swe444/main.dart';
 import 'TextStyle.dart';
 
 class Catogory extends StatelessWidget {
   final double weidth, height;
-
+  final AuthServices _auth = AuthServices();
   Catogory(this.weidth, this.height);
 
   @override
@@ -41,7 +42,8 @@ class Catogory extends StatelessWidget {
                           Container(
                             margin: EdgeInsets.only(bottom: 10),
                             child: InkWell(
-                              onTap: () {
+                              onTap: () async {
+                                await _auth.SignOut();
                                 Navigator.push(
                                     context,
                                     new MaterialPageRoute(
