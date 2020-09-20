@@ -14,7 +14,7 @@ class Singup extends StatelessWidget {
   static String full_name = '';
   static String email = '';
   static String password = '';
-  String error = '';
+  static String error = '';
   static final _formKey1 = GlobalKey<FormState>();
 
   @override
@@ -49,8 +49,7 @@ class Singup extends StatelessWidget {
                             await _authServices.RegisterWithEmailAndPassword(
                                 email, password);
                         if (result == null) {
-                          // setState(() => error = 'please supply a valid email');
-                          print(error);
+                          error = 'please supply a valid email';
                         } else {}
                       }
                     },
@@ -140,6 +139,7 @@ class Singup extends StatelessWidget {
                         ),
                       ),
                       Container(
+                        margin: EdgeInsets.only(bottom: 15),
                         width: weidth * 0.75,
                         height: height / 20,
                         child: TextFormField(
@@ -161,6 +161,10 @@ class Singup extends StatelessWidget {
                               // border: InputBorder.none,
                               hintText: "Confirm password"),
                         ),
+                      ),
+                      //print errors in signUp
+                      Container(
+                        child: Text(error, style: textStyle().style5(weidth)),
                       )
                     ],
                   ),
