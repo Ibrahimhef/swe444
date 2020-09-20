@@ -52,7 +52,6 @@ class Login extends StatelessWidget {
                                 email, password);
                         if (result == null) {
                           error = "email is invalid";
-                          print(error);
                         } else {}
                       }
                     },

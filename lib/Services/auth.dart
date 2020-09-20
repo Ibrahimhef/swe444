@@ -25,7 +25,7 @@ class AuthServices {
       FirebaseUser user = result.user;
       return _userFormFireBaseUser(user);
     } catch (e) {
-      print(e.toString());
+      // print(e.toString());
       return null;
     }
   }
@@ -37,7 +37,7 @@ class AuthServices {
       FirebaseUser user = result.user;
       return _userFormFireBaseUser(user);
     } catch (e) {
-      print(e.toString());
+      // print(e.toString());
       return null;
     }
   }
@@ -49,7 +49,7 @@ class AuthServices {
       FirebaseUser user = result.user;
       return _userFormFireBaseUser(user);
     } catch (e) {
-      print(e.toString());
+      // print(e.toString());
       return null;
     }
   }
@@ -60,7 +60,7 @@ class AuthServices {
       // FirebaseUser user = result.user;
       // return _userFormFireBaseUser(user);
     } catch (e) {
-      print(e.toString());
+      // print(e.toString());
       // return null;
     }
   }
