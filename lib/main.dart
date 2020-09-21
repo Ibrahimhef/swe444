@@ -188,3 +188,5 @@ Widget setAppBar(double weidth, String name) {
       backgroundColor: Color.fromRGBO(115, 32, 2, 1),
       title: Text(name, style: textStyle().style4(weidth)));
 }
+
+
