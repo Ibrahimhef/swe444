@@ -33,7 +33,7 @@ class Login extends StatelessWidget {
                     image: AssetImage('assets/Background.png'),
                     fit: BoxFit.fill),
               ),
-              //Sign in
+              //Sign in form
               Positioned(
                 right: 0,
                 top: height / 13,
@@ -44,7 +44,7 @@ class Login extends StatelessWidget {
               ),
               //Sign in with google
               Positioned(
-                right: weidth / 3,
+                right: weidth / 2.9,
                 top: height / 1.2,
                 child: Image(
                     image: AssetImage('assets/Google button.png'),
@@ -74,7 +74,7 @@ class Login extends StatelessWidget {
                       //         builder: (context) => new catogory()));
                       if (_formKey.currentState.validate()) {
                         dynamic result =
-                            await _authServices.SingInWithEmailAndPassword(
+                            await _authServices.SignInWithEmailAndPassword(
                                 email, password);
                         if (result == null) {
                           error = "email is invalid";
@@ -82,8 +82,6 @@ class Login extends StatelessWidget {
                       }
                     },
                     child: Image(
-                      // width: weidth,
-                      // height: height,
                       image: AssetImage('assets/Start cooking.png'),
                     ),
                   ),
@@ -95,7 +93,7 @@ class Login extends StatelessWidget {
                   key: _formKey,
                   child: Positioned(
                     top: height * 0.34,
-                    left: weidth * 0.30,
+                    left: weidth * 0.29,
                     right: weidth * 0.15,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -103,7 +101,7 @@ class Login extends StatelessWidget {
                         Container(
                           margin: EdgeInsets.only(bottom: 88),
                           width: weidth * 0.60,
-                          height: height / 20,
+                          height: height / 17,
                           child: TextFormField(
                             onChanged: (value) => email = value,
                             validator: (value) =>
@@ -148,13 +146,13 @@ class Login extends StatelessWidget {
                           // Navigator.push(
                           //     context,
                           //     new MaterialPageRoute(
-                          //         builder: (context) => new SingupPage()));
+                          //         builder: (context) => new SignupPage()));
                           toggleView();
                         },
                         child: Text("Don't have an account? Sign up",
                             style: TextStyle(
                                 fontFamily: 'OleoScript',
-                                color: Colors.red,
+                                color: Colors.grey[600],
                                 fontSize: weidth * 0.03)),
                       ),
                       InkWell(
@@ -167,7 +165,7 @@ class Login extends StatelessWidget {
                         child: Text(" Forget password?",
                             style: TextStyle(
                                 fontFamily: 'OleoScript',
-                                color: Colors.red,
+                                color: Colors.grey[600],
                                 fontSize: weidth * 0.03)),
                       ),
                     ],

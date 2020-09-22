@@ -5,10 +5,10 @@ import 'package:swe444/main.dart';
 import 'TextStyle.dart';
 import 'wrapper.dart';
 
-class Sing extends State<Singup> {
+class Sign extends State<Signup> {
   final Function toggleView;
   final double weidth, height;
-  Sing(this.weidth, this.height, {this.toggleView});
+  Sign(this.weidth, this.height, {this.toggleView});
 
   final AuthServices _authServices = AuthServices();
   static String full_name = '';
@@ -20,22 +20,38 @@ class Sing extends State<Singup> {
 
   @override
   Widget build(BuildContext context) {
-        return Scaffold(
-      backgroundColor: Colors.white,
+    return Scaffold(
       body: SingleChildScrollView(
         child: Container(
             height: height,
             width: weidth,
             child: Stack(
               children: [
-                //Singup heder
+                //Signup background
                 Positioned(
                   right: 0,
-                  top: -7,
+                  top: 0,
                   child: Image(
-                      width: weidth + 25,
-                      height: height / 2.1,
-                      image: AssetImage('assets/singupHeder@3x.png'),
+                      width: weidth,
+                      image: AssetImage('assets/Background.png'),
+                      fit: BoxFit.fill),
+                ),
+                //Signup form
+                Positioned(
+                  right: 0,
+                  top: height / 30,
+                  child: Image(
+                      width: weidth,
+                      image: AssetImage('assets/Sign up.png'),
+                      fit: BoxFit.fill),
+                ),
+                //Signup heder
+                Positioned(
+                  right: 0,
+                  top: 0,
+                  child: Image(
+                      width: weidth,
+                      image: AssetImage('assets/Header square.png'),
                       fit: BoxFit.fill),
                 ),
                 // Arrow for submit
@@ -61,9 +77,7 @@ class Sing extends State<Singup> {
                         }
                       },
                       child: Image(
-                        width: weidth * 0.4,
-                        height: height * 0.05,
-                        image: AssetImage('assets/singup.png'),
+                        image: AssetImage('assets/Sign-up button.png'),
                       ),
                     ),
                   ),
@@ -74,15 +88,15 @@ class Sing extends State<Singup> {
                 Form(
                   key: _formKey1,
                   child: Positioned(
-                    top: height * 0.48,
-                    left: weidth * 0.15,
+                    top: height * 0.31,
+                    left: weidth * 0.25,
                     right: weidth * 0.15,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                          margin: EdgeInsets.only(bottom: 15),
-                          width: weidth * 0.75,
+                          margin: EdgeInsets.only(bottom: 55),
+                          width: weidth * 0.50,
                           height: height / 20,
                           child: TextFormField(
                             onChanged: (value) => full_name = value,
@@ -92,10 +106,6 @@ class Sing extends State<Singup> {
                             onFieldSubmitted: (_) =>
                                 FocusScope.of(context).nextFocus(),
                             decoration: InputDecoration(
-                                icon: Icon(
-                                  Icons.perm_identity,
-                                  color: Colors.black54,
-                                ),
                                 border: UnderlineInputBorder(
                                     borderSide: new BorderSide(
                                         color: Colors.black54,
@@ -105,8 +115,8 @@ class Sing extends State<Singup> {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(bottom: 15),
-                          width: weidth * 0.75,
+                          margin: EdgeInsets.only(bottom: 50),
+                          width: weidth * 0.50,
                           height: height / 20,
                           child: TextFormField(
                             onChanged: (value) => email = value,
@@ -116,17 +126,13 @@ class Sing extends State<Singup> {
                             onFieldSubmitted: (_) =>
                                 FocusScope.of(context).nextFocus(),
                             decoration: InputDecoration(
-                                icon: Icon(
-                                  Icons.mail_outline,
-                                  color: Colors.black54,
-                                ),
                                 // border: InputBorder.none,
                                 hintText: "Email"),
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(bottom: 15),
-                          width: weidth * 0.75,
+                          margin: EdgeInsets.only(bottom: 54),
+                          width: weidth * 0.50,
                           height: height / 20,
                           child: TextFormField(
                             onChanged: (value) => password = value,
@@ -137,17 +143,13 @@ class Sing extends State<Singup> {
                             onFieldSubmitted: (_) =>
                                 FocusScope.of(context).nextFocus(),
                             decoration: InputDecoration(
-                                icon: Icon(
-                                  Icons.lock,
-                                  color: Colors.black54,
-                                ),
                                 // border: InputBorder.none,
                                 hintText: "Password"),
                           ),
                         ),
                         Container(
                           margin: EdgeInsets.only(bottom: 15),
-                          width: weidth * 0.75,
+                          width: weidth * 0.50,
                           height: height / 20,
                           child: TextFormField(
                             validator: (value) {
@@ -161,10 +163,6 @@ class Sing extends State<Singup> {
                             },
                             obscureText: true,
                             decoration: InputDecoration(
-                                icon: Icon(
-                                  Icons.lock,
-                                  color: Colors.black54,
-                                ),
                                 // border: InputBorder.none,
                                 hintText: "Confirm password"),
                           ),
@@ -179,7 +177,7 @@ class Sing extends State<Singup> {
                 ),
                 //Have account action
                 Positioned(
-                  top: height * 0.9,
+                  top: height * 0.95,
                   child: Container(
                     width: weidth,
                     child: Row(
@@ -188,13 +186,16 @@ class Sing extends State<Singup> {
                         InkWell(
                           onTap: () {
                             setState(() {
-                              errorMessage = Text("",
-                                  style: textStyle().style5(weidth));
+                              errorMessage =
+                                  Text("", style: textStyle().style5(weidth));
                             });
                             widget.toggleView();
                           },
-                          child: Text("Have account?",
-                              style: textStyle().style1(weidth)),
+                          child: Text("Already have an account? Sign in",
+                              style: TextStyle(
+                                  fontFamily: 'OleoScript',
+                                  color: Colors.grey[600],
+                                  fontSize: weidth * 0.03)),
                         ),
                       ],
                     ),
@@ -207,14 +208,14 @@ class Sing extends State<Singup> {
   }
 }
 
-class Singup extends StatefulWidget {
+class Signup extends StatefulWidget {
   final Function toggleView;
   final double weidth, height;
 
-  Singup(this.weidth, this.height, {this.toggleView});
+  Signup(this.weidth, this.height, {this.toggleView});
 
   @override
   State<StatefulWidget> createState() {
-    return Sing(weidth, height);
+    return Sign(weidth, height);
   }
 }

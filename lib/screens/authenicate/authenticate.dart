@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:swe444/singup.dart';
+import 'package:swe444/signup.dart';
 import 'package:swe444/login.dart';
 import 'package:swe444/main.dart';
 
@@ -20,6 +20,6 @@ class _AuthentcateState extends State<Authentcate> {
         ? LoginPage(
             toggleView: toggleView,
           )
-        : SingupPage(toggleView: toggleView);
+        : SignupPage(toggleView: toggleView);
   }
 }

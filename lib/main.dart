@@ -5,7 +5,7 @@ import 'package:swe444/Services/auth.dart';
 import 'package:swe444/models/user.dart';
 import 'package:swe444/wrapper.dart';
 import 'login.dart';
-import 'singup.dart';
+import 'signup.dart';
 import 'forgetPassword.dart';
 import 'catogory.dart';
 import 'apptizersPage.dart';
@@ -72,11 +72,11 @@ class LoginPage extends StatelessWidget {
   }
 }
 
-//---------------------------------------------------
-class SingupPage extends StatelessWidget {
+//Sign up page------------------------------------
+class SignupPage extends StatelessWidget {
   final Function toggleView;
 
-  SingupPage({this.toggleView});
+  SignupPage({this.toggleView});
 
   @override
   Widget build(BuildContext context) {
@@ -84,9 +84,9 @@ class SingupPage extends StatelessWidget {
     final weidth = MediaQuery.of(context).size.width;
     return Scaffold(
         resizeToAvoidBottomPadding: true,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         body: Container(
-          child: Singup(
+          child: Signup(
             weidth,
             height,
             toggleView: toggleView,
