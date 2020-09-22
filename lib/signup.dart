@@ -56,7 +56,7 @@ class Sign extends State<Signup> {
                 ),
                 // Arrow for submit
                 Positioned(
-                  top: height * 0.798,
+                  top: height * 0.82,
                   left: weidth * 0.10,
                   right: weidth * 0.10,
                   child: Center(
@@ -95,7 +95,7 @@ class Sign extends State<Signup> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                          margin: EdgeInsets.only(bottom: 55),
+                          margin: EdgeInsets.only(bottom: 52),
                           width: weidth * 0.50,
                           height: height / 20,
                           child: TextFormField(

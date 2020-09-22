@@ -95,7 +95,11 @@ class SignupPage extends StatelessWidget {
   }
 }
 
+//Frogot password page----------------------------
 class ForgetPage extends StatelessWidget {
+  final Function toggleView;
+
+  ForgetPage({this.toggleView});
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
