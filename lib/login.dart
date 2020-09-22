@@ -152,7 +152,10 @@ class Login extends StatelessWidget {
                           toggleView();
                         },
                         child: Text("Don't have an account? Sign up",
-                            style: textStyle().style5(weidth)),
+                            style: TextStyle(
+                                fontFamily: 'OleoScript',
+                                color: Colors.red,
+                                fontSize: weidth * 0.03)),
                       ),
                       InkWell(
                         onTap: () {
@@ -162,7 +165,10 @@ class Login extends StatelessWidget {
                                   builder: (context) => new ForgetPage()));
                         },
                         child: Text(" Forget password?",
-                            style: textStyle().style5(weidth)),
+                            style: TextStyle(
+                                fontFamily: 'OleoScript',
+                                color: Colors.red,
+                                fontSize: weidth * 0.03)),
                       ),
                     ],
                   ),
