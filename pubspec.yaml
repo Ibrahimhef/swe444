@@ -58,22 +58,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-     - assets/Appatazer@3x.png
-     - assets/headOfLoginPage@3x.png
-     - assets/catogory@3x.png
-     - assets/Jusic@3x.png
-     - assets/mainD@3x.png
-     - assets/salad@3x.png
-     - assets/singupHeder@3x.png
-     - assets/Soup@3x.png
-     - assets/Sweet@3x.png
-     - assets/forgethead@3x.png
-     - assets/singin.png
-     - assets/singup.png
-     - assets/sendpass.png
-     - assets/welcome.png
-     - assets/logout.png
-     - assets/icon.png
+     - assets/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -101,6 +86,9 @@ flutter:
 #       fonts:
 #         - asset: fonts/Mentality.ttf
   fonts:
+    - family: OleoScript
+      fonts:
+         - asset: fonts/OleoScript-Regular.ttf
     - family: Mentality
       fonts:
          - asset: fonts/Mentality.ttf

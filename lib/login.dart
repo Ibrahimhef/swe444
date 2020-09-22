@@ -24,19 +24,45 @@ class Login extends StatelessWidget {
           width: weidth,
           child: Stack(
             children: [
+              //login background
+              Positioned(
+                right: 0,
+                top: 0,
+                child: Image(
+                    width: weidth,
+                    image: AssetImage('assets/Background.png'),
+                    fit: BoxFit.fill),
+              ),
+              //Sign in
+              Positioned(
+                right: 0,
+                top: height / 13,
+                child: Image(
+                    width: weidth,
+                    image: AssetImage('assets/Sign in.png'),
+                    fit: BoxFit.fill),
+              ),
+              //Sign in with google
+              Positioned(
+                right: weidth / 3,
+                top: height / 1.2,
+                child: Image(
+                    image: AssetImage('assets/Google button.png'),
+                    fit: BoxFit.fill),
+              ),
               //login header
               Positioned(
                 right: 0,
-                top: -7,
+                top: 0,
                 child: Image(
-                    width: weidth + 25,
-                    height: height / 2.5,
-                    image: AssetImage('assets/headOfLoginPage@3x.png'),
+                    width: weidth,
+                    image: AssetImage('assets/Header square.png'),
                     fit: BoxFit.fill),
               ),
+
               // Login area
               Positioned(
-                top: height * 0.687,
+                top: height * 0.643,
                 left: weidth * 0.10,
                 right: weidth * 0.10,
                 child: Center(
@@ -56,9 +82,9 @@ class Login extends StatelessWidget {
                       }
                     },
                     child: Image(
-                      width: weidth * 0.4,
-                      height: height * 0.05,
-                      image: AssetImage('assets/singin.png'),
+                      // width: weidth,
+                      // height: height,
+                      image: AssetImage('assets/Start cooking.png'),
                     ),
                   ),
                 ),
@@ -68,15 +94,15 @@ class Login extends StatelessWidget {
               Form(
                   key: _formKey,
                   child: Positioned(
-                    top: height * 0.54,
-                    left: weidth * 0.15,
+                    top: height * 0.34,
+                    left: weidth * 0.30,
                     right: weidth * 0.15,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                          margin: EdgeInsets.only(bottom: 20),
-                          width: weidth * 0.75,
+                          margin: EdgeInsets.only(bottom: 88),
+                          width: weidth * 0.60,
                           height: height / 20,
                           child: TextFormField(
                             onChanged: (value) => email = value,
@@ -86,20 +112,16 @@ class Login extends StatelessWidget {
                             onFieldSubmitted: (_) =>
                                 FocusScope.of(context).nextFocus(),
                             decoration: InputDecoration(
-                                icon: Icon(
-                                  Icons.perm_identity,
-                                  color: Colors.black54,
-                                ),
                                 border: UnderlineInputBorder(
                                     borderSide: new BorderSide(
                                         color: Colors.black54,
                                         width: 0.5,
                                         style: BorderStyle.none)),
-                                hintText: "email"),
+                                hintText: "Email"),
                           ),
                         ),
                         Container(
-                          width: weidth * 0.75,
+                          width: weidth * 0.60,
                           height: height / 20,
                           child: TextFormField(
                             onChanged: (value) => password = value,
@@ -107,19 +129,15 @@ class Login extends StatelessWidget {
                                 value.isEmpty ? "Enter a password" : null,
                             obscureText: true,
                             decoration: InputDecoration(
-                                icon: Icon(
-                                  Icons.lock,
-                                  color: Colors.black54,
-                                ),
                                 // border: InputBorder.none,
-                                hintText: "password"),
+                                hintText: "Password"),
                           ),
                         )
                       ],
                     ),
                   )),
               Positioned(
-                top: height * 0.9,
+                top: height * 0.95,
                 child: Container(
                   width: weidth,
                   child: Row(
@@ -133,8 +151,8 @@ class Login extends StatelessWidget {
                           //         builder: (context) => new SingupPage()));
                           toggleView();
                         },
-                        child:
-                            Text("Sign-up", style: textStyle().style1(weidth)),
+                        child: Text("Don't have an account? Sign up",
+                            style: textStyle().style5(weidth)),
                       ),
                       InkWell(
                         onTap: () {
@@ -144,7 +162,7 @@ class Login extends StatelessWidget {
                                   builder: (context) => new ForgetPage()));
                         },
                         child: Text(" Forget password?",
-                            style: textStyle().style1(weidth)),
+                            style: textStyle().style5(weidth)),
                       ),
                     ],
                   ),

@@ -50,6 +50,7 @@ class MyApp extends State<MyHomePage> {
   }
 }
 
+//Sign in page------------------------------------
 class LoginPage extends StatelessWidget {
   final Function toggleView;
 
@@ -60,16 +61,18 @@ class LoginPage extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final weidth = MediaQuery.of(context).size.width;
     return Scaffold(
-        resizeToAvoidBottomPadding: true,
-        backgroundColor: Colors.white,
-        body: Login(
-          weidth,
-          height,
-          toggleView: toggleView,
-        ));
+      resizeToAvoidBottomPadding: true,
+      backgroundColor: Colors.transparent,
+      body: Login(
+        weidth,
+        height,
+        toggleView: toggleView,
+      ),
+    );
   }
 }
 
+//---------------------------------------------------
 class SingupPage extends StatelessWidget {
   final Function toggleView;
 
@@ -188,5 +191,3 @@ Widget setAppBar(double weidth, String name) {
       backgroundColor: Color.fromRGBO(115, 32, 2, 1),
       title: Text(name, style: textStyle().style4(weidth)));
 }
-
-
