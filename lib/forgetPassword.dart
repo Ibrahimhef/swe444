@@ -38,6 +38,15 @@ class ForgetPass extends StatelessWidget {
                   image: AssetImage('assets/Reset Password.png'),
                   fit: BoxFit.fill),
             ),
+            //Logo form
+            Positioned(
+              right: weidth / 4,
+              bottom: height / 1.69,
+              child: Image(
+                  width: weidth / 2,
+                  image: AssetImage('assets/Saffron-logo.png'),
+                  fit: BoxFit.fill),
+            ),
             //Forgot password header
             Positioned(
               right: 0,

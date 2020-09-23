@@ -60,13 +60,26 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final weidth = MediaQuery.of(context).size.width;
-    return Scaffold(
-      resizeToAvoidBottomPadding: true,
-      backgroundColor: Colors.transparent,
-      body: Login(
-        weidth,
-        height,
-        toggleView: toggleView,
+    return SafeArea(
+      bottom: true,
+      top: true,
+      child: Scaffold(
+        resizeToAvoidBottomPadding: true,
+        // backgroundColor: Color(0xfff2cb05),
+        body: Container(
+          width: double.infinity,
+          height: height,
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topRight,
+                  end: Alignment.bottomLeft,
+                  colors: [Color(0xfff2cb05), Color(0xfff2b705)])),
+          child: Login(
+            weidth,
+            height,
+            toggleView: toggleView,
+          ),
+        ),
       ),
     );
   }
