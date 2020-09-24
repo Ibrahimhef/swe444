@@ -1,7 +1,11 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:swe444/Services/auth.dart';
+import 'package:swe444/models/user.dart';
+import 'package:swe444/wrapper.dart';
 import 'login.dart';
-import 'singup.dart';
+import 'signup.dart';
 import 'forgetPassword.dart';
 import 'catogory.dart';
 import 'apptizersPage.dart';
@@ -14,8 +18,8 @@ import 'TextStyle.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 
 void main() {
-  // runApp(DevicePreview(builder:(context) => MyHomePage()));
-  runApp(MyHomePage());
+  runApp(DevicePreview(builder:(context) => MyHomePage()));
+  // runApp(MyHomePage());
 }
 
 class MyHomePage extends StatefulWidget {
@@ -28,40 +32,78 @@ class MyHomePage extends StatefulWidget {
 class MyApp extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        // builder: DevicePreview.appBuilder,
-        debugShowCheckedModeBanner: false,
-        home: AnimatedSplashScreen(
-          duration: 3000,
-          splashIconSize: 280,
-          splash: Image(
-            image: AssetImage('assets/welcome.png'),
-          ),
-          nextScreen: LoginPage(),
-        ));
+    return StreamProvider<User>.value(
+      value: AuthServices().user,
+      child: MaterialApp(
+          builder: DevicePreview.appBuilder,
+          debugShowCheckedModeBanner: false,
+          home: AnimatedSplashScreen(
+            backgroundColor: Color.fromRGBO(242, 201, 54, 1),
+<<<<<<< HEAD
+            duration:2000,
+=======
+            duration: 3000,
+>>>>>>> parent of 611cffe... Merge remote-tracking branch 'origin/master'
+            splashIconSize: 380,
+            splash: Image(
+              image: AssetImage('assets/welcome.png'),
+            ),
+            nextScreen: Wrapper(),
+          )),
+    );
   }
 }
 
+//Sign in page------------------------------------
 class LoginPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-    final weidth = MediaQuery.of(context).size.width;
-    return Scaffold(backgroundColor: Colors.white, body: Login(weidth, height));
-  }
-}
+  final Function toggleView;
 
-class SingupPage extends StatelessWidget {
+  LoginPage({this.toggleView});
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final weidth = MediaQuery.of(context).size.width;
     return Scaffold(
-        backgroundColor: Colors.white, body: Singup(weidth, height));
+      resizeToAvoidBottomPadding: true,
+      backgroundColor: Colors.transparent,
+      body: Login(
+        weidth,
+        height,
+        toggleView: toggleView,
+      ),
+    );
   }
 }
 
+//Sign up page------------------------------------
+class SignupPage extends StatelessWidget {
+  final Function toggleView;
+
+  SignupPage({this.toggleView});
+
+  @override
+  Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final weidth = MediaQuery.of(context).size.width;
+    return Scaffold(
+        resizeToAvoidBottomPadding: true,
+        backgroundColor: Colors.transparent,
+        body: Container(
+          child: Signup(
+            weidth,
+            height,
+            toggleView: toggleView,
+          ),
+        ));
+  }
+}
+
+//Frogot password page----------------------------
 class ForgetPage extends StatelessWidget {
+  final Function toggleView;
+
+  ForgetPage({this.toggleView});
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -76,8 +118,7 @@ class catogory extends StatelessWidget {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final weidth = MediaQuery.of(context).size.width;
-    return Scaffold(
-        backgroundColor: Colors.white, body: Catogory(weidth, height));
+    return Catogory(weidth, height);
   }
 }
 
