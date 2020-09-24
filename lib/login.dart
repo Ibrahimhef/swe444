@@ -60,7 +60,7 @@ class Login extends StatelessWidget {
                               //         builder: (context) => new catogory()));
                               if (_formKey.currentState.validate()) {
                                 dynamic result =
-                                    await _authServices.SingInWithEmailAndPassword(
+                                    await _authServices.SignInWithEmailAndPassword(
                                         email, password);
                                 if (result == null) {
                                   error = "email is invalid";
