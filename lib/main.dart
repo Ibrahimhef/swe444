@@ -39,7 +39,7 @@ class MyApp extends State<MyHomePage> {
           debugShowCheckedModeBanner: false,
           home: AnimatedSplashScreen(
             backgroundColor: Color.fromRGBO(242, 201, 54, 1),
-            duration: 2000,
+            duration: 3000,
             splashIconSize: 380,
             splash: Image(
               image: AssetImage('assets/welcome.png'),
