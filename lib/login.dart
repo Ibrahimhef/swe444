@@ -15,12 +15,10 @@ class Login extends StatelessWidget {
   static String email = '';
   static String password = '';
   String error = '';
-  GoogleSignIn _googleSignIn = GoogleSignIn(
-    scopes: [
-      'email',
-      'https://www.googleapis.com/auth/contacts.readonly',
-    ],
-  );
+  GoogleSignIn _googleSignIn = GoogleSignIn(scopes: [
+    'email',
+    'https://www.googleapis.com/auth/contacts.readonly',
+  ]);
   static final _formKey = GlobalKey<FormState>();
 
   @override
@@ -59,8 +57,8 @@ class Login extends StatelessWidget {
                               //     new MaterialPageRoute(
                               //         builder: (context) => new catogory()));
                               if (_formKey.currentState.validate()) {
-                                dynamic result =
-                                    await _authServices.SignInWithEmailAndPassword(
+                                dynamic result = await _authServices
+                                    .SingInWithEmailAndPassword(
                                         email, password);
                                 if (result == null) {
                                   error = "email is invalid";
@@ -78,7 +76,7 @@ class Login extends StatelessWidget {
                           onTap: () async {
                             try {
                               await _googleSignIn.signIn();
-
+                              print(_googleSignIn.currentUser.toString());
                             } catch (error) {
                               print(error);
                             }

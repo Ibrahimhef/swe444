@@ -105,7 +105,7 @@ flutter:
   fonts:
     - family: Mentality
       fonts:
-        #  - asset: fonts/Mentality.ttf
+         - asset: fonts/Mentality.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
