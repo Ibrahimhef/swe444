@@ -19,7 +19,7 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 
 void main() {
   // runApp(DevicePreview(builder: (context) => MyHomePage()));
-  // runApp(MyHomePage());
+  runApp(MyHomePage());
 }
 
 class MyHomePage extends StatefulWidget {
@@ -39,7 +39,7 @@ class MyApp extends State<MyHomePage> {
           debugShowCheckedModeBanner: false,
           home: AnimatedSplashScreen(
             backgroundColor: Color.fromRGBO(242, 201, 54, 1),
-            duration: 3000,
+            duration: 2000,
             splashIconSize: 380,
             splash: Image(
               image: AssetImage('assets/welcome.png'),
