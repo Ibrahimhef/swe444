@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:swe444/Services/auth.dart';
 import 'package:swe444/main.dart';
 import 'TextStyle.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class Login extends StatelessWidget {
   final Function toggleView;
@@ -14,6 +15,12 @@ class Login extends StatelessWidget {
   static String email = '';
   static String password = '';
   String error = '';
+  GoogleSignIn _googleSignIn = GoogleSignIn(
+    scopes: [
+      'email',
+      'https://www.googleapis.com/auth/contacts.readonly',
+    ],
+  );
   static final _formKey = GlobalKey<FormState>();
 
   @override
@@ -24,65 +31,65 @@ class Login extends StatelessWidget {
           width: weidth,
           child: Stack(
             children: [
-              //login background
-              Positioned(
-                right: 0,
-                top: 0,
-                child: Image(
-                    width: weidth,
-                    image: AssetImage('assets/Background.png'),
-                    fit: BoxFit.fill),
-              ),
-              //Sign in form
-              Positioned(
-                right: 0,
-                top: height / 13,
-                child: Image(
-                    width: weidth,
-                    image: AssetImage('assets/Sign in.png'),
-                    fit: BoxFit.fill),
-              ),
-              //Sign in with google
-              Positioned(
-                right: weidth / 2.9,
-                top: height / 1.2,
-                child: Image(
-                    image: AssetImage('assets/Google button.png'),
-                    fit: BoxFit.fill),
-              ),
               //login header
               Positioned(
                 right: 0,
-                top: 0,
+                top: -7,
                 child: Image(
-                    width: weidth,
-                    image: AssetImage('assets/Header square.png'),
+                    width: weidth + 25,
+                    height: height / 2.5,
+                    image: AssetImage('assets/headOfLoginPage@3x.png'),
                     fit: BoxFit.fill),
               ),
-
               // Login area
               Positioned(
-                top: height * 0.655,
+                top: height * 0.687,
                 left: weidth * 0.10,
                 right: weidth * 0.10,
                 child: Center(
-                  child: InkWell(
-                    onTap: () async {
-                      // Navigator.push(
-                      //     context,
-                      //     new MaterialPageRoute(
-                      //         builder: (context) => new catogory()));
-                      if (_formKey.currentState.validate()) {
-                        dynamic result =
-                            await _authServices.SignInWithEmailAndPassword(
-                                email, password);
-                        if (result == null) {
-                          error = "email is invalid";
-                        } else {}
-                      }
-                    },
-                    child: Image(
-                      image: AssetImage('assets/Start cooking.png'),
+                  child: Container(
+                    child: Column(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(bottom: 10),
+                          child: InkWell(
+                            onTap: () async {
+                              // Navigator.push(
+                              //     context,
+                              //     new MaterialPageRoute(
+                              //         builder: (context) => new catogory()));
+                              if (_formKey.currentState.validate()) {
+                                dynamic result =
+                                    await _authServices.SingInWithEmailAndPassword(
+                                        email, password);
+                                if (result == null) {
+                                  error = "email is invalid";
+                                } else {}
+                              }
+                            },
+                            child: Image(
+                              width: weidth * 0.35,
+                              height: height * 0.05,
+                              image: AssetImage('assets/singin.png'),
+                            ),
+                          ),
+                        ),
+                        InkWell(
+                          onTap: () async {
+                            try {
+                              await _googleSignIn.signIn();
+
+                            } catch (error) {
+                              print(error);
+                            }
+                          },
+                          child: Image(
+                            width: weidth * 0.4,
+                            height: height * 0.05,
+                            image: AssetImage('assets/googleSignIn@3x.png'),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -92,16 +99,16 @@ class Login extends StatelessWidget {
               Form(
                   key: _formKey,
                   child: Positioned(
-                    top: height * 0.34,
-                    left: weidth * 0.29,
+                    top: height * 0.54,
+                    left: weidth * 0.15,
                     right: weidth * 0.15,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                          margin: EdgeInsets.only(bottom: 88),
-                          width: weidth * 0.60,
-                          height: height / 17,
+                          margin: EdgeInsets.only(bottom: 20),
+                          width: weidth * 0.75,
+                          height: height / 20,
                           child: TextFormField(
                             onChanged: (value) => email = value,
                             validator: (value) =>
@@ -110,16 +117,20 @@ class Login extends StatelessWidget {
                             onFieldSubmitted: (_) =>
                                 FocusScope.of(context).nextFocus(),
                             decoration: InputDecoration(
+                                icon: Icon(
+                                  Icons.perm_identity,
+                                  color: Colors.black54,
+                                ),
                                 border: UnderlineInputBorder(
                                     borderSide: new BorderSide(
                                         color: Colors.black54,
                                         width: 0.5,
                                         style: BorderStyle.none)),
-                                hintText: "Email"),
+                                hintText: "email"),
                           ),
                         ),
                         Container(
-                          width: weidth * 0.60,
+                          width: weidth * 0.75,
                           height: height / 20,
                           child: TextFormField(
                             onChanged: (value) => password = value,
@@ -127,15 +138,19 @@ class Login extends StatelessWidget {
                                 value.isEmpty ? "Enter a password" : null,
                             obscureText: true,
                             decoration: InputDecoration(
+                                icon: Icon(
+                                  Icons.lock,
+                                  color: Colors.black54,
+                                ),
                                 // border: InputBorder.none,
-                                hintText: "Password"),
+                                hintText: "password"),
                           ),
                         )
                       ],
                     ),
                   )),
               Positioned(
-                top: height * 0.95,
+                top: height * 0.9,
                 child: Container(
                   width: weidth,
                   child: Row(
@@ -146,14 +161,11 @@ class Login extends StatelessWidget {
                           // Navigator.push(
                           //     context,
                           //     new MaterialPageRoute(
-                          //         builder: (context) => new SignupPage()));
+                          //         builder: (context) => new SingupPage()));
                           toggleView();
                         },
-                        child: Text("Don't have an account? Sign up",
-                            style: TextStyle(
-                                fontFamily: 'OleoScript',
-                                color: Colors.grey[600],
-                                fontSize: weidth * 0.03)),
+                        child:
+                            Text("Sign-up", style: textStyle().style1(weidth)),
                       ),
                       InkWell(
                         onTap: () {
@@ -163,10 +175,7 @@ class Login extends StatelessWidget {
                                   builder: (context) => new ForgetPage()));
                         },
                         child: Text(" Forget password?",
-                            style: TextStyle(
-                                fontFamily: 'OleoScript',
-                                color: Colors.grey[600],
-                                fontSize: weidth * 0.03)),
+                            style: textStyle().style1(weidth)),
                       ),
                     ],
                   ),
