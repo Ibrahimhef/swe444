@@ -39,7 +39,11 @@ class MyApp extends State<MyHomePage> {
           debugShowCheckedModeBanner: false,
           home: AnimatedSplashScreen(
             backgroundColor: Color.fromRGBO(242, 201, 54, 1),
+<<<<<<< HEAD
             duration:2000,
+=======
+            duration: 3000,
+>>>>>>> parent of 611cffe... Merge remote-tracking branch 'origin/master'
             splashIconSize: 380,
             splash: Image(
               image: AssetImage('assets/welcome.png'),
