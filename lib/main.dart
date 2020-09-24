@@ -18,8 +18,8 @@ import 'TextStyle.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 
 void main() {
-  // runApp(DevicePreview(builder:(context) => MyHomePage()));
-  runApp(MyHomePage());
+  // runApp(DevicePreview(builder: (context) => MyHomePage()));
+  // runApp(MyHomePage());
 }
 
 class MyHomePage extends StatefulWidget {
