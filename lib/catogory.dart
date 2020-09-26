@@ -6,7 +6,7 @@ import 'TextStyle.dart';
 
 class Catogory extends StatelessWidget {
   final double weidth, height;
-  final AuthServices _auth = AuthServices();
+  // final AuthServices _auth = AuthServices();
 
   Catogory(this.weidth, this.height);
 
@@ -14,13 +14,13 @@ class Catogory extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: Color.fromRGBO(217, 125, 13, 1),
-          onPressed: () async {
-            await _auth.SignOut();
-          },
-          child: Text("Logout", style: TextStyle(color: Colors.white,),)
-        ),
+        // floatingActionButton: FloatingActionButton(
+        //   backgroundColor: Color.fromRGBO(217, 125, 13, 1),
+        //   onPressed: () async {
+        //     await _auth.SignOut();
+        //   },
+        //   child: Text("Logout", style: TextStyle(color: Colors.white,),)
+        // ),
         body: Container(
             height: height,
             width: weidth,
@@ -28,10 +28,10 @@ class Catogory extends StatelessWidget {
               children: [
                 //header of ForgetPass
                 Positioned(
-                  right: -2,
+                  right: -22,
                   top: -2,
                   child: Image(
-                      width: weidth + 20,
+                      width: weidth + 30,
                       height: height / 2.9,
                       image: AssetImage('assets/catogory@3x.png'),
                       fit: BoxFit.fill),
@@ -57,7 +57,7 @@ class Catogory extends StatelessWidget {
                                         context,
                                         new MaterialPageRoute(
                                             builder: (context) =>
-                                                new salads()));
+                                                new Sub_Categories("Salads")));
                                   },
                                   child: Image(
                                     width: weidth * 0.39,
@@ -73,7 +73,7 @@ class Catogory extends StatelessWidget {
                                     Navigator.push(
                                         context,
                                         new MaterialPageRoute(
-                                            builder: (context) => new soup()));
+                                            builder: (context) => Sub_Categories("Soup")));
                                   },
                                   child: Image(
                                     width: weidth * 0.39,
@@ -88,7 +88,7 @@ class Catogory extends StatelessWidget {
                                       context,
                                       new MaterialPageRoute(
                                           builder: (context) =>
-                                              new MainDishes()));
+                                              new Sub_Categories("Main Dishes")));
                                 },
                                 child: Image(
                                   width: weidth * 0.39,
@@ -112,7 +112,7 @@ class Catogory extends StatelessWidget {
                                         context,
                                         new MaterialPageRoute(
                                             builder: (context) =>
-                                                new apptizers()));
+                                                new Sub_Categories("Appetizers")));
                                   },
                                   child: Image(
                                     width: weidth * 0.39,
@@ -130,7 +130,7 @@ class Catogory extends StatelessWidget {
                                         context,
                                         new MaterialPageRoute(
                                             builder: (context) =>
-                                                new sweets()));
+                                                new Sub_Categories("Sweets")));
                                   },
                                   child: Image(
                                     width: weidth * 0.39,
@@ -144,7 +144,7 @@ class Catogory extends StatelessWidget {
                                   Navigator.push(
                                       context,
                                       new MaterialPageRoute(
-                                          builder: (context) => new jusis()));
+                                          builder: (context) => new Sub_Categories("Juice")));
                                 },
                                 child: Image(
                                   width: weidth * 0.39,

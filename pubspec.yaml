@@ -76,6 +76,7 @@ flutter:
      - assets/logout.png
      - assets/icon.png
      - assets/googleSignIn@3x.png
+     - assets/Drawer@3x.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

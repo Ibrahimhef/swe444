@@ -8,12 +8,7 @@ import 'login.dart';
 import 'singup.dart';
 import 'forgetPassword.dart';
 import 'catogory.dart';
-import 'apptizersPage.dart';
-import 'saladsPage.dart';
-import 'soupPage.dart';
-import 'sweetsPage.dart';
-import 'mainDishesPage.dart';
-import 'JuisePage.dart';
+import 'package:swe444/SubCategories.dart';
 import 'TextStyle.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 
@@ -111,82 +106,19 @@ class catogory extends StatelessWidget {
   }
 }
 
-class apptizers extends StatelessWidget {
+class Sub_Categories extends StatelessWidget {
+  final String cateogry;
+
+  const Sub_Categories(this.cateogry);
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final weidth = MediaQuery.of(context).size.width;
-    return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: setAppBar(weidth, "Appetizers"),
-        body: Appatizers(weidth, height));
+    return SubCategories(weidth, height, cateogry);
   }
 }
 
-class salads extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-    final weidth = MediaQuery.of(context).size.width;
-    return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: setAppBar(weidth, "Salads"),
-        body: Salads(weidth, height));
-  }
-}
 
-class soup extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-    final weidth = MediaQuery.of(context).size.width;
-    return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: setAppBar(weidth, "Soup"),
-        body: Soup(weidth, height));
-  }
-}
 
-class sweets extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-    final weidth = MediaQuery.of(context).size.width;
-    return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: setAppBar(weidth, "Sweets"),
-        body: Sweets(weidth, height));
-  }
-}
-
-class jusis extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-    final weidth = MediaQuery.of(context).size.width;
-    return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: setAppBar(weidth, "Juice"),
-        body: Jusis(weidth, height));
-  }
-}
-
-class MainDishes extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-    final weidth = MediaQuery.of(context).size.width;
-    return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: setAppBar(weidth, "Main Dishes"),
-        body: mainDishes(weidth, height));
-  }
-}
-
-Widget setAppBar(double weidth, String name) {
-  return AppBar(
-      backgroundColor: Color.fromRGBO(115, 32, 2, 1),
-      title: Text(name, style: textStyle().style4(weidth)));
-}
 
 
