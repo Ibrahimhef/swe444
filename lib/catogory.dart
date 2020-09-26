@@ -53,7 +53,7 @@ class Catogory extends StatelessWidget {
                                 margin: EdgeInsets.only(bottom: 10),
                                 child: InkWell(
                                   onTap: () {
-                                    Navigator.push(
+                                    Navigator.pushReplacement(
                                         context,
                                         new MaterialPageRoute(
                                             builder: (context) =>
@@ -70,10 +70,11 @@ class Catogory extends StatelessWidget {
                                 margin: EdgeInsets.only(bottom: 10),
                                 child: InkWell(
                                   onTap: () {
-                                    Navigator.push(
+                                    Navigator.pushReplacement(
                                         context,
                                         new MaterialPageRoute(
-                                            builder: (context) => Sub_Categories("Soup")));
+                                            builder: (context) =>
+                                                Sub_Categories("Soup")));
                                   },
                                   child: Image(
                                     width: weidth * 0.39,
@@ -84,11 +85,12 @@ class Catogory extends StatelessWidget {
                               ),
                               InkWell(
                                 onTap: () {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       new MaterialPageRoute(
                                           builder: (context) =>
-                                              new Sub_Categories("Main Dishes")));
+                                              new Sub_Categories(
+                                                  "Main Dishes")));
                                 },
                                 child: Image(
                                   width: weidth * 0.39,
@@ -108,11 +110,12 @@ class Catogory extends StatelessWidget {
                                 margin: EdgeInsets.only(bottom: 10),
                                 child: InkWell(
                                   onTap: () {
-                                    Navigator.push(
+                                    Navigator.pushReplacement(
                                         context,
                                         new MaterialPageRoute(
                                             builder: (context) =>
-                                                new Sub_Categories("Appetizers")));
+                                                new Sub_Categories(
+                                                    "Appetizers")));
                                   },
                                   child: Image(
                                     width: weidth * 0.39,
@@ -126,7 +129,7 @@ class Catogory extends StatelessWidget {
                                 margin: EdgeInsets.only(bottom: 10),
                                 child: InkWell(
                                   onTap: () {
-                                    Navigator.push(
+                                    Navigator.pushReplacement(
                                         context,
                                         new MaterialPageRoute(
                                             builder: (context) =>
@@ -141,10 +144,11 @@ class Catogory extends StatelessWidget {
                               ),
                               InkWell(
                                 onTap: () {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       new MaterialPageRoute(
-                                          builder: (context) => new Sub_Categories("Juice")));
+                                          builder: (context) =>
+                                              new Sub_Categories("Juice")));
                                 },
                                 child: Image(
                                   width: weidth * 0.39,
