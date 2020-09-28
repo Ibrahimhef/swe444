@@ -27,7 +27,7 @@ class Sign extends State<Signup> {
         alignment: Alignment.bottomCenter,
         children: [
           Container(
-            height: height * 0.8,
+            height: height * 0.85,
             width: double.infinity,
             decoration: BoxDecoration(
                 color: Colors.white,
@@ -212,7 +212,7 @@ class Sign extends State<Signup> {
           //Logo
           Positioned(
             right: weidth / 4,
-            bottom: height / 1.35,
+            bottom: height / 1.37,
             child: Image(
                 width: weidth / 2,
                 image: AssetImage('assets/Saffron-logo.png'),

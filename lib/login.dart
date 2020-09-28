@@ -25,7 +25,7 @@ class Login extends StatelessWidget {
         alignment: Alignment.bottomCenter,
         children: [
           Container(
-            height: height * 0.75,
+            height: height * 0.8,
             width: double.infinity,
             decoration: BoxDecoration(
                 color: Colors.white,
@@ -217,7 +217,7 @@ class Login extends StatelessWidget {
           //Logo
           Positioned(
             right: weidth / 4,
-            bottom: height / 1.40,
+            bottom: height / 1.37,
             child: Image(
                 width: weidth / 2,
                 image: AssetImage('assets/Saffron-logo.png'),
