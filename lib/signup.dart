@@ -24,198 +24,193 @@ class Sign extends State<Signup> {
       height: height,
       width: weidth,
       child: Stack(
-        // alignment: Alignment.bottomCenter,
+        alignment: Alignment.bottomCenter,
         children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Container(
-                height: height * 0.85,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(50),
-                        topRight: Radius.circular(50))),
-                child: Form(
-                  key: _formKey1,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 20.0),
-                        child: Text(
-                          'Sign up',
-                          style:
-                              TextStyle(fontFamily: 'OleoScript', fontSize: 50),
-                        ),
-                      ),
-                      //
-                      SizedBox(height: 15),
-                      //Full name
-                      Container(
-                        padding: EdgeInsets.only(
-                            top: 10, left: 5, right: 5, bottom: 5),
-                        // padding: EdgeInsets.symmetric(horizontal: 5),
-                        margin: EdgeInsets.symmetric(horizontal: weidth * 0.1),
-                        height: 70,
-                        decoration: BoxDecoration(
-                          color: Color(0xffE0E0E0),
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                        ),
-                        child: TextFormField(
-                          onChanged: (value) => full_name = value,
-                          validator: (value) =>
-                              value.isEmpty ? "Enter full name" : null,
-                          textInputAction: TextInputAction.next,
-                          onFieldSubmitted: (_) =>
-                              FocusScope.of(context).nextFocus(),
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hintText: "Full name",
-                            icon: Icon(
-                              Icons.person,
-                              size: 40,
-                            ),
-                          ),
-                        ),
-                      ),
-                      //
-                      SizedBox(height: height * 0.02),
-                      //Email
-                      Container(
-                        padding: EdgeInsets.only(
-                            top: 10, left: 5, right: 5, bottom: 5),
-                        // padding: EdgeInsets.all(5),
-                        margin: EdgeInsets.symmetric(horizontal: weidth * 0.1),
-                        height: 70,
-                        decoration: BoxDecoration(
-                          color: Color(0xffE0E0E0),
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                        ),
-                        child: TextFormField(
-                          onChanged: (value) => email = value,
-                          validator: (value) =>
-                              value.isEmpty ? "Enter an email" : null,
-                          textInputAction: TextInputAction.next,
-                          onFieldSubmitted: (_) =>
-                              FocusScope.of(context).nextFocus(),
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hintText: "Email",
-                            icon: Icon(
-                              Icons.email,
-                              size: 40,
-                            ),
-                          ),
-                        ),
-                      ),
-                      //
-                      SizedBox(height: height * 0.02),
-                      //Password
-                      Container(
-                        padding: EdgeInsets.only(
-                            top: 10, left: 5, right: 5, bottom: 5),
-                        // padding: EdgeInsets.symmetric(horizontal: 5),
-                        margin: EdgeInsets.symmetric(horizontal: weidth * 0.1),
-                        height: 70,
-                        decoration: BoxDecoration(
-                          color: Color(0xffE0E0E0),
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                        ),
-                        child: TextFormField(
-                          onChanged: (value) => password = value,
-                          validator: (value) =>
-                              value.isEmpty ? "Enter a password" : null,
-                          obscureText: true,
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hintText: "Password",
-                            icon: Icon(
-                              Icons.lock_outline,
-                              size: 40,
-                            ),
-                          ),
-                        ),
-                      ),
-                      //
-                      SizedBox(height: height * 0.02),
-                      //Password
-                      Container(
-                        padding: EdgeInsets.only(
-                            top: 10, left: 5, right: 5, bottom: 5),
-                        // padding: EdgeInsets.all(5),
-                        margin: EdgeInsets.symmetric(horizontal: weidth * 0.1),
-                        height: 70,
-                        decoration: BoxDecoration(
-                          color: Color(0xffE0E0E0),
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                        ),
-                        child: TextFormField(
-                          validator: (value) {
-                            if (value.isEmpty) {
-                              return "Enter a password";
-                            } else if (value != password) {
-                              return "Check Password";
-                              // ignore: unnecessary_statements
-                            }
-                            return null;
-                          },
-                          obscureText: true,
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hintText: "Confirm password",
-                            icon: Icon(
-                              Icons.lock_outline,
-                              size: 40,
-                            ),
-                          ),
-                        ),
-                      ),
-                      //
-                      SizedBox(height: height * 0.04),
-                      //
-                      RaisedButton(
-                        elevation: 5,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                            side: BorderSide(color: Colors.red)),
-                        color: Color(0xffDD7804),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            'Sign up',
-                            style: TextStyle(
-                                fontFamily: 'OleoScript', fontSize: 25),
-                          ),
-                        ),
-                        onPressed: () async {
-                          if (_formKey1.currentState.validate()) {
-                            dynamic result = await _authServices
-                                .RegisterWithEmailAndPassword(email, password);
-                            if (result == null) {
-                              error = 'Please supply a valid email';
-                            } else {
-                              Navigator.push(
-                                  context,
-                                  new MaterialPageRoute(
-                                      builder: (context) => new LoginPage()));
-                            }
-                          }
-                        },
-                      ),
-                      //
-                      SizedBox(height: height * 0.03),
-                      //
-                      //print errors in signUp (DEBUGING)
-                      Container(
-                        child: errorMessage,
-                      )
-                    ],
+          Container(
+            height: height * 0.85,
+            width: double.infinity,
+            decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(50),
+                    topRight: Radius.circular(50))),
+            child: Form(
+              key: _formKey1,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: Text(
+                      'Sign up',
+                      style: TextStyle(fontFamily: 'OleoScript', fontSize: 50),
+                    ),
                   ),
-                ),
+                  //
+                  SizedBox(height: 15),
+                  //Full name
+                  Container(
+                    padding:
+                        EdgeInsets.only(top: 10, left: 5, right: 5, bottom: 5),
+                    // padding: EdgeInsets.symmetric(horizontal: 5),
+                    margin: EdgeInsets.symmetric(horizontal: weidth * 0.1),
+                    height: 70,
+                    decoration: BoxDecoration(
+                      color: Color(0xffE0E0E0),
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                    ),
+                    child: TextFormField(
+                      onChanged: (value) => full_name = value,
+                      validator: (value) =>
+                          value.isEmpty ? "Enter full name" : null,
+                      textInputAction: TextInputAction.next,
+                      onFieldSubmitted: (_) =>
+                          FocusScope.of(context).nextFocus(),
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Full name",
+                        icon: Icon(
+                          Icons.person,
+                          size: 40,
+                        ),
+                      ),
+                    ),
+                  ),
+                  //
+                  SizedBox(height: height * 0.02),
+                  //Email
+                  Container(
+                    padding:
+                        EdgeInsets.only(top: 10, left: 5, right: 5, bottom: 5),
+                    // padding: EdgeInsets.all(5),
+                    margin: EdgeInsets.symmetric(horizontal: weidth * 0.1),
+                    height: 70,
+                    decoration: BoxDecoration(
+                      color: Color(0xffE0E0E0),
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                    ),
+                    child: TextFormField(
+                      onChanged: (value) => email = value,
+                      validator: (value) =>
+                          value.isEmpty ? "Enter an email" : null,
+                      textInputAction: TextInputAction.next,
+                      onFieldSubmitted: (_) =>
+                          FocusScope.of(context).nextFocus(),
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Email",
+                        icon: Icon(
+                          Icons.email,
+                          size: 40,
+                        ),
+                      ),
+                    ),
+                  ),
+                  //
+                  SizedBox(height: height * 0.02),
+                  //Password
+                  Container(
+                    padding:
+                        EdgeInsets.only(top: 10, left: 5, right: 5, bottom: 5),
+                    // padding: EdgeInsets.symmetric(horizontal: 5),
+                    margin: EdgeInsets.symmetric(horizontal: weidth * 0.1),
+                    height: 70,
+                    decoration: BoxDecoration(
+                      color: Color(0xffE0E0E0),
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                    ),
+                    child: TextFormField(
+                      onChanged: (value) => password = value,
+                      validator: (value) =>
+                          value.isEmpty ? "Enter a password" : null,
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Password",
+                        icon: Icon(
+                          Icons.lock_outline,
+                          size: 40,
+                        ),
+                      ),
+                    ),
+                  ),
+                  //
+                  SizedBox(height: height * 0.02),
+                  //Password
+                  Container(
+                    padding:
+                        EdgeInsets.only(top: 10, left: 5, right: 5, bottom: 5),
+                    // padding: EdgeInsets.all(5),
+                    margin: EdgeInsets.symmetric(horizontal: weidth * 0.1),
+                    height: 70,
+                    decoration: BoxDecoration(
+                      color: Color(0xffE0E0E0),
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                    ),
+                    child: TextFormField(
+                      validator: (value) {
+                        if (value.isEmpty) {
+                          return "Enter a password";
+                        } else if (value != password) {
+                          return "Check Password";
+                          // ignore: unnecessary_statements
+                        }
+                        return null;
+                      },
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Confirm password",
+                        icon: Icon(
+                          Icons.lock_outline,
+                          size: 40,
+                        ),
+                      ),
+                    ),
+                  ),
+                  //
+                  SizedBox(height: height * 0.04),
+                  //
+                  RaisedButton(
+                    elevation: 5,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        side: BorderSide(color: Colors.red)),
+                    color: Color(0xffDD7804),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'Sign up',
+                        style:
+                            TextStyle(fontFamily: 'OleoScript', fontSize: 25),
+                      ),
+                    ),
+                    onPressed: () async {
+                      if (_formKey1.currentState.validate()) {
+                        dynamic result =
+                            await _authServices.RegisterWithEmailAndPassword(
+                                email, password);
+                        if (result == null) {
+                          error = 'Please supply a valid email';
+                        } else {
+                          Navigator.push(
+                              context,
+                              new MaterialPageRoute(
+                                  builder: (context) => new LoginPage()));
+                        }
+                      }
+                    },
+                  ),
+                  //
+                  SizedBox(height: height * 0.03),
+                  //
+                  //print errors in signUp (DEBUGING)
+                  Container(
+                    child: errorMessage,
+                  )
+                ],
               ),
-            ],
+            ),
           ),
           //Logo
           Positioned(

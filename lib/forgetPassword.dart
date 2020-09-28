@@ -19,98 +19,92 @@ class ForgetPass extends StatelessWidget {
       height: height,
       width: weidth,
       child: Stack(
+        alignment: Alignment.bottomCenter,
         children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Container(
-                height: height * 0.45,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(50),
-                      topRight: Radius.circular(50)),
-                ),
-                child: Form(
-                  key: _formKey2,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
-                        child: Text(
-                          'Reset Password',
-                          style:
-                              TextStyle(fontFamily: 'OleoScript', fontSize: 50),
-                        ),
-                      ),
-                      //
-                      SizedBox(height: 15),
-                      //Form inputs
-                      Container(
-                        padding: EdgeInsets.only(
-                            top: 10, left: 5, right: 5, bottom: 5),
-                        // padding: EdgeInsets.symmetric(horizontal: 5),
-                        margin: EdgeInsets.symmetric(horizontal: weidth * 0.1),
-                        height: 70,
-                        decoration: BoxDecoration(
-                          color: Color(0xffE0E0E0),
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                        ),
-                        child: TextFormField(
-                          onChanged: (value) => email = value,
-                          validator: (value) =>
-                              value.isEmpty ? "Enter an email" : null,
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hintText: "Email",
-                            icon: Icon(
-                              Icons.email,
-                              size: 40,
-                            ),
-                          ),
-                        ),
-                      ),
-                      //
-                      SizedBox(height: height * 0.02),
-                      //Button
-                      RaisedButton(
-                        elevation: 5,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                            side: BorderSide(color: Colors.red)),
-                        color: Color(0xffDD7804),
-                        child: Padding(
-                          padding: const EdgeInsets.fromLTRB(15, 8, 15, 8),
-                          child: Text(
-                            'Reset',
-                            style: TextStyle(
-                                fontFamily: 'OleoScript', fontSize: 25),
-                          ),
-                        ),
-                        onPressed: () async {
-                          if (_formKey2.currentState.validate()) {
-                            await _authServices.ForgetPassword(email);
-                            Navigator.pop(
-                                context,
-                                new MaterialPageRoute(
-                                    builder: (context) => new LoginPage()));
-                          }
-                        },
-                      ),
-                      //
-                      SizedBox(height: height * 0.02),
-                    ],
+          Container(
+            height: height * 0.45,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(50), topRight: Radius.circular(50)),
+            ),
+            child: Form(
+              key: _formKey2,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0),
+                    child: Text(
+                      'Reset Password',
+                      style: TextStyle(fontFamily: 'OleoScript', fontSize: 50),
+                    ),
                   ),
-                ),
+                  //
+                  SizedBox(height: 15),
+                  //Form inputs
+                  Container(
+                    padding:
+                        EdgeInsets.only(top: 10, left: 5, right: 5, bottom: 5),
+                    // padding: EdgeInsets.symmetric(horizontal: 5),
+                    margin: EdgeInsets.symmetric(horizontal: weidth * 0.1),
+                    height: 70,
+                    decoration: BoxDecoration(
+                      color: Color(0xffE0E0E0),
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                    ),
+                    child: TextFormField(
+                      onChanged: (value) => email = value,
+                      validator: (value) =>
+                          value.isEmpty ? "Enter an email" : null,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Email",
+                        icon: Icon(
+                          Icons.email,
+                          size: 40,
+                        ),
+                      ),
+                    ),
+                  ),
+                  //
+                  SizedBox(height: height * 0.02),
+                  //Button
+                  RaisedButton(
+                    elevation: 5,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        side: BorderSide(color: Colors.red)),
+                    color: Color(0xffDD7804),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(15, 8, 15, 8),
+                      child: Text(
+                        'Reset',
+                        style:
+                            TextStyle(fontFamily: 'OleoScript', fontSize: 25),
+                      ),
+                    ),
+                    onPressed: () async {
+                      if (_formKey2.currentState.validate()) {
+                        await _authServices.ForgetPassword(email);
+                        Navigator.pop(
+                            context,
+                            new MaterialPageRoute(
+                                builder: (context) => new LoginPage()));
+                      }
+                    },
+                  ),
+                  //
+                  SizedBox(height: height * 0.02),
+                ],
               ),
-            ],
+            ),
           ),
           //Logo form
           Positioned(
             right: weidth / 4,
-            bottom: height / 2.91,
+            bottom: height / 2.9,
             child: Image(
                 width: weidth / 2,
                 image: AssetImage('assets/Saffron-logo.png'),
