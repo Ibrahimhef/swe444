@@ -70,10 +70,11 @@ class LoginPage extends StatelessWidget {
           width: double.infinity,
           height: height,
           decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                  colors: [Color(0xfff2cb05), Color(0xfff2b705)])),
+            gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [Color(0xfff2cb05), Color(0xfff2b705)]),
+          ),
           child: Login(
             weidth,
             height,
@@ -95,16 +96,28 @@ class SignupPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final weidth = MediaQuery.of(context).size.width;
-    return Scaffold(
+    return SafeArea(
+      bottom: true,
+      top: true,
+      child: Scaffold(
         resizeToAvoidBottomPadding: true,
-        backgroundColor: Colors.transparent,
         body: Container(
+          width: double.infinity,
+          height: height,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [Color(0xfff2cb05), Color(0xfff2b705)]),
+          ),
           child: Signup(
             weidth,
             height,
             toggleView: toggleView,
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
 
