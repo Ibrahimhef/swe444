@@ -54,8 +54,9 @@ class Login extends StatelessWidget {
                       padding: EdgeInsets.all(5),
                       margin: EdgeInsets.symmetric(horizontal: weidth * 0.1),
                       decoration: BoxDecoration(
-                          color: Color(0xffE0E0E0),
-                          borderRadius: BorderRadius.all(Radius.circular(10))),
+                        color: Color(0xffE0E0E0),
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                      ),
                       child: TextFormField(
                         onChanged: (value) => email = value,
                         validator: (value) =>
@@ -73,7 +74,9 @@ class Login extends StatelessWidget {
                         ),
                       ),
                     ),
+                    //
                     SizedBox(height: height * 0.03),
+                    //
                     Container(
                       padding: EdgeInsets.all(5),
                       margin: EdgeInsets.symmetric(horizontal: weidth * 0.1),
@@ -93,7 +96,9 @@ class Login extends StatelessWidget {
                               border: InputBorder.none,
                               hintText: "Password")),
                     ),
+                    //
                     SizedBox(height: height * 0.03),
+                    //
                     RaisedButton(
                       elevation: 5,
                       shape: RoundedRectangleBorder(
@@ -109,21 +114,24 @@ class Login extends StatelessWidget {
                         ),
                       ),
                       onPressed: () async {
-                        Navigator.push(
-                            context,
-                            new MaterialPageRoute(
-                                builder: (context) => new catogory()));
                         if (_formKey.currentState.validate()) {
                           dynamic result =
                               await _authServices.SignInWithEmailAndPassword(
                                   email, password);
                           if (result == null) {
-                            error = "email is invalid";
-                          } else {}
+                            error = "Email is invalid";
+                          } else {
+                            Navigator.push(
+                                context,
+                                new MaterialPageRoute(
+                                    builder: (context) => new catogory()));
+                          }
                         }
                       },
                     ),
-                    SizedBox(height: height * 0.06),
+                    //
+                    SizedBox(height: 25),
+                    //
                     Row(
                       children: <Widget>[
                         Expanded(
@@ -163,7 +171,9 @@ class Login extends StatelessWidget {
                         onPressed: () {},
                       ),
                     ),
+                    //
                     SizedBox(height: height * 0.07),
+                    //
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
