@@ -130,8 +130,31 @@ class ForgetPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final weidth = MediaQuery.of(context).size.width;
-    return Scaffold(
-        backgroundColor: Colors.white, body: ForgetPass(weidth, height));
+    return SafeArea(
+      bottom: true,
+      top: true,
+      child: Scaffold(
+        resizeToAvoidBottomPadding: true,
+        body: Container(
+          width: double.infinity,
+          height: height,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [Color(0xfff2cb05), Color(0xfff2b705)]),
+          ),
+          child: ForgetPass(
+            weidth,
+            height,
+            toggleView: toggleView,
+          ),
+        ),
+      ),
+    );
+    // return Scaffold(
+    //     backgroundColor: Colors.white,
+    //     body: ForgetPass(weidth, height));
   }
 }
 
