@@ -45,9 +45,11 @@ class Login extends StatelessWidget {
                             TextStyle(fontFamily: 'OleoScript', fontSize: 50),
                       ),
                     ),
+                    //
                     SizedBox(
                       height: 15,
                     ),
+                    //Form inputs
                     Container(
                       padding: EdgeInsets.all(5),
                       margin: EdgeInsets.symmetric(horizontal: weidth * 0.1),
@@ -106,21 +108,19 @@ class Login extends StatelessWidget {
                               TextStyle(fontFamily: 'OleoScript', fontSize: 25),
                         ),
                       ),
-                      onPressed: ()
-                          // async
-                          {
-                        // Navigator.push(
-                        //     context,
-                        //     new MaterialPageRoute(
-                        //         builder: (context) => new catogory()));
-                        // if (_formKey.currentState.validate()) {
-                        //   dynamic result =
-                        //       await _authServices.SignInWithEmailAndPassword(
-                        //           email, password);
-                        //   if (result == null) {
-                        //     error = "email is invalid";
-                        //   } else {}
-                        // }
+                      onPressed: () async {
+                        Navigator.push(
+                            context,
+                            new MaterialPageRoute(
+                                builder: (context) => new catogory()));
+                        if (_formKey.currentState.validate()) {
+                          dynamic result =
+                              await _authServices.SignInWithEmailAndPassword(
+                                  email, password);
+                          if (result == null) {
+                            error = "email is invalid";
+                          } else {}
+                        }
                       },
                     ),
                     SizedBox(height: height * 0.06),
