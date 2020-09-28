@@ -51,8 +51,11 @@ class Login extends StatelessWidget {
                     ),
                     //Form inputs
                     Container(
-                      padding: EdgeInsets.all(5),
+                      padding: EdgeInsets.only(
+                          top: 10, left: 5, right: 5, bottom: 5),
+                      // padding: EdgeInsets.symmetric(horizontal: 5),
                       margin: EdgeInsets.symmetric(horizontal: weidth * 0.1),
+                      height: 70,
                       decoration: BoxDecoration(
                         color: Color(0xffE0E0E0),
                         borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -78,8 +81,11 @@ class Login extends StatelessWidget {
                     SizedBox(height: height * 0.03),
                     //
                     Container(
-                      padding: EdgeInsets.all(5),
+                      padding: EdgeInsets.only(
+                          top: 10, left: 5, right: 5, bottom: 5),
+                      // padding: EdgeInsets.all(5),
                       margin: EdgeInsets.symmetric(horizontal: weidth * 0.1),
+                      height: 70,
                       decoration: BoxDecoration(
                           color: Color(0xffE0E0E0),
                           borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -172,7 +178,7 @@ class Login extends StatelessWidget {
                       ),
                     ),
                     //
-                    SizedBox(height: height * 0.07),
+                    SizedBox(height: height * 0.06),
                     //
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
