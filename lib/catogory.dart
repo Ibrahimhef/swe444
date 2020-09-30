@@ -22,6 +22,7 @@ class Catogory extends StatelessWidget {
         //   child: Text("Logout", style: TextStyle(color: Colors.white,),)
         // ),
         body: Container(
+            color: Colors.white,
             height: height,
             width: weidth,
             child: Stack(
@@ -53,11 +54,11 @@ class Catogory extends StatelessWidget {
                                 margin: EdgeInsets.only(bottom: 10),
                                 child: InkWell(
                                   onTap: () {
-                                    Navigator.pushReplacement(
+                                    Navigator.push(
                                         context,
                                         new MaterialPageRoute(
                                             builder: (context) =>
-                                                new Sub_Categories("Salads")));
+                                                new Sub_Categories(3)));
                                   },
                                   child: Image(
                                     width: weidth * 0.39,
@@ -70,11 +71,11 @@ class Catogory extends StatelessWidget {
                                 margin: EdgeInsets.only(bottom: 10),
                                 child: InkWell(
                                   onTap: () {
-                                    Navigator.pushReplacement(
+                                    Navigator.push(
                                         context,
                                         new MaterialPageRoute(
                                             builder: (context) =>
-                                                Sub_Categories("Soup")));
+                                                Sub_Categories(4)));
                                   },
                                   child: Image(
                                     width: weidth * 0.39,
@@ -85,12 +86,12 @@ class Catogory extends StatelessWidget {
                               ),
                               InkWell(
                                 onTap: () {
-                                  Navigator.pushReplacement(
+                                  Navigator.push(
                                       context,
                                       new MaterialPageRoute(
                                           builder: (context) =>
                                               new Sub_Categories(
-                                                  "Main Dishes")));
+                                                  2)));
                                 },
                                 child: Image(
                                   width: weidth * 0.39,
@@ -110,12 +111,12 @@ class Catogory extends StatelessWidget {
                                 margin: EdgeInsets.only(bottom: 10),
                                 child: InkWell(
                                   onTap: () {
-                                    Navigator.pushReplacement(
+                                    Navigator.push(
                                         context,
                                         new MaterialPageRoute(
                                             builder: (context) =>
                                                 new Sub_Categories(
-                                                    "Appetizers")));
+                                                   1)));
                                   },
                                   child: Image(
                                     width: weidth * 0.39,
@@ -129,11 +130,11 @@ class Catogory extends StatelessWidget {
                                 margin: EdgeInsets.only(bottom: 10),
                                 child: InkWell(
                                   onTap: () {
-                                    Navigator.pushReplacement(
+                                    Navigator.push(
                                         context,
                                         new MaterialPageRoute(
                                             builder: (context) =>
-                                                new Sub_Categories("Sweets")));
+                                                new Sub_Categories(5)));
                                   },
                                   child: Image(
                                     width: weidth * 0.39,
@@ -144,11 +145,11 @@ class Catogory extends StatelessWidget {
                               ),
                               InkWell(
                                 onTap: () {
-                                  Navigator.pushReplacement(
+                                  Navigator.push(
                                       context,
                                       new MaterialPageRoute(
                                           builder: (context) =>
-                                              new Sub_Categories("Juice")));
+                                              new Sub_Categories(0)));
                                 },
                                 child: Image(
                                   width: weidth * 0.39,
@@ -167,3 +168,5 @@ class Catogory extends StatelessWidget {
             )));
   }
 }
+
+

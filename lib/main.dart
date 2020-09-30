@@ -13,8 +13,8 @@ import 'TextStyle.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 
 void main() {
-  runApp(DevicePreview(builder:(context) => MyHomePage()));
-  // runApp(MyHomePage());
+  // runApp(DevicePreview(builder:(context) => MyHomePage()));
+  runApp(MyHomePage());
 }
 
 class MyHomePage extends StatefulWidget {
@@ -30,7 +30,7 @@ class MyApp extends State<MyHomePage> {
     return StreamProvider<User>.value(
       value: AuthServices().user,
       child: MaterialApp(
-          builder: DevicePreview.appBuilder,
+          // builder: DevicePreview.appBuilder,
           debugShowCheckedModeBanner: false,
           home: AnimatedSplashScreen(
             backgroundColor: Color.fromRGBO(242, 201, 54, 1),
@@ -107,8 +107,7 @@ class catogory extends StatelessWidget {
 }
 
 class Sub_Categories extends StatelessWidget {
-  final String cateogry;
-
+  final int cateogry;
   const Sub_Categories(this.cateogry);
   @override
   Widget build(BuildContext context) {

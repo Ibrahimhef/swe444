@@ -22,6 +22,7 @@ environment:
 
 dependencies:
   device_preview: ^0.4.8
+  curved_navigation_bar: ^0.3.4
   animated_splash_screen: ^1.0.1
   flutter:
     sdk: flutter
@@ -77,6 +78,18 @@ flutter:
      - assets/icon.png
      - assets/googleSignIn@3x.png
      - assets/Drawer@3x.png
+     - assets/Appetizers_icon@3x.png
+     - assets/Apptizers_page@3x.png
+     - assets/Juice_icon@3x.png
+     - assets/Juice_page@3x.png
+     - assets/Main Dishes_icon@3x.png
+     - assets/Main Dishes_page@3x.png
+     - assets/Salads_icon@3x.png
+     - assets/Salads_page@3x.png
+     - assets/Soup_icon@3x.png
+     - assets/Soup_page@3x.png
+     - assets/Sweets _icon@3x.png
+     - assets/Sweets_page@3x.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
