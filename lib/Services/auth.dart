@@ -25,7 +25,7 @@ class AuthServices {
       FirebaseUser user = result.user;
       return _userFormFireBaseUser(user);
     } catch (e) {
-      print(e.toString());
+      // print(e.toString());
       return null;
     }
   }
@@ -37,7 +37,7 @@ class AuthServices {
       FirebaseUser user = result.user;
       return _userFormFireBaseUser(user);
     } catch (e) {
-      print(e.toString());
+      // print(e.toString());
       return null;
     }
   }
@@ -49,8 +49,19 @@ class AuthServices {
       FirebaseUser user = result.user;
       return _userFormFireBaseUser(user);
     } catch (e) {
-      print(e.toString());
+      // print(e.toString());
       return null;
+    }
+  }
+
+  Future ForgetPassword(String email) async {
+    try {
+      await _auth.sendPasswordResetEmail(email: email);
+      // FirebaseUser user = result.user;
+      // return _userFormFireBaseUser(user);
+    } catch (e) {
+      // print(e.toString());
+      // return null;
     }
   }
 

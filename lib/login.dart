@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:swe444/Services/auth.dart';
 import 'package:swe444/main.dart';
 import 'TextStyle.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class Login extends StatelessWidget {
   final Function toggleView;
@@ -14,6 +15,10 @@ class Login extends StatelessWidget {
   static String email = '';
   static String password = '';
   String error = '';
+  GoogleSignIn _googleSignIn = GoogleSignIn(scopes: [
+    'email',
+    'https://www.googleapis.com/auth/contacts.readonly',
+  ]);
   static final _formKey = GlobalKey<FormState>();
 
   @override
@@ -40,25 +45,49 @@ class Login extends StatelessWidget {
                 left: weidth * 0.10,
                 right: weidth * 0.10,
                 child: Center(
-                  child: InkWell(
-                    onTap: () async {
-                      // Navigator.push(
-                      //     context,
-                      //     new MaterialPageRoute(
-                      //         builder: (context) => new catogory()));
-                      if (_formKey.currentState.validate()) {
-                        dynamic result =
-                            await _authServices.SingInWithEmailAndPassword(
-                                email, password);
-                        if (result == null) {
-                          print(error);
-                        } else {}
-                      }
-                    },
-                    child: Image(
-                      width: weidth * 0.4,
-                      height: height * 0.05,
-                      image: AssetImage('assets/singin.png'),
+                  child: Container(
+                    child: Column(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(bottom: 10),
+                          child: InkWell(
+                            onTap: () async {
+                              // Navigator.push(
+                              //     context,
+                              //     new MaterialPageRoute(
+                              //         builder: (context) => new catogory()));
+                              if (_formKey.currentState.validate()) {
+                                dynamic result = await _authServices
+                                    .SingInWithEmailAndPassword(
+                                        email, password);
+                                if (result == null) {
+                                  error = "email is invalid";
+                                } else {}
+                              }
+                            },
+                            child: Image(
+                              width: weidth * 0.35,
+                              height: height * 0.05,
+                              image: AssetImage('assets/singin.png'),
+                            ),
+                          ),
+                        ),
+                        InkWell(
+                          onTap: () async {
+                            try {
+                              await _googleSignIn.signIn();
+                              print(_googleSignIn.currentUser.toString());
+                            } catch (error) {
+                              print(error);
+                            }
+                          },
+                          child: Image(
+                            width: weidth * 0.4,
+                            height: height * 0.05,
+                            image: AssetImage('assets/googleSignIn@3x.png'),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),

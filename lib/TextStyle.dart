@@ -21,7 +21,7 @@ class textStyle {
 
   TextStyle style4(double x) {
     return new TextStyle(
-        fontSize: x * 0.08,
+        fontSize: x * 0.07,
         color: Colors.white,
         // fontWeight: FontWeight.bold,
         );
