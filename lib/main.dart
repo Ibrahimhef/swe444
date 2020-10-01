@@ -30,17 +30,18 @@ class MyApp extends State<MyHomePage> {
     return StreamProvider<User>.value(
       value: AuthServices().user,
       child: MaterialApp(
-          // builder: DevicePreview.appBuilder,
-          debugShowCheckedModeBanner: false,
-          home: AnimatedSplashScreen(
-            backgroundColor: Color.fromRGBO(242, 201, 54, 1),
-            duration: 1500,
-            splashIconSize: 380,
-            splash: Image(
-              image: AssetImage('assets/welcome.png'),
-            ),
-            nextScreen: Wrapper(),
-          )),
+        // builder: DevicePreview.appBuilder,
+        debugShowCheckedModeBanner: false,
+        home: AnimatedSplashScreen(
+          backgroundColor: Color.fromRGBO(242, 201, 54, 1),
+          duration: 1500,
+          splashIconSize: 380,
+          splash: Image(
+            image: AssetImage('assets/Saffron-logo.png'),
+          ),
+          nextScreen: Wrapper(),
+        ),
+      ),
     );
   }
 }
@@ -75,15 +76,16 @@ class SingupPage extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final weidth = MediaQuery.of(context).size.width;
     return Scaffold(
-        resizeToAvoidBottomPadding: true,
-        backgroundColor: Colors.white,
-        body: Container(
-          child: Singup(
-            weidth,
-            height,
-            toggleView: toggleView,
-          ),
-        ));
+      resizeToAvoidBottomPadding: true,
+      backgroundColor: Colors.white,
+      body: Container(
+        child: Singup(
+          weidth,
+          height,
+          toggleView: toggleView,
+        ),
+      ),
+    );
   }
 }
 
@@ -116,8 +118,3 @@ class catogory extends StatelessWidget {
 //     return SubCategories(weidth, height, cateogry);
 //   }
 // }
-
-
-
-
-

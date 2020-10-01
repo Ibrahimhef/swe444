@@ -59,7 +59,7 @@ class catogory extends State<Catogory> {
         time: "10 min"),
     recipe(
         caterogry: 2,
-        name: "Stack",
+        name: "Steak",
         decraption:
             "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
@@ -100,7 +100,7 @@ class catogory extends State<Catogory> {
         time: "10 min"),
     recipe(
         caterogry: 2,
-        name: "Stack",
+        name: "Steak",
         decraption:
             "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
@@ -141,7 +141,7 @@ class catogory extends State<Catogory> {
         time: "10 min"),
     recipe(
         caterogry: 2,
-        name: "Stack",
+        name: "Steak",
         decraption:
             "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
@@ -182,7 +182,7 @@ class catogory extends State<Catogory> {
         time: "10 min"),
     recipe(
         caterogry: 2,
-        name: "Stack",
+        name: "Steak",
         decraption:
             "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
@@ -223,7 +223,7 @@ class catogory extends State<Catogory> {
         time: "10 min"),
     recipe(
         caterogry: 2,
-        name: "Stack",
+        name: "Steak",
         decraption:
             "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
@@ -264,7 +264,7 @@ class catogory extends State<Catogory> {
         time: "10 min"),
     recipe(
         caterogry: 2,
-        name: "Stack",
+        name: "Steak",
         decraption:
             "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
@@ -305,7 +305,7 @@ class catogory extends State<Catogory> {
         time: "10 min"),
     recipe(
         caterogry: 2,
-        name: "Stack",
+        name: "Steak",
         decraption:
             "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
@@ -346,7 +346,7 @@ class catogory extends State<Catogory> {
         time: "10 min"),
     recipe(
         caterogry: 2,
-        name: "Stack",
+        name: "Steak",
         decraption:
             "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
@@ -387,7 +387,7 @@ class catogory extends State<Catogory> {
         time: "10 min"),
     recipe(
         caterogry: 2,
-        name: "Stack",
+        name: "Steak",
         decraption:
             "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
@@ -428,7 +428,7 @@ class catogory extends State<Catogory> {
         time: "10 min"),
     recipe(
         caterogry: 2,
-        name: "Stack",
+        name: "Steak",
         decraption:
             "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
@@ -469,7 +469,7 @@ class catogory extends State<Catogory> {
         time: "10 min"),
     recipe(
         caterogry: 2,
-        name: "Stack",
+        name: "Steak",
         decraption:
             "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
@@ -510,7 +510,7 @@ class catogory extends State<Catogory> {
         time: "10 min"),
     recipe(
         caterogry: 2,
-        name: "Stack",
+        name: "Steak",
         decraption:
             "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
@@ -551,7 +551,7 @@ class catogory extends State<Catogory> {
         time: "10 min"),
     recipe(
         caterogry: 2,
-        name: "Stack",
+        name: "Steak",
         decraption:
             "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
@@ -592,7 +592,7 @@ class catogory extends State<Catogory> {
         time: "10 min"),
     recipe(
         caterogry: 2,
-        name: "Stack",
+        name: "Steak",
         decraption:
             "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
@@ -633,7 +633,7 @@ class catogory extends State<Catogory> {
         time: "10 min"),
     recipe(
         caterogry: 2,
-        name: "Stack",
+        name: "Steak",
         decraption:
             "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
@@ -674,7 +674,7 @@ class catogory extends State<Catogory> {
         time: "10 min"),
     recipe(
         caterogry: 2,
-        name: "Stack",
+        name: "Steak",
         decraption:
             "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
@@ -715,7 +715,7 @@ class catogory extends State<Catogory> {
         time: "10 min"),
     recipe(
         caterogry: 2,
-        name: "Stack",
+        name: "Steak",
         decraption:
             "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
@@ -779,20 +779,23 @@ class catogory extends State<Catogory> {
           Icon(Icons.person)
         ],
         onTap: (index) {
-          setState(() {
-            if (index < 6) {
-              category = index;
-              test1.clear();
-              for (int i = 0; i < test.length; i++) {
-                if (test[i].caterogry == category) test1.add(test.elementAt(i));
+          setState(
+            () {
+              if (index < 6) {
+                category = index;
+                test1.clear();
+                for (int i = 0; i < test.length; i++) {
+                  if (test[i].caterogry == category)
+                    test1.add(test.elementAt(i));
+                }
+              } else {
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                        builder: (context) => new Profile(weidth, height)));
               }
-            } else {
-              Navigator.push(
-                  context,
-                  new MaterialPageRoute(
-                      builder: (context) => new Profile(weidth, height)));
-            }
-          });
+            },
+          );
         },
       ),
       floatingActionButton: FloatingActionButton(
