@@ -20,7 +20,7 @@ class Sing extends State<Singup> {
 
   @override
   Widget build(BuildContext context) {
-        return Scaffold(
+    return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Container(
@@ -109,7 +109,10 @@ class Sing extends State<Singup> {
                           width: weidth * 0.75,
                           height: height / 20,
                           child: TextFormField(
-                            onChanged: (value) => email = value,
+                            onChanged: (value) {
+                              email = value;
+                              email = email.trim();
+                            },
                             validator: (value) =>
                                 value.isEmpty ? "Enter an email" : null,
                             textInputAction: TextInputAction.next,
@@ -188,8 +191,8 @@ class Sing extends State<Singup> {
                         InkWell(
                           onTap: () {
                             setState(() {
-                              errorMessage = Text("",
-                                  style: textStyle().style5(weidth));
+                              errorMessage =
+                                  Text("", style: textStyle().style5(weidth));
                             });
                             widget.toggleView();
                           },
