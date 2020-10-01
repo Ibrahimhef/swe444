@@ -87,13 +87,13 @@ flutter:
 #     - family: Mentality
 #       fonts:
 #         - asset: fonts/Mentality.ttf
-  fonts:
-    - family: Mentality
-      fonts:
-        - asset: fonts/Mentality.ttf
-    - family: OleoScript
-      fonts:
-        - asset: fonts/OleoScript-Regular.ttf
+fonts:
+  # - family: Mentality
+  #   fonts:
+  #     - asset: fonts/Mentality.ttf
+  - family: OleoScript
+    fonts:
+      - asset: fonts/OleoScript-Regular.ttf
         
   #
   # For details regarding fonts from package dependencies,

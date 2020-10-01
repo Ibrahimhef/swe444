@@ -806,7 +806,8 @@ class catogory extends State<Catogory> {
       appBar: AppBar(
         title: Text(
           cat1[category],
-          style: TextStyle(color: Colors.black, fontSize: 25),
+          style: TextStyle(
+              color: Colors.black, fontFamily: 'OleoScript', fontSize: 25),
         ),
         backgroundColor: Colors.white,
         elevation: 0,
