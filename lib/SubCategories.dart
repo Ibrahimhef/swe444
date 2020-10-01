@@ -30,10 +30,16 @@ class catogory extends State<Catogory> {
     "assets/Sweets_page@3x.png"
   ];
   var color = [
-    Color.fromRGBO(242, 171, 39, 0.7),
-    Color.fromRGBO(217, 125, 13, 0.7),
-    Color.fromRGBO(115, 32, 2, 0.7),
-    Color.fromRGBO(217, 77, 26, 0.7)
+    Color.fromRGBO(242, 171, 39, 0.6),
+    Color.fromRGBO(217, 125, 13, 0.6),
+    Color.fromRGBO(115, 32, 2, 0.6),
+    Color.fromRGBO(217, 77, 26, 0.6),
+    Color.fromRGBO(242, 94, 122, 0.6),
+    Color.fromRGBO(242, 204, 133, 0.6),
+    Color.fromRGBO(191, 131, 57, 0.6),
+    Color.fromRGBO(242, 206, 213, 0.6),
+    Color.fromRGBO(139, 140, 93, 0.6),
+    Color.fromRGBO(166, 78, 78, 0.6),
   ];
 
   var cat1 = ["Juice", "Appetizers", "Main Dishes", "Salads", "Soup", "Sweets"];
@@ -800,6 +806,8 @@ class catogory extends State<Catogory> {
           style: TextStyle(color: Colors.black, fontSize: 25),
         ),
         backgroundColor: Colors.white,
+        elevation: 0,
+        bottomOpacity: 0,
       ),
       body: Container(
         color: Colors.white,
@@ -817,7 +825,7 @@ class catogory extends State<Catogory> {
                     height: 125,
                     child: FittedBox(
                       child: Material(
-                        color: color[random.nextInt(3)],
+                        color: color[random.nextInt(9)],
                         elevation: 14.0,
                         borderRadius: BorderRadius.circular(24.0),
                         child: Row(
