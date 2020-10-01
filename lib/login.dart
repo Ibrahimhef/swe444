@@ -108,7 +108,10 @@ class Login extends StatelessWidget {
                           width: weidth * 0.75,
                           height: height / 20,
                           child: TextFormField(
-                            onChanged: (value) => email = value,
+                            onChanged: (value) {
+                              email = value;
+                              email = email.trim();
+                            },
                             validator: (value) =>
                                 value.isEmpty ? "Enter an email" : null,
                             textInputAction: TextInputAction.next,

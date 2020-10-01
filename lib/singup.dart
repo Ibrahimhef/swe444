@@ -111,6 +111,7 @@ class Sing extends State<Singup> {
                           child: TextFormField(
                             onChanged: (value) {
                               email = value;
+                              //edit by albra trim method will remove any space in email
                               email = email.trim();
                             },
                             validator: (value) =>
