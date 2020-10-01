@@ -20,13 +20,24 @@ class Profile extends StatefulWidget {
 
 class profile extends State<Profile> {
   final double weidth, height;
-
-
   profile(this.weidth, this.height);
-
+  final AuthServices _auth = AuthServices();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: Container(
+
+        child: Center(
+          child: InkWell(
+            onTap: () async {
+              await _auth.SignOut();
+              Navigator.of(context).pop();
+
+            },
+            child: Text("اطلع برا", style: TextStyle(fontSize: 50),),
+          ),
+        ),
+      ),
     );
   }
 }
