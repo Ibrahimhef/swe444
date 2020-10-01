@@ -754,28 +754,17 @@ class catogory extends State<Catogory> {
       if (test[i].caterogry == category) test1.add(test.elementAt(i));
     }
     return Scaffold(
+      backgroundColor: Color(0xffF5F5F5),
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: Color.fromRGBO(242, 171, 39, 1),
         height: 50,
         items: [
-          Image(
-            image: AssetImage('assets/Juice_icon@3x.png'),
-          ),
-          Image(
-            image: AssetImage('assets/Appetizers_icon@3x.png'),
-          ),
-          Image(
-            image: AssetImage('assets/Main Dishes_icon@3x.png'),
-          ),
-          Image(
-            image: AssetImage('assets/Salads_icon@3x.png'),
-          ),
-          Image(
-            image: AssetImage('assets/Soup_icon@3x.png'),
-          ),
-          Image(
-            image: AssetImage('assets/Sweets _icon@3x.png'),
-          ),
+          Image.asset('assets/Juice_icon@3x.png'),
+          Image.asset('assets/Appetizers_icon@3x.png'),
+          Image.asset('assets/Main Dishes_icon@3x.png'),
+          Image.asset('assets/Salads_icon@3x.png'),
+          Image.asset('assets/Soup_icon@3x.png'),
+          Image.asset('assets/Sweets _icon@3x.png'),
           Icon(Icons.person)
         ],
         onTap: (index) {
@@ -800,23 +789,22 @@ class catogory extends State<Catogory> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        backgroundColor: Color.fromRGBO(242, 171, 39, 1),
+        backgroundColor: Color(0xfff2780c),
         child: Icon(Icons.add),
       ),
       appBar: AppBar(
-        title: Text(
-          cat1[category],
-          style: TextStyle(
-              color: Colors.black, fontFamily: 'OleoScript', fontSize: 25),
+        title: Center(
+          child: Text(
+            cat1[category],
+            style: TextStyle(
+                color: Colors.black, fontFamily: 'OleoScript', fontSize: 25),
+          ),
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xfff2b705),
         elevation: 0,
         bottomOpacity: 0,
       ),
       body: Container(
-        color: Colors.white,
-        width: weidth,
-        height: height,
         child: ListView.builder(
             itemCount: test1.length,
             itemBuilder: (context, index) {
@@ -829,20 +817,21 @@ class catogory extends State<Catogory> {
                     height: 125,
                     child: FittedBox(
                       child: Material(
-                        color: color[random.nextInt(9)],
+                        // color: color[random.nextInt(9)],
+                        color: Colors.white,
                         elevation: 14.0,
-                        borderRadius: BorderRadius.circular(24.0),
+                        borderRadius: BorderRadius.circular(25.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Container(
-                              padding: EdgeInsets.only(top: 10, left: 10),
+                              padding: EdgeInsets.all(10),
                               width: 250,
                               height: 125,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-// recipe name
+                                  // recipe name
                                   Container(
                                       margin: EdgeInsets.only(bottom: 5),
                                       width: 250,
@@ -853,7 +842,7 @@ class catogory extends State<Catogory> {
                                             fontWeight: FontWeight.bold,
                                             fontSize: 20),
                                       )),
-// breif descraption
+                                  // breif descraption
                                   Container(
                                       width: 250,
                                       height: 50,
@@ -875,7 +864,7 @@ class catogory extends State<Catogory> {
                               width: 100,
                               height: 125,
                               child: Image(
-//image Path
+                                //image Path
                                 image: AssetImage(test1[index].path),
                               ),
                             )
