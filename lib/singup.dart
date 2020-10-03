@@ -50,7 +50,7 @@ class Sing extends State<Singup> {
                           // print("$email and $password");
                           dynamic result =
                               await _authServices.RegisterWithEmailAndPassword(
-                                  email, password);
+                                  full_name, email, password);
                           if (result == null) {
                             error = 'please supply a valid email';
                             setState(() {

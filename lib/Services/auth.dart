@@ -1,3 +1,5 @@
+import 'package:swe444/Services/database.dart';
+
 import '../models/user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -42,11 +44,13 @@ class AuthServices {
     }
   }
 
-  Future RegisterWithEmailAndPassword(String email, String password) async {
+  Future RegisterWithEmailAndPassword(
+      String full_name, String email, String password) async {
     try {
       AuthResult result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
       FirebaseUser user = result.user;
+      await DatabaseService(uid: user.uid).UserData(full_name);
       return _userFormFireBaseUser(user);
     } catch (e) {
       // print(e.toString());
