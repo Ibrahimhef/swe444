@@ -8,7 +8,6 @@ import 'login.dart';
 import 'singup.dart';
 import 'forgetPassword.dart';
 import 'SubCategories.dart';
-import 'package:swe444/SubCategories.dart';
 import 'TextStyle.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 
