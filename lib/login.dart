@@ -15,10 +15,6 @@ class Login extends StatelessWidget {
   static String email = '';
   static String password = '';
   String error = '';
-  GoogleSignIn _googleSignIn = GoogleSignIn(scopes: [
-    'email',
-    'https://www.googleapis.com/auth/contacts.readonly',
-  ]);
   static final _formKey = GlobalKey<FormState>();
 
   @override
@@ -74,12 +70,7 @@ class Login extends StatelessWidget {
                         ),
                         InkWell(
                           onTap: () async {
-                            try {
-                              await _googleSignIn.signIn();
-                              print(_googleSignIn.currentUser.toString());
-                            } catch (error) {
-                              print(error);
-                            }
+                            _authServices.signinwithgoogleaccount();
                           },
                           child: Image(
                             width: weidth * 0.4,

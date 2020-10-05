@@ -1,9 +1,8 @@
 import 'package:swe444/List_info.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:swe444/profile.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-
 
 class Catogory extends StatefulWidget {
   final double weidth, height;
@@ -40,35 +39,35 @@ class catogory extends State<Catogory> {
         caterogry: 1,
         name: "Mozzarella sticks",
         decraption:
-        "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
+            "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
         path: "assets/Appetizers_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 2,
         name: "Steak",
         decraption:
-        "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
+            "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 3,
         name: "Salads",
         decraption:
-        "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
+            "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
         path: "assets/Salads_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 4,
         name: "Soup",
         decraption:
-        "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
+            "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
         path: "assets/Soup_icon@3x.png",
         time: "10"),
     recipe(
         caterogry: 5,
         name: "Cookies",
         decraption:
-        "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
+            "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
         path: "assets/Sweets _icon@3x.png",
         time: "10"),
     recipe(
@@ -81,35 +80,35 @@ class catogory extends State<Catogory> {
         caterogry: 1,
         name: "Mozzarella sticks",
         decraption:
-        "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
+            "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
         path: "assets/Appetizers_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 2,
         name: "Steak",
         decraption:
-        "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
+            "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 3,
         name: "Salads",
         decraption:
-        "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
+            "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
         path: "assets/Salads_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 4,
         name: "Soup",
         decraption:
-        "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
+            "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
         path: "assets/Soup_icon@3x.png",
         time: "10"),
     recipe(
         caterogry: 5,
         name: "Cookies",
         decraption:
-        "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
+            "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
         path: "assets/Sweets _icon@3x.png",
         time: "10"),
     recipe(
@@ -122,35 +121,35 @@ class catogory extends State<Catogory> {
         caterogry: 1,
         name: "Mozzarella sticks",
         decraption:
-        "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
+            "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
         path: "assets/Appetizers_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 2,
         name: "Steak",
         decraption:
-        "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
+            "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 3,
         name: "Salads",
         decraption:
-        "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
+            "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
         path: "assets/Salads_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 4,
         name: "Soup",
         decraption:
-        "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
+            "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
         path: "assets/Soup_icon@3x.png",
         time: "10"),
     recipe(
         caterogry: 5,
         name: "Cookies",
         decraption:
-        "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
+            "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
         path: "assets/Sweets _icon@3x.png",
         time: "10"),
     recipe(
@@ -163,35 +162,35 @@ class catogory extends State<Catogory> {
         caterogry: 1,
         name: "Mozzarella sticks",
         decraption:
-        "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
+            "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
         path: "assets/Appetizers_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 2,
         name: "Steak",
         decraption:
-        "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
+            "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 3,
         name: "Salads",
         decraption:
-        "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
+            "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
         path: "assets/Salads_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 4,
         name: "Soup",
         decraption:
-        "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
+            "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
         path: "assets/Soup_icon@3x.png",
         time: "10"),
     recipe(
         caterogry: 5,
         name: "Cookies",
         decraption:
-        "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
+            "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
         path: "assets/Sweets _icon@3x.png",
         time: "10"),
     recipe(
@@ -204,35 +203,35 @@ class catogory extends State<Catogory> {
         caterogry: 1,
         name: "Mozzarella sticks",
         decraption:
-        "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
+            "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
         path: "assets/Appetizers_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 2,
         name: "Steak",
         decraption:
-        "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
+            "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 3,
         name: "Salads",
         decraption:
-        "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
+            "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
         path: "assets/Salads_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 4,
         name: "Soup",
         decraption:
-        "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
+            "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
         path: "assets/Soup_icon@3x.png",
         time: "10"),
     recipe(
         caterogry: 5,
         name: "Cookies",
         decraption:
-        "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
+            "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
         path: "assets/Sweets _icon@3x.png",
         time: "10"),
     recipe(
@@ -245,35 +244,35 @@ class catogory extends State<Catogory> {
         caterogry: 1,
         name: "Mozzarella sticks",
         decraption:
-        "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
+            "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
         path: "assets/Appetizers_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 2,
         name: "Steak",
         decraption:
-        "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
+            "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 3,
         name: "Salads",
         decraption:
-        "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
+            "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
         path: "assets/Salads_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 4,
         name: "Soup",
         decraption:
-        "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
+            "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
         path: "assets/Soup_icon@3x.png",
         time: "10"),
     recipe(
         caterogry: 5,
         name: "Cookies",
         decraption:
-        "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
+            "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
         path: "assets/Sweets _icon@3x.png",
         time: "10"),
     recipe(
@@ -286,35 +285,35 @@ class catogory extends State<Catogory> {
         caterogry: 1,
         name: "Mozzarella sticks",
         decraption:
-        "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
+            "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
         path: "assets/Appetizers_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 2,
         name: "Steak",
         decraption:
-        "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
+            "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 3,
         name: "Salads",
         decraption:
-        "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
+            "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
         path: "assets/Salads_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 4,
         name: "Soup",
         decraption:
-        "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
+            "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
         path: "assets/Soup_icon@3x.png",
         time: "10"),
     recipe(
         caterogry: 5,
         name: "Cookies",
         decraption:
-        "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
+            "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
         path: "assets/Sweets _icon@3x.png",
         time: "10"),
     recipe(
@@ -327,35 +326,35 @@ class catogory extends State<Catogory> {
         caterogry: 1,
         name: "Mozzarella sticks",
         decraption:
-        "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
+            "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
         path: "assets/Appetizers_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 2,
         name: "Steak",
         decraption:
-        "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
+            "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 3,
         name: "Salads",
         decraption:
-        "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
+            "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
         path: "assets/Salads_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 4,
         name: "Soup",
         decraption:
-        "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
+            "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
         path: "assets/Soup_icon@3x.png",
         time: "10"),
     recipe(
         caterogry: 5,
         name: "Cookies",
         decraption:
-        "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
+            "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
         path: "assets/Sweets _icon@3x.png",
         time: "10"),
     recipe(
@@ -368,35 +367,35 @@ class catogory extends State<Catogory> {
         caterogry: 1,
         name: "Mozzarella sticks",
         decraption:
-        "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
+            "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
         path: "assets/Appetizers_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 2,
         name: "Steak",
         decraption:
-        "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
+            "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 3,
         name: "Salads",
         decraption:
-        "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
+            "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
         path: "assets/Salads_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 4,
         name: "Soup",
         decraption:
-        "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
+            "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
         path: "assets/Soup_icon@3x.png",
         time: "10"),
     recipe(
         caterogry: 5,
         name: "Cookies",
         decraption:
-        "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
+            "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
         path: "assets/Sweets _icon@3x.png",
         time: "10"),
     recipe(
@@ -409,35 +408,35 @@ class catogory extends State<Catogory> {
         caterogry: 1,
         name: "Mozzarella sticks",
         decraption:
-        "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
+            "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
         path: "assets/Appetizers_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 2,
         name: "Steak",
         decraption:
-        "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
+            "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 3,
         name: "Salads",
         decraption:
-        "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
+            "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
         path: "assets/Salads_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 4,
         name: "Soup",
         decraption:
-        "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
+            "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
         path: "assets/Soup_icon@3x.png",
         time: "10"),
     recipe(
         caterogry: 5,
         name: "Cookies",
         decraption:
-        "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
+            "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
         path: "assets/Sweets _icon@3x.png",
         time: "10"),
     recipe(
@@ -450,35 +449,35 @@ class catogory extends State<Catogory> {
         caterogry: 1,
         name: "Mozzarella sticks",
         decraption:
-        "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
+            "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
         path: "assets/Appetizers_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 2,
         name: "Steak",
         decraption:
-        "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
+            "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 3,
         name: "Salads",
         decraption:
-        "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
+            "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
         path: "assets/Salads_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 4,
         name: "Soup",
         decraption:
-        "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
+            "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
         path: "assets/Soup_icon@3x.png",
         time: "10"),
     recipe(
         caterogry: 5,
         name: "Cookies",
         decraption:
-        "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
+            "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
         path: "assets/Sweets _icon@3x.png",
         time: "10"),
     recipe(
@@ -491,35 +490,35 @@ class catogory extends State<Catogory> {
         caterogry: 1,
         name: "Mozzarella sticks",
         decraption:
-        "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
+            "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
         path: "assets/Appetizers_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 2,
         name: "Steak",
         decraption:
-        "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
+            "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 3,
         name: "Salads",
         decraption:
-        "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
+            "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
         path: "assets/Salads_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 4,
         name: "Soup",
         decraption:
-        "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
+            "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
         path: "assets/Soup_icon@3x.png",
         time: "10"),
     recipe(
         caterogry: 5,
         name: "Cookies",
         decraption:
-        "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
+            "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
         path: "assets/Sweets _icon@3x.png",
         time: "10"),
     recipe(
@@ -532,35 +531,35 @@ class catogory extends State<Catogory> {
         caterogry: 1,
         name: "Mozzarella sticks",
         decraption:
-        "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
+            "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
         path: "assets/Appetizers_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 2,
         name: "Steak",
         decraption:
-        "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
+            "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 3,
         name: "Salads",
         decraption:
-        "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
+            "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
         path: "assets/Salads_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 4,
         name: "Soup",
         decraption:
-        "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
+            "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
         path: "assets/Soup_icon@3x.png",
         time: "10"),
     recipe(
         caterogry: 5,
         name: "Cookies",
         decraption:
-        "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
+            "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
         path: "assets/Sweets _icon@3x.png",
         time: "10"),
     recipe(
@@ -573,35 +572,35 @@ class catogory extends State<Catogory> {
         caterogry: 1,
         name: "Mozzarella sticks",
         decraption:
-        "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
+            "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
         path: "assets/Appetizers_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 2,
         name: "Steak",
         decraption:
-        "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
+            "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 3,
         name: "Salads",
         decraption:
-        "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
+            "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
         path: "assets/Salads_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 4,
         name: "Soup",
         decraption:
-        "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
+            "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
         path: "assets/Soup_icon@3x.png",
         time: "10"),
     recipe(
         caterogry: 5,
         name: "Cookies",
         decraption:
-        "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
+            "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
         path: "assets/Sweets _icon@3x.png",
         time: "10"),
     recipe(
@@ -614,35 +613,35 @@ class catogory extends State<Catogory> {
         caterogry: 1,
         name: "Mozzarella sticks",
         decraption:
-        "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
+            "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
         path: "assets/Appetizers_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 2,
         name: "Steak",
         decraption:
-        "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
+            "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 3,
         name: "Salads",
         decraption:
-        "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
+            "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
         path: "assets/Salads_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 4,
         name: "Soup",
         decraption:
-        "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
+            "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
         path: "assets/Soup_icon@3x.png",
         time: "10"),
     recipe(
         caterogry: 5,
         name: "Cookies",
         decraption:
-        "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
+            "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
         path: "assets/Sweets _icon@3x.png",
         time: "10"),
     recipe(
@@ -655,35 +654,35 @@ class catogory extends State<Catogory> {
         caterogry: 1,
         name: "Mozzarella sticks",
         decraption:
-        "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
+            "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
         path: "assets/Appetizers_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 2,
         name: "Steak",
         decraption:
-        "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
+            "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 3,
         name: "Salads",
         decraption:
-        "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
+            "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
         path: "assets/Salads_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 4,
         name: "Soup",
         decraption:
-        "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
+            "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
         path: "assets/Soup_icon@3x.png",
         time: "10"),
     recipe(
         caterogry: 5,
         name: "Cookies",
         decraption:
-        "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
+            "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
         path: "assets/Sweets _icon@3x.png",
         time: "10"),
     recipe(
@@ -696,45 +695,44 @@ class catogory extends State<Catogory> {
         caterogry: 1,
         name: "Mozzarella sticks",
         decraption:
-        "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
+            "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
         path: "assets/Appetizers_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 2,
         name: "Steak",
         decraption:
-        "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
+            "A  steak is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though can also be pan-fried. It is often grilled in an attempt to replicate the flavor of steak cooked over the glowing coals of an open fire",
         path: "assets/Main Dishes_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 3,
         name: "Salads",
         decraption:
-        "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
+            "A salad is a dish consisting of pieces of food in a mixture, with at least one raw ingredient.",
         path: "assets/Salads_icon@3x.png",
         time: "10 min"),
     recipe(
         caterogry: 4,
         name: "Soup",
         decraption:
-        "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
+            "Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, or water. Hot soups are additionally characterized by boiling solid ingredients in liquids in a pot until the flavors are extracted, forming a broth.",
         path: "assets/Soup_icon@3x.png",
         time: "10"),
     recipe(
         caterogry: 5,
         name: "Cookies",
         decraption:
-        "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
+            "A cookie is a baked or cooked food that is typically small, flat and sweet. ",
         path: "assets/Sweets _icon@3x.png",
         time: "10"),
   ];
 
   catogory(this.weidth, this.height, this.category);
-  List<recipe> ListOfCurrentCateogry = new List<recipe>();
+
   @override
   Widget build(BuildContext context) {
-    // ListOfCurrentCateogry.first;
-    ListOfCurrentCateogry.clear();
+    List<recipe> ListOfCurrentCateogry = new List<recipe>();
     for (int i = 0; i < ListOfCateogry.length; i++) {
       if (ListOfCateogry[i].caterogry == category)
         ListOfCurrentCateogry.add(ListOfCateogry.elementAt(i));
@@ -755,10 +753,10 @@ class catogory extends State<Catogory> {
         ],
         onTap: (index) {
           setState(
-                () {
+            () {
               if (index < 6) {
-                category = index;
-
+                ListOfCurrentCateogry.first;
+                ListOfCurrentCateogry.clear();
                 category = index;
                 for (int i = 0; i < ListOfCateogry.length; i++) {
                   if (ListOfCateogry[i].caterogry == category)
