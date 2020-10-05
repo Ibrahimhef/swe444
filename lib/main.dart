@@ -106,14 +106,3 @@ class catogory extends StatelessWidget {
     return Catogory(weidth, height);
   }
 }
-
-// class Sub_Categories extends StatelessWidget {
-//   final int cateogry;
-//   const Sub_Categories(this.cateogry);
-//   @override
-//   Widget build(BuildContext context) {
-//     final height = MediaQuery.of(context).size.height;
-//     final weidth = MediaQuery.of(context).size.width;
-//     return SubCategories(weidth, height, cateogry);
-//   }
-// }

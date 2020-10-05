@@ -1,22 +1,22 @@
-import 'package:swe444/SubCategories.dart';
 
 import 'package:flutter/material.dart';
 
 class ListInfo extends StatefulWidget {
   final double weidth, height;
-  List<recipe> ListOfRecipeces;
+  final List ListOfRecipeces;
 
   ListInfo(this.ListOfRecipeces, this.weidth, this.height);
 
   @override
   State<StatefulWidget> createState() {
+    print(ListOfRecipeces.length);
     return listInfo(ListOfRecipeces, weidth, height);
   }
 }
 
 class listInfo extends State<ListInfo> {
   final double weidth, height;
-  List<recipe> ListOfRecipeces;
+  List ListOfRecipeces;
 
   listInfo(this.ListOfRecipeces, this.weidth, this.height);
 
@@ -64,7 +64,7 @@ class listInfo extends State<ListInfo> {
                                   width: weidth * 0.577,
                                   height: weidth * 0.12,
                                   child:
-                                      Text(ListOfRecipeces[index].decraption)),
+                                  Text(ListOfRecipeces[index].decraption)),
                               Row(
                                 children: [
                                   Container(
