@@ -20,22 +20,54 @@ class Profile extends StatefulWidget {
 
 class profile extends State<Profile> {
   final double weidth, height;
+
   profile(this.weidth, this.height);
+
   final AuthServices _auth = AuthServices();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-
-        child: Center(
-          child: InkWell(
-            onTap: () async {
-              await _auth.SignOut();
-              Navigator.of(context).pop();
-
-            },
-            child: Text("اطلع برا", style: TextStyle(fontSize: 50),),
-          ),
+        child: Stack(
+          children: [
+            Positioned(
+              top: -38,
+              child: Image(
+                image: AssetImage('assets/ProfileHead@3x.png'),
+                width: weidth+20,
+                height: height,
+              ),
+            ),
+            Positioned(
+              top: height * 0.91,
+              child: Container(
+                width: weidth,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    InkWell(
+                        onTap: () async {
+                          await _auth.SignOut();
+                          Navigator.of(context).pop();
+                        },
+                        child: Image(
+                          image: AssetImage('assets/LogOutBouttin@3x.png'),
+                          width: weidth * 0.4,
+                          height: weidth * 0.2,
+                        )),
+                    InkWell(
+                        onTap: () {},
+                        child: Image(
+                          image: AssetImage('assets/EditButton@3x.png'),
+                          width: weidth * 0.4,
+                          height: weidth * 0.2,
+                        )),
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

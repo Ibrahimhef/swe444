@@ -3,19 +3,23 @@ import 'package:swe444/SubCategories.dart';
 import 'package:flutter/material.dart';
 
 class ListInfo extends StatefulWidget {
-   List<recipe> ListOfRecipeces;
+  final double weidth, height;
+  List<recipe> ListOfRecipeces;
 
-   ListInfo(this.ListOfRecipeces);
+  ListInfo(this.ListOfRecipeces, this.weidth, this.height);
 
   @override
   State<StatefulWidget> createState() {
-    return listInfo(ListOfRecipeces);
+    return listInfo(ListOfRecipeces, weidth, height);
   }
 }
 
 class listInfo extends State<ListInfo> {
+  final double weidth, height;
   List<recipe> ListOfRecipeces;
-  listInfo(this.ListOfRecipeces);
+
+  listInfo(this.ListOfRecipeces, this.weidth, this.height);
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -26,8 +30,8 @@ class listInfo extends State<ListInfo> {
             child: Padding(
               padding: const EdgeInsets.all(10),
               child: Container(
-                width: 350,
-                height: 125,
+                width: weidth * 0.82,
+                height: weidth * 0.3,
                 child: FittedBox(
                   child: Material(
                     // color: color[random.nextInt(9)],
@@ -39,33 +43,33 @@ class listInfo extends State<ListInfo> {
                       children: [
                         Container(
                           padding: EdgeInsets.all(10),
-                          width: 250,
-                          height: 125,
+                          width: weidth * 0.577,
+                          height: weidth * 0.3,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               // recipe name
                               Container(
                                   margin: EdgeInsets.only(bottom: 5),
-                                  width: 250,
+                                  width: weidth * 0.577,
                                   height: 25,
                                   child: Text(
                                     ListOfRecipeces[index].name,
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 20),
+                                        fontSize: weidth * 0.0462),
                                   )),
                               // breif descraption
                               Container(
-                                  width: 250,
-                                  height: 50,
+                                  width: weidth * 0.577,
+                                  height: weidth * 0.12,
                                   child:
                                       Text(ListOfRecipeces[index].decraption)),
                               Row(
                                 children: [
                                   Container(
-                                      width: 200,
-                                      height: 20,
+                                      width: weidth * 0.466,
+                                      height: weidth * 0.05,
                                       padding: EdgeInsets.only(right: 25),
                                       child: Text("time  " +
                                           ListOfRecipeces[index].time)),
@@ -75,8 +79,8 @@ class listInfo extends State<ListInfo> {
                           ),
                         ),
                         Container(
-                          width: 100,
-                          height: 125,
+                          width: weidth * 0.231,
+                          height: weidth * 0.3,
                           child: Image(
                             //image Path
                             image: AssetImage(ListOfRecipeces[index].path),

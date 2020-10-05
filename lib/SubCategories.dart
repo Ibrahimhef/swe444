@@ -781,14 +781,15 @@ class catogory extends State<Catogory> {
         title: Center(
           child: Text(
             cat1[category],
-            style: TextStyle(color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
+            style: TextStyle(
+                color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
           ),
         ),
         backgroundColor: Color(0xfff2b705),
         elevation: 0,
         bottomOpacity: 0,
       ),
-      body: Container(child: ListInfo(ListOfCurrentCateogry)),
+      body: Container(child: ListInfo(ListOfCurrentCateogry, weidth, height)),
     );
   }
 }
