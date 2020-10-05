@@ -1,11 +1,8 @@
-import 'dart:math';
+import 'package:swe444/List_info.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:swe444/main.dart';
 import 'package:swe444/profile.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'TextStyle.dart';
 
 class Catogory extends StatefulWidget {
   final double weidth, height;
@@ -29,21 +26,9 @@ class catogory extends State<Catogory> {
     "assets/Soup_page@3x.png",
     "assets/Sweets_page@3x.png"
   ];
-  var color = [
-    Color.fromRGBO(242, 171, 39, 0.6),
-    Color.fromRGBO(217, 125, 13, 0.6),
-    Color.fromRGBO(115, 32, 2, 0.6),
-    Color.fromRGBO(217, 77, 26, 0.6),
-    Color.fromRGBO(242, 94, 122, 0.6),
-    Color.fromRGBO(242, 204, 133, 0.6),
-    Color.fromRGBO(191, 131, 57, 0.6),
-    Color.fromRGBO(242, 206, 213, 0.6),
-    Color.fromRGBO(139, 140, 93, 0.6),
-    Color.fromRGBO(166, 78, 78, 0.6),
-  ];
 
   var cat1 = ["Juice", "Appetizers", "Main Dishes", "Salads", "Soup", "Sweets"];
-  List<recipe> test = [
+  List<recipe> ListOfCateogry = [
     recipe(
         caterogry: 0,
         name: "Orange Juice",
@@ -742,16 +727,16 @@ class catogory extends State<Catogory> {
         path: "assets/Sweets _icon@3x.png",
         time: "10"),
   ];
+  List<recipe> ListOfCurrentCateogry = new List<recipe>();
 
-  List<recipe> test1 = new List<recipe>();
-  var random = new Random();
 
   catogory(this.weidth, this.height, this.category);
 
   @override
   Widget build(BuildContext context) {
-    for (int i = 0; i < test.length; i++) {
-      if (test[i].caterogry == category) test1.add(test.elementAt(i));
+    for (int i = 0; i < ListOfCateogry.length; i++) {
+      if (ListOfCateogry[i].caterogry == category)
+        ListOfCurrentCateogry.add(ListOfCateogry.elementAt(i));
     }
     return Scaffold(
       backgroundColor: Color(0xffF5F5F5),
@@ -772,10 +757,10 @@ class catogory extends State<Catogory> {
             () {
               if (index < 6) {
                 category = index;
-                test1.clear();
-                for (int i = 0; i < test.length; i++) {
-                  if (test[i].caterogry == category)
-                    test1.add(test.elementAt(i));
+                ListOfCurrentCateogry.clear();
+                for (int i = 0; i < ListOfCateogry.length; i++) {
+                  if (ListOfCateogry[i].caterogry == category)
+                    ListOfCurrentCateogry.add(ListOfCateogry.elementAt(i));
                 }
               } else {
                 Navigator.push(
@@ -796,87 +781,14 @@ class catogory extends State<Catogory> {
         title: Center(
           child: Text(
             cat1[category],
-            style: TextStyle(
-                color: Colors.black, fontFamily: 'OleoScript', fontSize: 25),
+            style: TextStyle(color: Colors.black, fontSize: 25),
           ),
         ),
         backgroundColor: Color(0xfff2b705),
         elevation: 0,
         bottomOpacity: 0,
       ),
-      body: Container(
-        child: ListView.builder(
-            itemCount: test1.length,
-            itemBuilder: (context, index) {
-              return InkWell(
-                onTap: () {},
-                child: Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Container(
-                    width: 350,
-                    height: 125,
-                    child: FittedBox(
-                      child: Material(
-                        // color: color[random.nextInt(9)],
-                        color: Colors.white,
-                        elevation: 14.0,
-                        borderRadius: BorderRadius.circular(25.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              width: 250,
-                              height: 125,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  // recipe name
-                                  Container(
-                                      margin: EdgeInsets.only(bottom: 5),
-                                      width: 250,
-                                      height: 25,
-                                      child: Text(
-                                        test1[index].name,
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 20),
-                                      )),
-                                  // breif descraption
-                                  Container(
-                                      width: 250,
-                                      height: 50,
-                                      child: Text(test1[index].decraption)),
-                                  Row(
-                                    children: [
-                                      Container(
-                                          width: 200,
-                                          height: 20,
-                                          padding: EdgeInsets.only(right: 25),
-                                          child: Text(
-                                              "time  " + test[index].time)),
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ),
-                            Container(
-                              width: 100,
-                              height: 125,
-                              child: Image(
-                                //image Path
-                                image: AssetImage(test1[index].path),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              );
-            }),
-      ),
+      body: Container(child: ListInfo(ListOfCurrentCateogry)),
     );
   }
 }
@@ -884,6 +796,6 @@ class catogory extends State<Catogory> {
 class recipe {
   final String name, decraption, path, time;
   final int caterogry;
-
   recipe({this.name, this.decraption, this.path, this.time, this.caterogry});
 }
+
