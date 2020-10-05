@@ -2,6 +2,7 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:swe444/homeTest.dart';
 import 'package:swe444/login.dart';
 import 'package:swe444/main.dart';
 import 'package:swe444/models/user.dart';
