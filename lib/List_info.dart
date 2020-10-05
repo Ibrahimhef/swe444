@@ -3,9 +3,9 @@ import 'package:swe444/SubCategories.dart';
 import 'package:flutter/material.dart';
 
 class ListInfo extends StatefulWidget {
-  final List<recipe> ListOfRecipeces;
+   List<recipe> ListOfRecipeces;
 
-  const ListInfo(this.ListOfRecipeces);
+   ListInfo(this.ListOfRecipeces);
 
   @override
   State<StatefulWidget> createState() {
@@ -14,10 +14,8 @@ class ListInfo extends StatefulWidget {
 }
 
 class listInfo extends State<ListInfo> {
-  final List<recipe> ListOfRecipeces;
-
+  List<recipe> ListOfRecipeces;
   listInfo(this.ListOfRecipeces);
-
   @override
   Widget build(BuildContext context) {
     return ListView.builder(

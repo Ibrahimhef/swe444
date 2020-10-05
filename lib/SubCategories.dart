@@ -31,7 +31,7 @@ class catogory extends State<Catogory> {
   List<recipe> ListOfCateogry = [
     recipe(
         caterogry: 0,
-        name: "Orange Juice",
+        name: "Orange ",
         decraption: "Like any orange",
         path: "assets/Juice_icon@3x.png",
         time: "10 min"),
@@ -727,13 +727,12 @@ class catogory extends State<Catogory> {
         path: "assets/Sweets _icon@3x.png",
         time: "10"),
   ];
-  List<recipe> ListOfCurrentCateogry = new List<recipe>();
-
 
   catogory(this.weidth, this.height, this.category);
 
   @override
   Widget build(BuildContext context) {
+    List<recipe> ListOfCurrentCateogry = new List<recipe>();
     for (int i = 0; i < ListOfCateogry.length; i++) {
       if (ListOfCateogry[i].caterogry == category)
         ListOfCurrentCateogry.add(ListOfCateogry.elementAt(i));
@@ -756,8 +755,9 @@ class catogory extends State<Catogory> {
           setState(
             () {
               if (index < 6) {
-                category = index;
+                ListOfCurrentCateogry.first;
                 ListOfCurrentCateogry.clear();
+                category = index;
                 for (int i = 0; i < ListOfCateogry.length; i++) {
                   if (ListOfCateogry[i].caterogry == category)
                     ListOfCurrentCateogry.add(ListOfCateogry.elementAt(i));
@@ -781,7 +781,7 @@ class catogory extends State<Catogory> {
         title: Center(
           child: Text(
             cat1[category],
-            style: TextStyle(color: Colors.black, fontSize: 25),
+            style: TextStyle(color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
           ),
         ),
         backgroundColor: Color(0xfff2b705),
@@ -796,6 +796,6 @@ class catogory extends State<Catogory> {
 class recipe {
   final String name, decraption, path, time;
   final int caterogry;
+
   recipe({this.name, this.decraption, this.path, this.time, this.caterogry});
 }
-
