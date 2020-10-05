@@ -755,8 +755,11 @@ class catogory extends State<Catogory> {
           setState(
             () {
               if (index < 6) {
+                print(ListOfCurrentCateogry);
                 ListOfCurrentCateogry.first;
                 ListOfCurrentCateogry.clear();
+                print(ListOfCurrentCateogry);
+                print(index);
                 category = index;
                 for (int i = 0; i < ListOfCateogry.length; i++) {
                   if (ListOfCateogry[i].caterogry == category)

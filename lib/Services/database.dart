@@ -14,6 +14,18 @@ class DatabaseService {
         .setData({'name': full_name, "email": email, "password": password});
   }
 
+  Future insertMeals(int category, String title, String ingredients,
+      String step, int duration, String email) async {
+    return await mealCollection.document(uid).setData({
+      "category": category,
+      'title': title,
+      'ingredients': ingredients,
+      'steps': step,
+      'duration': duration,
+      'email': email
+    });
+  }
+
   List<profile> _userListFromSnapShot(QuerySnapshot snapshot) {
     return snapshot.documents.map((doc) {
       return profile(
