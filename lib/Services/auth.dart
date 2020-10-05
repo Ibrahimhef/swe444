@@ -1,3 +1,4 @@
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:swe444/Services/database.dart';
 
 import '../models/user.dart';
@@ -6,6 +7,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class AuthServices {
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  final googleSignIn = GoogleSignIn();
+
   User _userFormFireBaseUser(FirebaseUser user) {
     return user != null
         ? User(
@@ -28,6 +31,25 @@ class AuthServices {
       return _userFormFireBaseUser(user);
     } catch (e) {
       // print(e.toString());
+      return null;
+    }
+  }
+
+  //sign in with google account edit by albra
+  Future signinwithgoogleaccount() async {
+    try {
+      GoogleSignInAccount googleacc = await googleSignIn.signIn();
+      if (googleacc != null) {
+        GoogleSignInAuthentication googleauth = await googleacc.authentication;
+        AuthCredential authCredential = GoogleAuthProvider.getCredential(
+            idToken: googleauth.idToken, accessToken: googleauth.accessToken);
+        AuthResult res = await _auth.signInWithCredential(authCredential);
+
+        FirebaseUser user = await _auth.currentUser();
+        return _userFormFireBaseUser(user);
+      }
+    } catch (e) {
+      print(e.toString());
       return null;
     }
   }
@@ -70,8 +92,13 @@ class AuthServices {
     }
   }
 
+//sign out edit by albra
   Future SignOut() async {
     try {
+      FirebaseUser user = await _auth.currentUser();
+      if (user.providerData[1].providerId == 'google.com') {
+        await googleSignIn.disconnect();
+      }
       print("Sign out");
       return await _auth.signOut();
     } catch (e) {
