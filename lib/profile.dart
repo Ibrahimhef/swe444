@@ -45,7 +45,7 @@ class profile extends State<Profile> {
               left: 15,
               child: Container(
                 alignment: Alignment.center,
-                width: weidth *0.5,
+                width: weidth * 0.5,
                 child: InkWell(
                     highlightColor: Colors.transparent,
                     splashColor: Colors.transparent,
@@ -61,14 +61,14 @@ class profile extends State<Profile> {
               ),
             ),
             Positioned(
-              top: 120,
-left: 15,
-                right: 15,
-                child: Container(
-                    width: weidth * 0.4,
-                    height: height * 0.7,
-                    child: ListOwnInfo(ListOfRecipeces, weidth * 0.8, height * 0.5)),
-
+              top: weidth / 2.5,
+              left: 15,
+              right: 15,
+              child: Container(
+                  width: weidth * 0.4,
+                  height: height * 0.7,
+                  child:
+                      ListOwnInfo(ListOfRecipeces, weidth * 0.8, height * 0.5)),
             )
           ],
         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+
 class ListInfo extends StatefulWidget {
   final double weidth, height;
   final List ListOfRecipeces;
@@ -8,7 +9,6 @@ class ListInfo extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    print(ListOfRecipeces.length);
     return listInfo(ListOfRecipeces, weidth, height);
   }
 }
