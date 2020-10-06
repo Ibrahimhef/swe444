@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:swe444/Services/auth.dart';
 import 'package:swe444/ListOwnRecipe.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class Profile extends StatefulWidget {
   final double weidth, height;
@@ -35,12 +36,12 @@ class profile extends State<Profile> {
               child: Image(
                 image: AssetImage('assets/ProfileHead@3x.png'),
                 width: weidth,
-                height: height / 4,
+                height: height / 4.5,
                 fit: BoxFit.fill,
               ),
             ),
             Positioned(
-              top: height * 0.88,
+              top: height * 0.89,
               right: 15,
               left: 15,
               child: Container(
@@ -55,13 +56,48 @@ class profile extends State<Profile> {
                     },
                     child: Image(
                       image: AssetImage('assets/LogOutBouttin@3x.png'),
-                      width: weidth * 0.4,
+                      width: weidth * 0.38,
                       height: weidth * 0.2,
                     )),
               ),
             ),
             Positioned(
-              top: weidth / 2.5,
+                top: height / 4.5,
+                left: 25,
+                child: Container(
+                  width: weidth * 0.8,
+                  child: Material(
+                    color: Colors.white,
+                    elevation: 5.0,
+                    borderRadius: BorderRadius.circular(25.0),
+                    child: Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(bottom: 7),
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              "Ibrahim Alhefdhi",
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          Container(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              "ibrahimalhefdhi@gmail.com",
+                              style: TextStyle(fontSize: 18),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                )),
+            Positioned(
+              top: height / 4,
               left: 15,
               right: 15,
               child: Container(
