@@ -42,11 +42,13 @@ class profile extends State<Profile> {
             ),
             Positioned(
               top: height * 0.89,
-              right: 15,
-              left: 15,
+left: 100,
+              right: 100,
               child: Container(
                 alignment: Alignment.center,
-                width: weidth * 0.5,
+                // color: Colors.black,
+                width: weidth /5,
+                height: weidth/5,
                 child: InkWell(
                     highlightColor: Colors.transparent,
                     splashColor: Colors.transparent,
@@ -55,10 +57,11 @@ class profile extends State<Profile> {
                       Navigator.of(context).pop();
                     },
                     child: Image(
-                      image: AssetImage('assets/LogOutBouttin@3x.png'),
-                      width: weidth * 0.38,
+                      width: weidth * 0.4,
                       height: weidth * 0.2,
-                    )),
+                      image: AssetImage('assets/LogOutBouttin@3x.png'),
+                    )
+                ),
               ),
             ),
             Positioned(
