@@ -35,6 +35,8 @@ class ForgetPass extends StatelessWidget {
               right: weidth * 0.10,
               child: Center(
                 child: InkWell(
+                  highlightColor: Colors.transparent,
+                  splashColor: Colors.transparent,
                   onTap: () async {
                     if (_formKey2.currentState.validate()) {
                       await _authServices.ForgetPassword(email);

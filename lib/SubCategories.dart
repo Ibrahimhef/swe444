@@ -729,10 +729,11 @@ class catogory extends State<Catogory> {
   ];
 
   catogory(this.weidth, this.height, this.category);
-
+  List<recipe> ListOfCurrentCateogry = new List<recipe>();
   @override
   Widget build(BuildContext context) {
-    List<recipe> ListOfCurrentCateogry = new List<recipe>();
+    ListOfCurrentCateogry.clear();
+
     for (int i = 0; i < ListOfCateogry.length; i++) {
       if (ListOfCateogry[i].caterogry == category)
         ListOfCurrentCateogry.add(ListOfCateogry.elementAt(i));
@@ -755,8 +756,6 @@ class catogory extends State<Catogory> {
           setState(
             () {
               if (index < 6) {
-                ListOfCurrentCateogry.first;
-                ListOfCurrentCateogry.clear();
                 category = index;
                 for (int i = 0; i < ListOfCateogry.length; i++) {
                   if (ListOfCateogry[i].caterogry == category)
@@ -766,7 +765,7 @@ class catogory extends State<Catogory> {
                 Navigator.push(
                     context,
                     new MaterialPageRoute(
-                        builder: (context) => new Profile(weidth, height)));
+                        builder: (context) => new Profile(weidth, height,ListOfCateogry)));
               }
             },
           );
@@ -786,8 +785,8 @@ class catogory extends State<Catogory> {
           ),
         ),
         backgroundColor: Color(0xfff2b705),
-        elevation: 0,
-        bottomOpacity: 0,
+        // elevation: 0,
+        // bottomOpacity: 0,
       ),
       body: Container(child: ListInfo(ListOfCurrentCateogry, weidth, height)),
     );

@@ -45,6 +45,8 @@ class Sing extends State<Singup> {
                   right: weidth * 0.10,
                   child: Center(
                     child: InkWell(
+                      highlightColor: Colors.transparent,
+                      splashColor: Colors.transparent,
                       onTap: () async {
                         if (_formKey1.currentState.validate()) {
                           // print("$email and $password");
@@ -190,6 +192,8 @@ class Sing extends State<Singup> {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         InkWell(
+                          highlightColor: Colors.transparent,
+                          splashColor: Colors.transparent,
                           onTap: () {
                             setState(() {
                               errorMessage =

@@ -46,12 +46,9 @@ class Login extends StatelessWidget {
                       children: [
                         Container(
                           margin: EdgeInsets.only(bottom: 10),
-                          child: InkWell(
+                          child: InkWell(highlightColor: Colors.transparent,
+                            splashColor: Colors.transparent,
                             onTap: () async {
-                              // Navigator.push(
-                              //     context,
-                              //     new MaterialPageRoute(
-                              //         builder: (context) => new catogory()));
                               if (_formKey.currentState.validate()) {
                                 dynamic result = await _authServices
                                     .SingInWithEmailAndPassword(
@@ -69,6 +66,8 @@ class Login extends StatelessWidget {
                           ),
                         ),
                         InkWell(
+                          highlightColor: Colors.transparent,
+                          splashColor: Colors.transparent,
                           onTap: () async {
                             _authServices.signinwithgoogleaccount();
                           },
@@ -149,6 +148,8 @@ class Login extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       InkWell(
+                        highlightColor: Colors.transparent,
+                        splashColor: Colors.transparent,
                         onTap: () {
                           // Navigator.push(
                           //     context,
@@ -160,6 +161,8 @@ class Login extends StatelessWidget {
                             Text("Sign-up", style: textStyle().style1(weidth)),
                       ),
                       InkWell(
+                        highlightColor: Colors.transparent,
+                        splashColor: Colors.transparent,
                         onTap: () {
                           Navigator.push(
                               context,
