@@ -15,14 +15,15 @@ class DatabaseService {
   }
 
   Future insertMeals(int category, String title, String ingredients,
-      String step, int duration, String email) async {
+      String step, int duration, String email, String imageURL) async {
     return await mealCollection.document(uid).setData({
       "category": category,
       'title': title,
       'ingredients': ingredients,
       'steps': step,
       'duration': duration,
-      'email': email
+      'email': email,
+      'imageURL': imageURL
     });
   }
 
