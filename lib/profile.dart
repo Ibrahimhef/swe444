@@ -41,26 +41,24 @@ class profile extends State<Profile> {
               ),
             ),
             Positioned(
-              top: height * 0.89,
-left: 100,
-              right: 100,
-              child: Container(
-                alignment: Alignment.center,
-                // color: Colors.black,
-                width: weidth /5,
-                height: weidth/5,
-                child: InkWell(
-                    highlightColor: Colors.transparent,
-                    splashColor: Colors.transparent,
-                    onTap: () async {
-                      await _auth.SignOut();
-                      Navigator.of(context).pop();
-                    },
-                    child: Image(
-                      width: weidth * 0.4,
-                      height: weidth * 0.2,
-                      image: AssetImage('assets/LogOutBouttin@3x.png'),
-                    )
+              top: height * 0.87,
+              left: 125,
+              right: 125,
+              child:
+              InkWell(
+                highlightColor: Colors.transparent,
+                splashColor: Colors.transparent,
+                onTap: () async {
+                  await _auth.SignOut();
+                  Navigator.of(context).pop();
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Image(
+                    width: weidth * 0.15,
+                    height: weidth * 0.2,
+                    image: AssetImage('assets/LogOutBouttin@3x.png'),
+                  ),
                 ),
               ),
             ),
