@@ -35,7 +35,7 @@ class listInfo extends State<ListInfo> {
                   child: Material(
                     // color: color[random.nextInt(9)],
                     color: Colors.white,
-                    elevation: 14.0,
+                    elevation: 5.0,
                     borderRadius: BorderRadius.circular(25.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -68,18 +68,31 @@ class listInfo extends State<ListInfo> {
                                     maxLines: 4,
                                   )),
 
-                              Container(
+                              Center(
+                                child: Container(
                                   width: (weidth * 0.85) * 0.6,
                                   height: (height * 0.22) * 0.15,
-                                  child: Text(
-                                    "time: " + ListOfRecipeces[index].time,
-                                  )),
+                                  decoration: BoxDecoration(
+                                    color: Color(0xffCBDCC3),
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      "time: " + ListOfRecipeces[index].time,
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ],
                           ),
                         ),
                         Container(
                           width: (weidth * 0.85) * 0.5,
                           height: height * 0.25,
+                          decoration: BoxDecoration(
+                            color: Color(0xffE1E1E1),
+                            borderRadius: BorderRadius.circular(25.0),
+                          ),
                           child: Image(
                             //image Path
                             image: AssetImage(ListOfRecipeces[index].path),
