@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -10,6 +12,8 @@ import 'forgetPassword.dart';
 import 'SubCategories.dart';
 import 'TextStyle.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+// import 'package:image_picker/image_picker.dart';
+// import 'package:firebase_storage/firebase_storage.dart';
 
 void main() {
   // runApp(DevicePreview(builder:(context) => MyHomePage()));
@@ -24,6 +28,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class MyApp extends State<MyHomePage> {
+  File _image;
+  String _uploadedFileURL;
   @override
   Widget build(BuildContext context) {
     return StreamProvider<User>.value(
