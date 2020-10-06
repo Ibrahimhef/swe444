@@ -38,18 +38,15 @@ class AuthServices {
   //sign in with google account edit by albra
   Future signinwithgoogleaccount() async {
     try {
-      print("1");
       GoogleSignInAccount googleacc = await googleSignIn.signIn();
-      print("1");
+
       if (googleacc != null) {
-        print("1");
         GoogleSignInAuthentication googleauth = await googleacc.authentication;
-        print("1");
+
         AuthCredential authCredential = GoogleAuthProvider.getCredential(
             idToken: googleauth.idToken, accessToken: googleauth.accessToken);
-        print("1");
+
         AuthResult res = await _auth.signInWithCredential(authCredential);
-        print("1");
 
         FirebaseUser user = await _auth.currentUser();
         return _userFormFireBaseUser(user);

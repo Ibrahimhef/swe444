@@ -46,7 +46,8 @@ class Login extends StatelessWidget {
                       children: [
                         Container(
                           margin: EdgeInsets.only(bottom: 10),
-                          child: InkWell(highlightColor: Colors.transparent,
+                          child: InkWell(
+                            highlightColor: Colors.transparent,
                             splashColor: Colors.transparent,
                             onTap: () async {
                               if (_formKey.currentState.validate()) {
