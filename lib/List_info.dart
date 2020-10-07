@@ -67,10 +67,11 @@ class listInfo extends State<ListInfo> {
                                 SizedBox(
                                     width: (weidth * 0.85) * 0.95,
                                     height: (height * 0.22) * 0.45,
-                                    child: AutoSizeText(
+                                    child: Text(
                                       ListOfRecipeces[index].decraption,
-                                      style: TextStyle(fontSize: 20),
-                                      maxLines: 4,
+                                      style: TextStyle(fontSize: 18),
+                                      overflow: TextOverflow.fade,
+
                                     )),
 
                                 Center(
