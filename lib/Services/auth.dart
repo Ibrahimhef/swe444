@@ -71,17 +71,16 @@ class AuthServices {
 
   Future RegisterWithEmailAndPassword(
       String full_name, String email, String password) async {
-    try {
-      AuthResult result = await _auth.createUserWithEmailAndPassword(
-          email: email, password: password);
-      FirebaseUser user = result.user;
-      await DatabaseService(uid: user.uid)
-          .insertUser(full_name, email, password);
-      return _userFormFireBaseUser(user);
-    } catch (e) {
-      // print(e.toString());
-      return null;
-    }
+    // try {
+    AuthResult result = await _auth.createUserWithEmailAndPassword(
+        email: email, password: password);
+    FirebaseUser user = result.user;
+    await DatabaseService(uid: user.uid).insertUser(full_name, email, password);
+    return _userFormFireBaseUser(user);
+    // } catch (e) {
+    //   // print(e.toString());
+    //   return null;
+    // }
   }
 
   Future ForgetPassword(String email) async {

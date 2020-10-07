@@ -1,5 +1,9 @@
+import 'dart:io';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:swe444/Services/auth.dart';
 import 'package:swe444/main.dart';
 import 'package:swe444/shared/loading.dart';
@@ -51,23 +55,47 @@ class Sing extends State<Singup> {
                             highlightColor: Colors.transparent,
                             splashColor: Colors.transparent,
                             onTap: () async {
-                              if (_formKey1.currentState.validate()) {
-                                // print("$email and $password");
-                                setState(() {
-                                  loading = true;
-                                });
-                                dynamic result = await _authServices
-                                    .RegisterWithEmailAndPassword(
-                                        full_name, email, password);
-                                if (result == null) {
-                                  error = 'please supply a valid email';
+                              try {
+                                if (_formKey1.currentState.validate()) {
+                                  // print("$email and $password");
                                   setState(() {
-                                    loading = false;
-                                    errorMessage = Text(error,
-                                        style: textStyle().style5(weidth));
+                                    loading = true;
                                   });
-                                } else {}
-                              }
+                                  dynamic result = await _authServices
+                                      .RegisterWithEmailAndPassword(
+                                          full_name, email, password);
+                                  if (result == null) {
+                                    error = 'please supply a valid email';
+                                    setState(() {
+                                      loading = false;
+                                      errorMessage = Text(error,
+                                          style: textStyle().style5(weidth));
+                                    });
+                                  } else {}
+                                }
+                              } catch (e) {
+                                if (e is PlatformException) {
+                                  if (e.code == "ERROR_EMAIL_ALREADY_IN_USE") {
+                                    // print("this email already exist");
+                                    setState(() {
+                                      loading = false;
+                                      error = 'this email already exist';
+                                      errorMessage = Text(error,
+                                          style: textStyle().style5(weidth));
+                                    });
+                                  }
+                                  if (e.code == "ERROR_INVALID_EMAIL") {
+                                    setState(() {
+                                      loading = false;
+                                      error = 'invalid email ';
+                                      errorMessage = Text(error,
+                                          style: textStyle().style5(weidth));
+                                    });
+                                  }
+                                } else {
+                                  print("iy shi");
+                                }
+                              } //catch
                             },
                             child: Image(
                               width: weidth * 0.4,
