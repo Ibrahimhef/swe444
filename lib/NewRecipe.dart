@@ -149,7 +149,7 @@ class addPage extends State<AddPage> {
                                 ),
                                 Expanded(
                                   child: ListView.builder(
-                                    scrollDirection: Axis.horizontal,
+                                    scrollDirection: Axis.vertical,
                                     itemCount: cat.length,
                                     itemBuilder:
                                         (BuildContext context, int index) {
