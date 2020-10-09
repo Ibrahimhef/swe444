@@ -1,6 +1,7 @@
 class Meal {
   final int category;
   final String title;
+  final String description;
   final String ingredients;
   final String step;
   final int duration;
@@ -10,6 +11,7 @@ class Meal {
   Meal(
       {this.category,
       this.title,
+      this.description,
       this.ingredients,
       this.step,
       this.duration,
