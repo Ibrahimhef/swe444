@@ -812,6 +812,8 @@ class catogory extends State<Catogory> {
 class recipe {
   final String name, decraption, path, time;
   final int caterogry;
-
   recipe({this.name, this.decraption, this.path, this.time, this.caterogry});
+  String getName(){
+    return this.name;
+  }
 }

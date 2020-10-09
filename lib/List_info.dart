@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:swe444/DetiledRecipe.dart';
 
 class ListInfo extends StatefulWidget {
   final double weidth, height;
@@ -30,7 +31,13 @@ class listInfo extends State<ListInfo> {
             return InkWell(
               highlightColor: Colors.transparent,
               splashColor: Colors.transparent,
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                    builder: (context) =>
+                new DetildPage(weidth, height, "Test")));
+              },
               child: Padding(
                 padding: const EdgeInsets.only(left: 8, right: 8),
                 child: Container(
