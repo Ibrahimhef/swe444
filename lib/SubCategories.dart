@@ -18,6 +18,7 @@ class Catogory extends StatefulWidget {
 
 class catogory extends State<Catogory> {
   final double weidth, height;
+  List<recipe> ListOfCurrentCateogry = new List<recipe>();
   int category;
   var cat = [
     "assets/Juice_page@3x.png",
@@ -731,7 +732,7 @@ class catogory extends State<Catogory> {
 
   catogory(this.weidth, this.height, this.category);
 
-  List<recipe> ListOfCurrentCateogry = new List<recipe>();
+
 
   @override
   Widget build(BuildContext context) {

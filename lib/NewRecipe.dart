@@ -14,7 +14,7 @@ class AddPage extends StatefulWidget {
 
 class addPage extends State<AddPage> {
   final double weidth, height;
-
+  int _defaultChoiceIndex = 0;
   addPage(this.weidth, this.height);
 
   @override
@@ -36,7 +36,8 @@ class addPage extends State<AddPage> {
       "assets/Sweets _icon@3x.png"
     ];
 
-    int _defaultChoiceIndex = 0;
+
+    int index=0;
 
     return SingleChildScrollView(
       child: Container(
@@ -152,32 +153,34 @@ class addPage extends State<AddPage> {
                                     itemCount: cat.length,
                                     itemBuilder:
                                         (BuildContext context, int index) {
-                                      return ChoiceChip(
-                                        labelPadding: EdgeInsets.all(5.0),
-                                        avatar: CircleAvatar(
-                                          backgroundColor: Colors.white,
-                                          child: Image(
-                                              image: AssetImage(path[index])),
+                                      return Container(
+                                        margin: EdgeInsets.all(5),
+                                        child: ChoiceChip(
+                                          labelPadding: EdgeInsets.all(5.0),
+                                          avatar: CircleAvatar(
+                                            backgroundColor: Colors.white,
+                                            child: Image(
+                                                image: AssetImage(path[index])),
+                                          ),
+                                          label: Text(
+                                            cat[index],
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 15),
+                                          ),
+                                          backgroundColor: Colors.grey.shade300,
+                                          elevation: 6.0,
+                                          shadowColor: Colors.grey[60],
+                                          padding: EdgeInsets.all(6.0),
+                                          selectedColor:
+                                              Color.fromRGBO(242, 201, 54, 1),
+                                          selected: _defaultChoiceIndex == index,
+                                          onSelected: (bool selected) {
+                                            setState(() {
+                                              _defaultChoiceIndex = selected ? index : null;
+                                                                                          });
+                                          },
                                         ),
-                                        label: Text(
-                                          cat[index],
-                                          style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 15),
-                                        ),
-                                        backgroundColor: Colors.grey.shade300,
-                                        elevation: 6.0,
-                                        shadowColor: Colors.grey[60],
-                                        padding: EdgeInsets.all(6.0),
-                                        selectedColor:
-                                            Color.fromRGBO(242, 201, 54, 1),
-                                        selected: _defaultChoiceIndex == index,
-                                        onSelected: (bool selected) {
-                                          setState(() {
-                                            _defaultChoiceIndex = selected ? index : null;
-                                            print(_defaultChoiceIndex);
-                                          });
-                                        },
                                       );
                                     },
                                   ),
