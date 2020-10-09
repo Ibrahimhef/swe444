@@ -781,7 +781,7 @@ class catogory extends State<Catogory> {
               context,
               new MaterialPageRoute(
                   builder: (context) =>
-                      new AddPage(weidth: weidth, height: height)));
+                      new AddPage(weidth,height)));
         },
         backgroundColor: Color(0xfff2780c),
         child: Icon(Icons.add),
