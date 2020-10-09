@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:provider/provider.dart';
 import 'package:swe444/List_info.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -738,6 +739,10 @@ class catogory extends State<Catogory> {
 
   @override
   Widget build(BuildContext context) {
+    // final datainf = Provider.of<QuerySnapshot>(context);
+    // for (var doc in datainf.documents) {
+    //   print(doc.data);
+    // }
     ListOfCurrentCateogry.clear();
 
     for (int i = 0; i < ListOfCateogry.length; i++) {

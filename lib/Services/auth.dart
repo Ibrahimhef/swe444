@@ -62,6 +62,60 @@ class AuthServices {
       AuthResult result = await _auth.signInWithEmailAndPassword(
           email: email, password: password);
       FirebaseUser user = result.user;
+      await DatabaseService(uid: user.uid).insertMeals(
+          0,
+          "test1",
+          "description description description description",
+          "1",
+          "step step",
+          40,
+          email,
+          "imageURL");
+      await DatabaseService(uid: user.uid).insertMeals(
+          1,
+          "test2",
+          "description description description description",
+          "1",
+          "step step",
+          50,
+          email,
+          "imageURL");
+      await DatabaseService(uid: user.uid).insertMeals(
+          2,
+          "test3",
+          "description description description description",
+          "1",
+          "step step",
+          40,
+          email,
+          "imageURL");
+      await DatabaseService(uid: user.uid).insertMeals(
+          3,
+          "test4",
+          "description description description description",
+          "1",
+          "step step",
+          40,
+          email,
+          "imageURL");
+      await DatabaseService(uid: user.uid).insertMeals(
+          4,
+          "test5",
+          "description description description description",
+          "1",
+          "step step",
+          40,
+          email,
+          "imageURL");
+      await DatabaseService(uid: user.uid).insertMeals(
+          5,
+          "test6",
+          "description description description description",
+          "1",
+          "step step",
+          40,
+          email,
+          "imageURL");
       return _userFormFireBaseUser(user);
     } catch (e) {
       // print(e.toString());
