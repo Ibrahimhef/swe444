@@ -7,12 +7,11 @@ import 'package:swe444/models/meals.dart';
 class ListInfo extends StatefulWidget {
   final double weidth, height;
 
-
-  ListInfo( this.weidth, this.height);
+  ListInfo(this.weidth, this.height);
 
   @override
   State<StatefulWidget> createState() {
-    return listInfo( weidth, height);
+    return listInfo(weidth, height);
   }
 }
 
@@ -20,17 +19,20 @@ class listInfo extends State<ListInfo> {
   final double weidth, height;
   static int category;
   List meal = [];
-  listInfo( this.weidth, this.height);
+  listInfo(this.weidth, this.height);
 
   @override
   Widget build(BuildContext context) {
-
-    meal.clear();
-    final currentMeal = Provider.of<List<Meal>>(context);
-    for (int i = 0; i < currentMeal.length; i++) {
-      if (currentMeal[i].category == category) {
-        meal.add(currentMeal[i]);
+    try {
+      meal.clear();
+      final currentMeal = Provider.of<List<Meal>>(context);
+      for (int i = 0; i < currentMeal.length; i++) {
+        if (currentMeal[i].category == category) {
+          meal.add(currentMeal[i]);
+        }
       }
+    } catch (e) {
+      print(e.toString());
     }
     // currentMeal.forEach((element) {
     //   // print("element:");
@@ -128,7 +130,8 @@ class listInfo extends State<ListInfo> {
                               color: Color(0xffE1E1E1),
                               borderRadius: BorderRadius.circular(25.0),
                             ),
-                            child: Image.network(meal[index].imageURL.toString()),
+                            child:
+                                Image.network(meal[index].imageURL.toString()),
                           )
                         ],
                       ),
@@ -140,7 +143,8 @@ class listInfo extends State<ListInfo> {
           }),
     );
   }
-  void cat(int cat){
+
+  void cat(int cat) {
     setState(() {
       category = cat;
     });

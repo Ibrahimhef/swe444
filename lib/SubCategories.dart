@@ -35,16 +35,6 @@ class catogory extends State<Catogory> {
 
   var cat1 = ["Juice", "Appetizers", "Main Dishes", "Salads", "Soup", "Sweets"];
 
-  List mealData() {
-    List meal = [];
-    final currentMeal = Provider.of<List<Meal>>(context);
-    for (int i = 0; i < currentMeal.length; i++) {
-      if (currentMeal[i].category == 5) {
-        meal.add(currentMeal[i]);
-      }
-    }
-  }
-
   void selepage(int index) {
     setState(
       () {
@@ -57,14 +47,12 @@ class catogory extends State<Catogory> {
           //   if (ListOfCateogry[i].caterogry == category)
           //     ListOfCurrentCateogry.add(ListOfCateogry.elementAt(i));
           // }
+        } else {
+          Navigator.push(
+              context,
+              new MaterialPageRoute(
+                  builder: (context) => new Profile(weidth, height, [])));
         }
-        // else {
-        //   Navigator.push(
-        //       context,
-        //       new MaterialPageRoute(
-        //           builder: (context) =>
-        //               new Profile(weidth, height, ListOfCateogry)));
-        // }
       },
     );
   }
@@ -73,7 +61,7 @@ class catogory extends State<Catogory> {
   int mode = 0;
   @override
   Widget build(BuildContext context) {
-    print(Provider.of<User>(context).email);
+    // print("email:" + Provider.of<User>(context).email);
     // ListOfCurrentCateogry.clear();
     // for (int i = 0; i < ListOfCateogry.length; i++) {
     //   if (ListOfCateogry[i].caterogry == _category)

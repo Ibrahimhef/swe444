@@ -14,8 +14,11 @@ class AuthServices {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final googleSignIn = GoogleSignIn();
 
-  User _userFormFireBaseUser(FirebaseUser user, {String email}) {
-    return user != null ? User(uid: user.uid, email: email) : null;
+  User _userFormFireBaseUser(FirebaseUser user,
+      {String email, String full_name}) {
+    return user != null
+        ? User(uid: user.uid, email: email, full_name: full_name)
+        : null;
   }
 
   Stream<User> get user {
@@ -63,51 +66,10 @@ class AuthServices {
       AuthResult result = await _auth.signInWithEmailAndPassword(
           email: email, password: password);
       FirebaseUser user = result.user;
-      await DatabaseService(uid: user.uid).insertMeals(
-          0,
-          "test1",
-          "description description description description",
-          "1",
-          "step step",
-          40,
-          email,
-          "imageURL");
-      await DatabaseService(uid: user.uid).insertMeals(
-          1,
-          "test2",
-          "description description description description",
-          "1",
-          "step step",
-          50,
-          email,
-          "imageURL");
-      await DatabaseService(uid: user.uid).insertMeals(
-          2,
-          "test3",
-          "description description description description",
-          "1",
-          "step step",
-          40,
-          email,
-          "imageURL");
-      await DatabaseService(uid: user.uid).insertMeals(
-          3,
-          "test4",
-          "description description description description",
-          "1",
-          "step step",
-          40,
-          email,
-          "imageURL");
-      await DatabaseService(uid: user.uid).insertMeals(
-          4,
-          "test5",
-          "description description description description",
-          "1",
-          "step step",
-          40,
-          email,
-          "imageURL");
+      Stream<List<profile>> users = await DatabaseService(uid: user.uid).users;
+      users.listen((event) {
+        print("length of data: ${event.length}");
+      });
       return _userFormFireBaseUser(
         user,
         email: email,
@@ -125,7 +87,7 @@ class AuthServices {
         email: email, password: password);
     FirebaseUser user = result.user;
     await DatabaseService(uid: user.uid).insertUser(full_name, email, password);
-    return _userFormFireBaseUser(user);
+    return _userFormFireBaseUser(user, email: email, full_name: full_name);
     // } catch (e) {
     //   // print(e.toString());
     //   return null;
