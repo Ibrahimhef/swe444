@@ -49,6 +49,7 @@ class catogory extends State<Catogory> {
         if (index < 6) {
           setState(() {
             listInfo.category=index;
+            _category= index;
           });
           // for (int i = 0; i < ListOfCateogry.length; i++) {
           //   if (ListOfCateogry[i].caterogry == category)
