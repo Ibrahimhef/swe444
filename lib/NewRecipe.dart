@@ -98,7 +98,7 @@ class addPage extends State<AddPage> {
                                 Padding(
                                   padding: const EdgeInsets.only(top:3 , bottom: 3, left: 16 , right: 16),
                                   child: TextFormField(
-                                    maxLines: 3,
+                                    maxLines: 2,
                                     decoration: InputDecoration(
                                       hintText: "Enter Ingredients",
                                       border: UnderlineInputBorder(
@@ -112,7 +112,7 @@ class addPage extends State<AddPage> {
                                 Padding(
                                   padding: const EdgeInsets.only(top:3 , bottom: 8, left: 16 , right: 16),
                                   child: TextFormField(
-                                    maxLines: 3,
+                                    maxLines: 2,
                                     decoration: InputDecoration(
                                       hintText: "Enter Steps",
                                       border: UnderlineInputBorder(
@@ -191,7 +191,6 @@ class addPage extends State<AddPage> {
       onSelected: (bool IsSelected) {
         setState(() {
           _index = IsSelected ? selectedIndex : null;
-          print(_index);
         });
       },
       selectedColor: Color.fromRGBO(242, 201, 54, 1),

@@ -6,31 +6,29 @@ import 'package:swe444/models/meals.dart';
 
 class ListInfo extends StatefulWidget {
   final double weidth, height;
-  int category;
 
-  ListInfo(this.category, this.weidth, this.height);
+
+  ListInfo( this.weidth, this.height);
 
   @override
   State<StatefulWidget> createState() {
-    return listInfo(category, weidth, height);
+    return listInfo( weidth, height);
   }
 }
 
 class listInfo extends State<ListInfo> {
   final double weidth, height;
-  int category;
-
-  listInfo(this.category, this.weidth, this.height);
+  static int category;
   List meal = [];
+  listInfo( this.weidth, this.height);
+
   @override
   Widget build(BuildContext context) {
+
     meal.clear();
-    print("category : $category");
     final currentMeal = Provider.of<List<Meal>>(context);
-    print(currentMeal);
     for (int i = 0; i < currentMeal.length; i++) {
       if (currentMeal[i].category == category) {
-        print(currentMeal[i].email);
         meal.add(currentMeal[i]);
       }
     }
@@ -144,5 +142,10 @@ class listInfo extends State<ListInfo> {
             );
           }),
     );
+  }
+  void cat(int cat){
+    setState(() {
+      category = cat;
+    });
   }
 }
