@@ -120,99 +120,105 @@ class addPage extends State<AddPage> {
                                       ),
                                     ),
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 3, bottom: 3, left: 16, right: 16),
-                                    child: TextFormField(
-                                      onChanged: (value) => title = value,
-                                      validator: (value) => value.isEmpty
-                                          ? "fill the title"
-                                          : null,
-                                      decoration: InputDecoration(
-                                        hintText: "Enter Recipe title",
-                                        border: UnderlineInputBorder(
-                                            borderSide: new BorderSide(
-                                                color: Colors.black54,
-                                                width: 0.5,
-                                                style: BorderStyle.none)),
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 3, bottom: 3, left: 16, right: 16),
-                                    child: TextFormField(
-                                      onChanged: (value) => description = value,
-                                      validator: (value) => value.isEmpty
-                                          ? "fill the description"
-                                          : null,
-                                      maxLines: 1,
-                                      decoration: InputDecoration(
-                                        hintText: "Enter Recipe Description",
-                                        border: UnderlineInputBorder(
-                                            borderSide: new BorderSide(
-                                                color: Colors.black54,
-                                                width: 0.5,
-                                                style: BorderStyle.none)),
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 3, bottom: 3, left: 16, right: 16),
-                                    child: TextFormField(
-                                      onChanged: (value) => ingredients = value,
-                                      validator: (value) => value.isEmpty
-                                          ? "fill the ingredients"
-                                          : null,
-                                      maxLines: 1,
-                                      decoration: InputDecoration(
-                                        hintText: "Enter Ingredients",
-                                        border: UnderlineInputBorder(
-                                            borderSide: new BorderSide(
-                                                color: Colors.black54,
-                                                width: 0.5,
-                                                style: BorderStyle.none)),
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 3, bottom: 8, left: 16, right: 16),
-                                    child: TextFormField(
-                                      onChanged: (value) => step = value,
-                                      validator: (value) => value.isEmpty
-                                          ? "fill the steps"
-                                          : null,
-                                      maxLines: 1,
-                                      decoration: InputDecoration(
-                                        hintText: "Enter Steps",
-                                        border: UnderlineInputBorder(
-                                            borderSide: new BorderSide(
-                                                color: Colors.black54,
-                                                width: 0.5,
-                                                style: BorderStyle.none)),
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 3, bottom: 8, left: 16, right: 16),
-                                    child: TextFormField(
-                                      onChanged: (value) =>
-                                          duration = int.parse(value),
-                                      validator: (value) => value.isEmpty
-                                          ? "fill the duration"
-                                          : null,
-                                      // maxLines: 1,
-                                      decoration: InputDecoration(
-                                        hintText: "Enter recipe duration",
-                                        border: UnderlineInputBorder(
-                                            borderSide: new BorderSide(
-                                                color: Colors.black54,
-                                                width: 0.5,
-                                                style: BorderStyle.none)),
-                                      ),
+                                  Container(
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              top: 3, bottom: 3, left: 16, right: 16),
+                                          child: TextFormField(
+                                            onChanged: (value) => title = value,
+                                            validator: (value) => value.isEmpty
+                                                ? "fill the title"
+                                                : null,
+                                            decoration: InputDecoration(
+                                              hintText: "Enter Recipe title",
+                                              border: UnderlineInputBorder(
+                                                  borderSide: new BorderSide(
+                                                      color: Colors.black54,
+                                                      width: 0.5,
+                                                      style: BorderStyle.none)),
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              top: 3, bottom: 3, left: 16, right: 16),
+                                          child: TextFormField(
+                                            onChanged: (value) => description = value,
+                                            validator: (value) => value.isEmpty
+                                                ? "fill the description"
+                                                : null,
+                                            maxLines: 1,
+                                            decoration: InputDecoration(
+                                              hintText: "Enter Recipe Description",
+                                              border: UnderlineInputBorder(
+                                                  borderSide: new BorderSide(
+                                                      color: Colors.black54,
+                                                      width: 0.5,
+                                                      style: BorderStyle.none)),
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              top: 3, bottom: 3, left: 16, right: 16),
+                                          child: TextFormField(
+                                            onChanged: (value) => ingredients = value,
+                                            validator: (value) => value.isEmpty
+                                                ? "fill the ingredients"
+                                                : null,
+                                            maxLines: 1,
+                                            decoration: InputDecoration(
+                                              hintText: "Enter Ingredients",
+                                              border: UnderlineInputBorder(
+                                                  borderSide: new BorderSide(
+                                                      color: Colors.black54,
+                                                      width: 0.5,
+                                                      style: BorderStyle.none)),
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              top: 3, bottom: 8, left: 16, right: 16),
+                                          child: TextFormField(
+                                            onChanged: (value) => step = value,
+                                            validator: (value) => value.isEmpty
+                                                ? "fill the steps"
+                                                : null,
+                                            maxLines: 1,
+                                            decoration: InputDecoration(
+                                              hintText: "Enter Steps",
+                                              border: UnderlineInputBorder(
+                                                  borderSide: new BorderSide(
+                                                      color: Colors.black54,
+                                                      width: 0.5,
+                                                      style: BorderStyle.none)),
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              top: 3, bottom: 8, left: 16, right: 16),
+                                          child: TextFormField(
+                                            onChanged: (value) =>
+                                            duration = int.parse(value),
+                                            validator: (value) => value.isEmpty
+                                                ? "fill the duration"
+                                                : null,
+                                            // maxLines: 1,
+                                            decoration: InputDecoration(
+                                              hintText: "Enter recipe duration",
+                                              border: UnderlineInputBorder(
+                                                  borderSide: new BorderSide(
+                                                      color: Colors.black54,
+                                                      width: 0.5,
+                                                      style: BorderStyle.none)),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                   Padding(
@@ -250,7 +256,7 @@ class addPage extends State<AddPage> {
                                             margin: EdgeInsets.all(5),
                                             child: chip(
                                                 cat[5],
-                                                "assets/Sweets _icon@3x.png",
+                                                "assets/Sweets_icon@3x.png",
                                                 5)),
                                       ],
                                     ),

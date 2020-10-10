@@ -128,10 +128,7 @@ class listInfo extends State<ListInfo> {
                               color: Color(0xffE1E1E1),
                               borderRadius: BorderRadius.circular(25.0),
                             ),
-                            child: Image(
-                              //image Path
-                              image: AssetImage("Sweets _icon@3x.png"),
-                            ),
+                            child: Image.network(meal[index].imageURL.toString()),
                           )
                         ],
                       ),
