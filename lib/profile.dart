@@ -57,7 +57,7 @@ class profile extends State<Profile> {
                           splashColor: Colors.transparent,
                           onTap: () async {
                             setState(() {
-                              loading = true;
+                              // loading = true;
                             });
                             await _auth.SignOut();
                             Navigator.of(context).pop();

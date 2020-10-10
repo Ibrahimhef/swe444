@@ -67,13 +67,14 @@ class AuthServices {
           email: email, password: password);
       FirebaseUser user = result.user;
       Stream<List<profile>> users = await DatabaseService(uid: user.uid).users;
+      String full_name;
       users.listen((event) {
         print("length of data: ${event.length}");
+        event.forEach((element) {
+          if (element.email == email) full_name = element.name;
+        });
       });
-      return _userFormFireBaseUser(
-        user,
-        email: email,
-      );
+      return _userFormFireBaseUser(user, email: email, full_name: full_name);
     } catch (e) {
       // print(e.toString());
       return null;
@@ -108,10 +109,10 @@ class AuthServices {
 //sign out edit by albra
   Future SignOut() async {
     try {
-      FirebaseUser user = await _auth.currentUser();
-      if (user.providerData[1].providerId == 'google.com') {
-        await googleSignIn.disconnect();
-      }
+      // FirebaseUser user = await _auth.currentUser();
+      // if (user.providerData[1].providerId == 'google.com') {
+      //   await googleSignIn.disconnect();
+      // }
       print("Sign out");
       return await _auth.signOut();
     } catch (e) {

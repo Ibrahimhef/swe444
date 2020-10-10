@@ -36,6 +36,7 @@ class catogory extends State<Catogory> {
   var cat1 = ["Juice", "Appetizers", "Main Dishes", "Salads", "Soup", "Sweets"];
 
   void selepage(int index) {
+    print("email:${user.email}");
     setState(
       () {
         if (index < 6) {

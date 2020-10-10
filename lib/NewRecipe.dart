@@ -4,6 +4,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:provider/provider.dart';
 import 'package:swe444/Services/auth.dart';
 import 'package:path/path.dart' as Path;
 import 'package:swe444/Services/database.dart';
@@ -50,6 +51,7 @@ class addPage extends State<AddPage> {
     storageReference.getDownloadURL().then((fileURL) {
       setState(() {
         uploadedFileURL = fileURL;
+        // return fileURL;
         print(uploadedFileURL);
       });
     });
@@ -115,8 +117,10 @@ class addPage extends State<AddPage> {
                                       onTap: chooseFile,
                                       child: Image(
                                         //image Path
-                                        image:
-                                            AssetImage('assets/AddPic@3x.png'),
+                                        image: _image != null
+                                            ? AssetImage(_image.path)
+                                            : AssetImage(
+                                                'assets/AddPic@3x.png'),
                                       ),
                                     ),
                                   ),
@@ -125,7 +129,10 @@ class addPage extends State<AddPage> {
                                       children: [
                                         Padding(
                                           padding: const EdgeInsets.only(
-                                              top: 3, bottom: 3, left: 16, right: 16),
+                                              top: 3,
+                                              bottom: 3,
+                                              left: 16,
+                                              right: 16),
                                           child: TextFormField(
                                             onChanged: (value) => title = value,
                                             validator: (value) => value.isEmpty
@@ -143,15 +150,20 @@ class addPage extends State<AddPage> {
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.only(
-                                              top: 3, bottom: 3, left: 16, right: 16),
+                                              top: 3,
+                                              bottom: 3,
+                                              left: 16,
+                                              right: 16),
                                           child: TextFormField(
-                                            onChanged: (value) => description = value,
+                                            onChanged: (value) =>
+                                                description = value,
                                             validator: (value) => value.isEmpty
                                                 ? "fill the description"
                                                 : null,
                                             maxLines: 1,
                                             decoration: InputDecoration(
-                                              hintText: "Enter Recipe Description",
+                                              hintText:
+                                                  "Enter Recipe Description",
                                               border: UnderlineInputBorder(
                                                   borderSide: new BorderSide(
                                                       color: Colors.black54,
@@ -162,9 +174,13 @@ class addPage extends State<AddPage> {
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.only(
-                                              top: 3, bottom: 3, left: 16, right: 16),
+                                              top: 3,
+                                              bottom: 3,
+                                              left: 16,
+                                              right: 16),
                                           child: TextFormField(
-                                            onChanged: (value) => ingredients = value,
+                                            onChanged: (value) =>
+                                                ingredients = value,
                                             validator: (value) => value.isEmpty
                                                 ? "fill the ingredients"
                                                 : null,
@@ -181,7 +197,10 @@ class addPage extends State<AddPage> {
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.only(
-                                              top: 3, bottom: 8, left: 16, right: 16),
+                                              top: 3,
+                                              bottom: 8,
+                                              left: 16,
+                                              right: 16),
                                           child: TextFormField(
                                             onChanged: (value) => step = value,
                                             validator: (value) => value.isEmpty
@@ -200,10 +219,13 @@ class addPage extends State<AddPage> {
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.only(
-                                              top: 3, bottom: 8, left: 16, right: 16),
+                                              top: 3,
+                                              bottom: 8,
+                                              left: 16,
+                                              right: 16),
                                           child: TextFormField(
                                             onChanged: (value) =>
-                                            duration = int.parse(value),
+                                                duration = int.parse(value),
                                             validator: (value) => value.isEmpty
                                                 ? "fill the duration"
                                                 : null,
@@ -281,17 +303,35 @@ class addPage extends State<AddPage> {
                   child: FlatButton(
                       highlightColor: Colors.transparent,
                       splashColor: Colors.transparent,
-                      onPressed: () {
-                        uploadFile();
-                        DatabaseService(uid: user.uid).insertMeals(
-                            category,
-                            title,
-                            description,
-                            ingredients,
-                            step,
-                            duration,
-                            user.email,
-                            uploadedFileURL);
+                      onPressed: () async {
+                        if (_formKey2.currentState.validate()) {
+                          // return fileURL;
+                          final user = Provider.of<User>(context);
+                          await uploadFile().whenComplete(() => {
+                                DatabaseService(uid: user.uid).insertMeals(
+                                    category,
+                                    title,
+                                    description,
+                                    ingredients,
+                                    step,
+                                    duration,
+                                    user.email,
+                                    uploadedFileURL)
+                              });
+                          // uploadFile();
+
+                          print(user.uid);
+                          //   DatabaseService(uid: user.uid).insertMeals(
+                          //       category,
+                          //       title,
+                          //       description,
+                          //       ingredients,
+                          //       step,
+                          //       duration,
+                          //       user.email,
+                          //       uploadedFileURL);
+                          // }
+                        }
                       },
                       child: Image(
                         image: AssetImage('assets/AddButton@3x.png'),
