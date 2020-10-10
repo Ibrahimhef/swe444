@@ -63,30 +63,25 @@ class detildPage extends State<DetildPage> {
                                         AssetImage("assets/Appetizers_icon@3x.png"),
                                   )),
                               Container(
-                                child: Text(
-                                  "Mozzarella sticks are elongated pieces of battered or breaded mozzarella, usually served as hors d'oeuvre.",
-                                  style: TextStyle(fontSize: 25),
+                                alignment: Alignment.topLeft,
+                                child: AutoSizeText(
+                                  "Descraption",
+                                  style: TextStyle(fontSize: weidth *0.05),
                                 ),
                               ),
                               Container(
                                 alignment: Alignment.topLeft,
                                 margin: EdgeInsets.only(top: 10 , bottom: 10 , right: 5, left: 5),
-                                child: Text(
-                                  "2 large eggs eggs, beaten"
-                                      "\n ¼ cup water"
-                                      "\n 1 ½ cups Italian seasoned bread crumbs"
-                                      "\n ½ teaspoon garlic salt",
-                                  style: TextStyle(fontSize: 20),
+                                child: AutoSizeText(
+                                  "ingradents",
+                                  style: TextStyle(fontSize: weidth *0.05),
                                 ),
                               ),
                   Container(
                     alignment: Alignment.topLeft,
                     margin: EdgeInsets.only(top: 10 , bottom: 10 , right: 5, left: 5),
                     child: Text(
-                      "2 large eggs eggs, beaten"
-                          "\n ¼ cup water"
-                          "\n 1 ½ cups Italian seasoned bread crumbs"
-                          "\n ½ teaspoon garlic salt",
+                      "steps",
                       style: TextStyle(fontSize: 20),
                     ),
                   ),
@@ -94,11 +89,8 @@ class detildPage extends State<DetildPage> {
                     alignment: Alignment.topLeft,
                     margin: EdgeInsets.only(top: 10 , bottom: 10 , right: 5, left: 5),
                     child: Text(
-                      "2 large eggs eggs, beaten"
-                          "\n ¼ cup water"
-                          "\n 1 ½ cups Italian seasoned bread crumbs"
-                          "\n ½ teaspoon garlic salt",
-                      style: TextStyle(fontSize: 20),
+                      "deuration",
+                      style: TextStyle(fontSize: weidth *0.05),
                     ),)
                             ],
                           ),
