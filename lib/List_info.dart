@@ -1,32 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:provider/provider.dart';
 import 'package:swe444/DetiledRecipe.dart';
+import 'package:swe444/models/meals.dart';
 
 class ListInfo extends StatefulWidget {
   final double weidth, height;
-  final List ListOfRecipeces;
+  int category;
 
-  ListInfo(this.ListOfRecipeces, this.weidth, this.height);
+  ListInfo(this.category, this.weidth, this.height);
 
   @override
   State<StatefulWidget> createState() {
-    return listInfo(ListOfRecipeces, weidth, height);
+    return listInfo(category, weidth, height);
   }
 }
 
 class listInfo extends State<ListInfo> {
   final double weidth, height;
-  List ListOfRecipeces;
+  int category;
 
-  listInfo(this.ListOfRecipeces, this.weidth, this.height);
-
+  listInfo(this.category, this.weidth, this.height);
+  List meal = [];
   @override
   Widget build(BuildContext context) {
+    meal.clear();
+    print("category : $category");
+    final currentMeal = Provider.of<List<Meal>>(context);
+    print(currentMeal);
+    for (int i = 0; i < currentMeal.length; i++) {
+      if (currentMeal[i].category == category) {
+        print(currentMeal[i].email);
+        meal.add(currentMeal[i]);
+      }
+    }
+    // currentMeal.forEach((element) {
+    //   // print("element:");
+    //   // print(element.email);
+    //   if (element.category == category) {
+    //     meal.add(element);
+    //     print(element.email);
+    //   }
+    // });
     return GlowingOverscrollIndicator(
       color: Color(0xfff2b705),
       axisDirection: AxisDirection.down,
       child: ListView.builder(
-          itemCount: ListOfRecipeces.length,
+          itemCount: meal.length,
           itemBuilder: (context, index) {
             return InkWell(
               highlightColor: Colors.transparent,
@@ -35,8 +55,8 @@ class listInfo extends State<ListInfo> {
                 Navigator.push(
                     context,
                     new MaterialPageRoute(
-                    builder: (context) =>
-                new DetildPage(weidth, height, "Test")));
+                        builder: (context) =>
+                            new DetildPage(weidth, height, "Test")));
               },
               child: Padding(
                 padding: const EdgeInsets.only(left: 8, right: 8),
@@ -65,7 +85,8 @@ class listInfo extends State<ListInfo> {
                                     width: (weidth * 0.85) * 0.6,
                                     height: (height * 0.22) * 0.2,
                                     child: Text(
-                                      ListOfRecipeces[index].name,
+                                      // ListOfRecipeces[index].name,
+                                      meal[index].title,
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 20),
@@ -75,15 +96,15 @@ class listInfo extends State<ListInfo> {
                                     width: (weidth * 0.85) * 0.95,
                                     height: (height * 0.22) * 0.45,
                                     child: Text(
-                                      ListOfRecipeces[index].decraption,
+                                      // ListOfRecipeces[index].decraption,
+                                      meal[index].description,
                                       style: TextStyle(fontSize: 18),
                                       overflow: TextOverflow.fade,
-
                                     )),
 
                                 Center(
                                   child: Container(
-                                    width: (weidth * 0.85) ,
+                                    width: (weidth * 0.85),
                                     height: (height * 0.22) * 0.15,
                                     decoration: BoxDecoration(
                                       color: Color(0xffCBDCC3),
@@ -91,7 +112,9 @@ class listInfo extends State<ListInfo> {
                                     ),
                                     child: Center(
                                       child: Text(
-                                        "Estimated time " + ListOfRecipeces[index].time,
+                                        "Estimated time " +
+                                            // ListOfRecipeces[index].time,
+                                            meal[index].duration.toString(),
                                         style: TextStyle(fontSize: 20),
                                       ),
                                     ),
@@ -109,7 +132,7 @@ class listInfo extends State<ListInfo> {
                             ),
                             child: Image(
                               //image Path
-                              image: AssetImage(ListOfRecipeces[index].path),
+                              image: AssetImage("Sweets _icon@3x.png"),
                             ),
                           )
                         ],

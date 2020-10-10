@@ -53,7 +53,7 @@ class DatabaseService {
   }
 
   Stream<List<Meal>> get meals {
-    return userCollection.snapshots().map(_mealListFromSnapShot);
+    return mealCollection.snapshots().map(_mealListFromSnapShot);
   }
 
   List<profile> _userListFromSnapShot(QuerySnapshot snapshot) {
