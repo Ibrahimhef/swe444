@@ -38,6 +38,8 @@ dependencies:
   page_transition: ^1.1.7+2
   provider: ^3.1.0
   flutter_spinkit: "^4.1.2"
+  image_picker: ^0.6.0+17    
+  firebase_storage: ^3.0.3 
   # image_picker: ^0.6.0+17    
   # firebase_storage: ^3.0.3 
 dev_dependencies:

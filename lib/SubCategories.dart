@@ -5,22 +5,24 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:swe444/Services/database.dart';
 import 'package:swe444/models/meals.dart';
+import 'package:swe444/models/user.dart';
 import 'package:swe444/profile.dart';
 import 'package:swe444/NewRecipe.dart';
 
 class Catogory extends StatefulWidget {
   final double weidth, height;
-
-  Catogory(this.weidth, this.height);
+  final User user;
+  Catogory(this.weidth, this.height, this.user);
 
   @override
   State<StatefulWidget> createState() {
-    return catogory(weidth, height, 0);
+    return catogory(weidth, height, 0, user);
   }
 }
 
 class catogory extends State<Catogory> {
   final double weidth, height;
+  final User user;
   int _category;
   var cat = [
     "assets/Juice_page@3x.png",
@@ -48,8 +50,8 @@ class catogory extends State<Catogory> {
       () {
         if (index < 6) {
           setState(() {
-            listInfo.category=index;
-            _category= index;
+            listInfo.category = index;
+            _category = index;
           });
           // for (int i = 0; i < ListOfCateogry.length; i++) {
           //   if (ListOfCateogry[i].caterogry == category)
@@ -67,10 +69,11 @@ class catogory extends State<Catogory> {
     );
   }
 
-  catogory(this.weidth, this.height, this._category);
+  catogory(this.weidth, this.height, this._category, this.user);
   int mode = 0;
   @override
   Widget build(BuildContext context) {
+    print(Provider.of<User>(context).email);
     // ListOfCurrentCateogry.clear();
     // for (int i = 0; i < ListOfCateogry.length; i++) {
     //   if (ListOfCateogry[i].caterogry == _category)
@@ -99,7 +102,7 @@ class catogory extends State<Catogory> {
             Navigator.push(
                 context,
                 new MaterialPageRoute(
-                    builder: (context) => new AddPage(weidth, height)));
+                    builder: (context) => new AddPage(weidth, height, user)));
           },
           backgroundColor: Color(0xfff2780c),
           child: Icon(Icons.add),
@@ -120,7 +123,7 @@ class catogory extends State<Catogory> {
           // bottomOpacity: 0,
         ),
         body: Container(
-          child: new ListInfo( weidth, height),
+          child: new ListInfo(weidth, height),
         ),
       ),
     );

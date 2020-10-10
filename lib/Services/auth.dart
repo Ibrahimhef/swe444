@@ -1,5 +1,10 @@
+import 'dart:math';
+
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:provider/provider.dart';
 import 'package:swe444/Services/database.dart';
+import 'package:swe444/models/meals.dart';
+import 'package:swe444/models/profile.dart';
 
 import '../models/user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -9,12 +14,8 @@ class AuthServices {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final googleSignIn = GoogleSignIn();
 
-  User _userFormFireBaseUser(FirebaseUser user) {
-    return user != null
-        ? User(
-            uid: user.uid,
-          )
-        : null;
+  User _userFormFireBaseUser(FirebaseUser user, {String email}) {
+    return user != null ? User(uid: user.uid, email: email) : null;
   }
 
   Stream<User> get user {
@@ -49,7 +50,7 @@ class AuthServices {
         AuthResult res = await _auth.signInWithCredential(authCredential);
 
         FirebaseUser user = await _auth.currentUser();
-        return _userFormFireBaseUser(user);
+        return _userFormFireBaseUser(user, email: user.email);
       }
     } catch (e) {
       print(e.toString());
@@ -107,16 +108,10 @@ class AuthServices {
           40,
           email,
           "imageURL");
-      await DatabaseService(uid: user.uid).insertMeals(
-          5,
-          "test6",
-          "description description description description",
-          "1",
-          "step step",
-          40,
-          email,
-          "imageURL");
-      return _userFormFireBaseUser(user);
+      return _userFormFireBaseUser(
+        user,
+        email: email,
+      );
     } catch (e) {
       // print(e.toString());
       return null;

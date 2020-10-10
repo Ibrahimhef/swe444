@@ -17,7 +17,7 @@ class Wrapper extends StatelessWidget {
     if (user == null) {
       return Authentcate();
     } else {
-      return catogory();
+      return catogory(user);
     }
   }
 }

@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:swe444/models/meals.dart';
 import 'package:swe444/models/profile.dart';
+import 'dart:math';
 
 class DatabaseService {
   final String uid;
@@ -25,7 +26,9 @@ class DatabaseService {
       int duration,
       String email,
       String imageURL) async {
-    return await mealCollection.document(uid).setData({
+    Random random = new Random();
+    int randomNumber = random.nextInt(1000000000);
+    return await mealCollection.document("$randomNumber").setData({
       "category": category,
       'title': title,
       'description': description,

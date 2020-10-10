@@ -105,10 +105,13 @@ class ForgetPage extends StatelessWidget {
 }
 
 class catogory extends StatelessWidget {
+  final User user;
+
+  const catogory(this.user);
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final weidth = MediaQuery.of(context).size.width;
-    return Catogory(weidth, height);
+    return Catogory(weidth, height, user);
   }
 }
