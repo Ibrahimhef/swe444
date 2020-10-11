@@ -10,10 +10,10 @@ class DatabaseService {
       Firestore.instance.collection("user");
   final CollectionReference mealCollection =
       Firestore.instance.collection("meals");
-  Future insertUser(String full_name, String email, String password) async {
-    return await userCollection
-        .document(uid)
-        .setData({'name': full_name, "email": email, "password": password});
+  Future insertUser(
+      String uid, String full_name, String email, String password) async {
+    return await userCollection.document(uid).setData(
+        {'uid': uid, 'name': full_name, "email": email, "password": password});
   }
 
 // method for insert meal info into database
@@ -62,6 +62,7 @@ class DatabaseService {
   List<profile> _userListFromSnapShot(QuerySnapshot snapshot) {
     return snapshot.documents.map((doc) {
       return profile(
+          uid: doc.data['uid'] ?? '',
           name: doc.data['name'] ?? '',
           email: doc.data['email'] ?? '',
           password: doc.data['password'] ?? '');

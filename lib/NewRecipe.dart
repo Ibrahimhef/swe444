@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 import 'package:swe444/Services/auth.dart';
 import 'package:path/path.dart' as Path;
 import 'package:swe444/Services/database.dart';
+import 'package:swe444/models/profile.dart';
 import 'package:swe444/models/user.dart';
 
 class AddPage extends StatefulWidget {
@@ -304,10 +305,24 @@ class addPage extends State<AddPage> {
                       highlightColor: Colors.transparent,
                       splashColor: Colors.transparent,
                       onPressed: () async {
-                        if (_formKey2.currentState.validate()) {
-                          // return fileURL;
+                        if (_formKey2.currentState.validate() &&
+                            _image != null) {
                           final user = Provider.of<User>(context);
-                          await uploadFile().whenComplete(() => {
+                          Stream<List<profile>> users =
+                              await DatabaseService(uid: user.uid).users;
+                          String email;
+                          users.listen((event) {
+                            print("length of data: ${event.length}");
+                            event.forEach((element) {
+                              if (element.uid == user.uid) {
+                                email = element.email;
+                                print("email email : $email");
+                              }
+                            });
+                          });
+                          // return fileURL;
+
+                          uploadFile().whenComplete(() => {
                                 DatabaseService(uid: user.uid).insertMeals(
                                     category,
                                     title,
@@ -315,7 +330,7 @@ class addPage extends State<AddPage> {
                                     ingredients,
                                     step,
                                     duration,
-                                    user.email,
+                                    email,
                                     uploadedFileURL)
                               });
                           // uploadFile();
