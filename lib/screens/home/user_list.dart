@@ -10,7 +10,7 @@ class UserList extends StatefulWidget {
 class _UserListState extends State<UserList> {
   @override
   Widget build(BuildContext context) {
-    final user = Provider.of<List<profile>>(context);
+    final user = Provider.of<List<profile1>>(context);
     return ListView.builder(
       itemBuilder: (context, index) {
         return Padding(

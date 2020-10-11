@@ -308,7 +308,7 @@ class addPage extends State<AddPage> {
                         if (_formKey2.currentState.validate() &&
                             _image != null) {
                           final user = Provider.of<User>(context);
-                          Stream<List<profile>> users =
+                          Stream<List<profile1>> users =
                               await DatabaseService(uid: user.uid).users;
                           String email;
                           users.listen((event) {

@@ -66,7 +66,7 @@ class AuthServices {
       AuthResult result = await _auth.signInWithEmailAndPassword(
           email: email, password: password);
       FirebaseUser user = result.user;
-      Stream<List<profile>> users = await DatabaseService(uid: user.uid).users;
+      Stream<List<profile1>> users = await DatabaseService(uid: user.uid).users;
       String full_name;
       users.listen((event) {
         print("length of data: ${event.length}");

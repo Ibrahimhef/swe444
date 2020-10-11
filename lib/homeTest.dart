@@ -12,7 +12,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final AuthServices _auth = AuthServices();
-    return StreamProvider<List<profile>>.value(
+    return StreamProvider<List<profile1>>.value(
         value: DatabaseService().users,
         child: Scaffold(
           body: UserList(),

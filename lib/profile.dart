@@ -1,9 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:swe444/Services/auth.dart';
 import 'package:swe444/ListOwnRecipe.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:swe444/Services/database.dart';
+import 'package:swe444/models/meals.dart';
+import 'package:swe444/models/user.dart';
 import 'package:swe444/shared/loading.dart';
+import 'package:swe444/models/profile.dart';
 
 class Profile extends StatefulWidget {
   final double weidth, height;
@@ -22,11 +27,39 @@ class profile extends State<Profile> {
   final List ListOfRecipeces;
 
   profile(this.weidth, this.height, this.ListOfRecipeces);
-
+  List ListOwnRec = [];
   final AuthServices _auth = AuthServices();
   bool loading = false;
+  String name = '';
+  String email = '';
+  Future collectInfo() async {
+    final user = Provider.of<User>(context);
+    Stream<List<profile1>> users = await DatabaseService(uid: user.uid).users;
+
+    users.listen((event) {
+      event.forEach((element) {
+        if (element.uid == user.uid) {
+          setState(() {
+            email = element.email;
+            name = element.name;
+          });
+        }
+      });
+    });
+    ListOwnRec.clear();
+    Stream<List<Meal>> meals = await DatabaseService(uid: user.uid).meals;
+    meals.listen((event) {
+      event.forEach((element) {
+        if (email == element.email) {
+          ListOwnRec.add(element);
+        }
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    collectInfo();
     return loading
         ? Loading()
         : Scaffold(
@@ -87,7 +120,7 @@ class profile extends State<Profile> {
                                   margin: EdgeInsets.only(bottom: 7),
                                   alignment: Alignment.centerLeft,
                                   child: Text(
-                                    "Ibrahim Alhefdhi",
+                                    "$name",
                                     style: TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold),
@@ -96,7 +129,7 @@ class profile extends State<Profile> {
                                 Container(
                                   alignment: Alignment.centerLeft,
                                   child: Text(
-                                    "ibrahimalhefdhi@gmail.com",
+                                    "$email",
                                     style: TextStyle(fontSize: 18),
                                   ),
                                 ),
@@ -113,7 +146,7 @@ class profile extends State<Profile> {
                         width: weidth * 0.4,
                         height: height * 0.7,
                         child: ListOwnInfo(
-                            ListOfRecipeces, weidth * 0.8, height * 0.5)),
+                            ListOwnRec, weidth * 0.8, height * 0.5)),
                   )
                 ],
               ),

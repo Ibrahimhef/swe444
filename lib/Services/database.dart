@@ -59,9 +59,9 @@ class DatabaseService {
     return mealCollection.snapshots().map(_mealListFromSnapShot);
   }
 
-  List<profile> _userListFromSnapShot(QuerySnapshot snapshot) {
+  List<profile1> _userListFromSnapShot(QuerySnapshot snapshot) {
     return snapshot.documents.map((doc) {
-      return profile(
+      return profile1(
           uid: doc.data['uid'] ?? '',
           name: doc.data['name'] ?? '',
           email: doc.data['email'] ?? '',
@@ -69,7 +69,7 @@ class DatabaseService {
     }).toList();
   }
 
-  Stream<List<profile>> get users {
+  Stream<List<profile1>> get users {
     return userCollection.snapshots().map(_userListFromSnapShot);
   }
 }
