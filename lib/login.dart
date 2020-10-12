@@ -98,7 +98,7 @@ class Loginstate extends State<Login> {
                                         setState(() {
                                           loading = false;
                                           error =
-                                              'this email/password incorrect';
+                                              'Email or Password is Incorrect';
                                           errorMessage = Text(error,
                                               style:
                                                   textStyle().style5(weidth));
@@ -108,7 +108,7 @@ class Loginstate extends State<Login> {
                                         // print("here");
                                         setState(() {
                                           loading = false;
-                                          error = 'invalid email';
+                                          error = 'Invalid Email';
                                           errorMessage = Text(error,
                                               style:
                                                   textStyle().style5(weidth));
@@ -204,6 +204,7 @@ class Loginstate extends State<Login> {
                                 ),
                               ),
                               Container(
+                                margin: EdgeInsets.all(7),
                                 child: errorMessage,
                               )
                             ],
