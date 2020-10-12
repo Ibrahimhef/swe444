@@ -62,23 +62,23 @@ class AuthServices {
   }
 
   Future SingInWithEmailAndPassword(String email, String password) async {
-    try {
-      AuthResult result = await _auth.signInWithEmailAndPassword(
-          email: email, password: password);
-      FirebaseUser user = result.user;
-      Stream<List<profile1>> users = await DatabaseService(uid: user.uid).users;
-      String full_name;
-      users.listen((event) {
-        print("length of data: ${event.length}");
-        event.forEach((element) {
-          if (element.email == email) full_name = element.name;
-        });
+    // try {
+    AuthResult result = await _auth.signInWithEmailAndPassword(
+        email: email, password: password);
+    FirebaseUser user = result.user;
+    Stream<List<profile1>> users = await DatabaseService(uid: user.uid).users;
+    String full_name;
+    users.listen((event) {
+      print("length of data: ${event.length}");
+      event.forEach((element) {
+        if (element.email == email) full_name = element.name;
       });
-      return _userFormFireBaseUser(user, email: email, full_name: full_name);
-    } catch (e) {
-      // print(e.toString());
-      return null;
-    }
+    });
+    return _userFormFireBaseUser(user, email: email, full_name: full_name);
+    // } catch (e) {
+    //   // print(e.toString());
+    //   return null;
+    // }
   }
 
   Future RegisterWithEmailAndPassword(
