@@ -33,33 +33,14 @@ class catogory extends State<Catogory> {
     "assets/Sweets_page@3x.png"
   ];
   var cat1 = ["Juice", "Appetizers", "Main Dishes", "Salads", "Soup", "Sweets"];
-
-  void selepage(int index) {
-    print("email:${user.email}");
-    setState(
-      () {
-        if (index < 6) {
-          setState(() {
-            listInfo.category = index;
-            _category = index;
-          });
-        } else {
-          Navigator.push(
-              context,
-              new MaterialPageRoute(
-                  builder: (context) => new Profile(weidth, height, [])));
-        }
-      },
-    );
-  }
   catogory(this.weidth, this.height, this._category, this.user);
-  var listView;
   int mode = 0;
   @override
   Widget build(BuildContext context) {
     setState(() {
       listInfo.category=0;
     });
+
     return StreamProvider<List<Meal>>.value(
       value: DatabaseService().meals,
       child: Scaffold(
@@ -80,10 +61,10 @@ class catogory extends State<Catogory> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            // Navigator.push(
-            //     context,
-            //     new MaterialPageRoute(
-            //         builder: (context) => new AddPage(weidth, height, user)));
+            Navigator.push(
+                context,
+                new MaterialPageRoute(
+                    builder: (context) => new AddPage(weidth, height, user)));
           },
           backgroundColor: Color(0xfff2780c),
           child: Icon(Icons.add),
@@ -104,10 +85,27 @@ class catogory extends State<Catogory> {
           // bottomOpacity: 0,
         ),
         body: Container(
-          child:listView,
-          // new ListInfo(weidth, height),
+          child: new ListInfo(weidth, height),
         ),
       ),
+    );
+  }
+  void selepage(int index) {
+    print("email:${user.email}");
+    setState(
+          () {
+        if (index < 6) {
+          setState(() {
+            listInfo.category = index;
+            _category = index;
+          });
+        } else {
+          Navigator.push(
+              context,
+              new MaterialPageRoute(
+                  builder: (context) => new Profile(weidth, height, [])));
+        }
+      },
     );
   }
 }
