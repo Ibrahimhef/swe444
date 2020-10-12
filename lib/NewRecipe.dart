@@ -55,6 +55,29 @@ class addPage extends State<AddPage> {
     storageReference.getDownloadURL().then((fileURL) {
       setState(() {
         uploadedFileURL = fileURL;
+        final user = Provider.of<User>(context);
+        Stream<List<profile1>> users = DatabaseService(uid: user.uid).users;
+        // String email;
+        users.listen((event) {
+          // print("length of data: ${event.length}");
+          event.forEach((element) {
+            if (element.uid == user.uid) {
+              email = element.email;
+              print("email: ${element.email}");
+              DatabaseService(uid: user.uid).insertMeals(
+                  category,
+                  title,
+                  description,
+                  ingredients,
+                  step,
+                  duration,
+                  element.email,
+                  fileURL);
+              // print("email email : $email");
+            }
+          });
+        });
+
         // return fileURL;
         print(uploadedFileURL);
       });
@@ -315,32 +338,29 @@ class addPage extends State<AddPage> {
                       onPressed: () async {
                         if (_formKey2.currentState.validate() &&
                             _image != null) {
-                          final user = Provider.of<User>(context);
-                          Stream<List<profile1>> users =
-                              await DatabaseService(uid: user.uid).users;
-                          String email;
-                          users.listen((event) {
-                            print("length of data: ${event.length}");
-                            event.forEach((element) {
-                              if (element.uid == user.uid) {
-                                email = element.email;
-                                print("email email : $email");
-                              }
-                            });
-                          });
                           // return fileURL;
-
-                          uploadFile().whenComplete(() => {
-                                DatabaseService(uid: user.uid).insertMeals(
-                                    category,
-                                    title,
-                                    description,
-                                    ingredients,
-                                    step,
-                                    duration,
-                                    email,
-                                    uploadedFileURL)
-                              });
+                          uploadFile();
+                          // uploadFile().then((value) =>
+                          //     DatabaseService(uid: user.uid).insertMeals(
+                          //         category,
+                          //         title,
+                          //         description,
+                          //         ingredients,
+                          //         step,
+                          //         duration,
+                          //         email,
+                          //         uploadedFileURL));
+                          // uploadFile().whenComplete(() => {
+                          //       DatabaseService(uid: user.uid).insertMeals(
+                          //           category,
+                          //           title,
+                          //           description,
+                          //           ingredients,
+                          //           step,
+                          //           duration,
+                          //           email,
+                          //           uploadedFileURL)
+                          //     });
                           // uploadFile();
 
                           print(user.uid);
