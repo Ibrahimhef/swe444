@@ -32,7 +32,6 @@ class catogory extends State<Catogory> {
     "assets/Soup_page@3x.png",
     "assets/Sweets_page@3x.png"
   ];
-
   var cat1 = ["Juice", "Appetizers", "Main Dishes", "Salads", "Soup", "Sweets"];
 
   void selepage(int index) {
@@ -44,10 +43,6 @@ class catogory extends State<Catogory> {
             listInfo.category = index;
             _category = index;
           });
-          // for (int i = 0; i < ListOfCateogry.length; i++) {
-          //   if (ListOfCateogry[i].caterogry == category)
-          //     ListOfCurrentCateogry.add(ListOfCateogry.elementAt(i));
-          // }
         } else {
           Navigator.push(
               context,
@@ -57,17 +52,14 @@ class catogory extends State<Catogory> {
       },
     );
   }
-
   catogory(this.weidth, this.height, this._category, this.user);
+  var listView;
   int mode = 0;
   @override
   Widget build(BuildContext context) {
-    // print("email:" + Provider.of<User>(context).email);
-    // ListOfCurrentCateogry.clear();
-    // for (int i = 0; i < ListOfCateogry.length; i++) {
-    //   if (ListOfCateogry[i].caterogry == _category)
-    //     ListOfCurrentCateogry.add(ListOfCateogry.elementAt(i));
-    // }
+    setState(() {
+      listInfo.category=0;
+    });
     return StreamProvider<List<Meal>>.value(
       value: DatabaseService().meals,
       child: Scaffold(
