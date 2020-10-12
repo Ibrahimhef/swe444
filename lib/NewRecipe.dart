@@ -85,7 +85,7 @@ class addPage extends State<AddPage> {
   }
 
   final double weidth, height;
-  int _index = 0;
+  static int index = 0;
 
   addPage(this.weidth, this.height, this.user);
 
@@ -427,11 +427,11 @@ class addPage extends State<AddPage> {
       elevation: 6.0,
       shadowColor: Colors.grey[60],
       padding: EdgeInsets.all(6.0),
-      selected: _index == selectedIndex,
+      selected: index == selectedIndex,
       onSelected: (bool IsSelected) {
         setState(() {
-          _index = IsSelected ? selectedIndex : null;
-          category = _index;
+          index = IsSelected ? selectedIndex : null;
+          category = index;
           print(category);
         });
       },
