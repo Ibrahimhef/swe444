@@ -140,7 +140,8 @@ class addPage extends State<AddPage> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Container(
-                                      margin: EdgeInsets.only(top: 8, bottom: 5),
+                                      margin:
+                                          EdgeInsets.only(top: 8, bottom: 5),
                                       width: sizeW(weidth, 0.6),
                                       height: height * 0.2,
                                       child: InkWell(
@@ -150,7 +151,7 @@ class addPage extends State<AddPage> {
                                         child: Image(
                                           //image Path
                                           image: _image != null
-                                              ? AssetImage(_image.path)
+                                              ? AssetImage("${_image.path}")
                                               : AssetImage(
                                                   'assets/AddPic@3x.png'),
                                         ),
@@ -166,8 +167,10 @@ class addPage extends State<AddPage> {
                                                 left: 16,
                                                 right: 16),
                                             child: TextFormField(
-                                              onChanged: (value) => title = value,
-                                              validator: (value) => value.isEmpty
+                                              onChanged: (value) =>
+                                                  title = value,
+                                              validator: (value) => value
+                                                      .isEmpty
                                                   ? "fill the Name of Recipe"
                                                   : null,
                                               decoration: InputDecoration(
@@ -175,8 +178,10 @@ class addPage extends State<AddPage> {
                                                 border: UnderlineInputBorder(
                                                     borderSide: new BorderSide(
                                                         color: Colors.black54,
-                                                        width: sizeW(weidth, 0.8),
-                                                        style: BorderStyle.none)),
+                                                        width:
+                                                            sizeW(weidth, 0.8),
+                                                        style:
+                                                            BorderStyle.none)),
                                               ),
                                             ),
                                           ),
@@ -189,10 +194,11 @@ class addPage extends State<AddPage> {
                                             child: TextFormField(
                                               onChanged: (value) =>
                                                   description = value,
-                                              validator: (value) => value.isEmpty
-                                                  ? "fill the description"
-                                                  : null,
-                                              maxLines: (height*0.008)
+                                              validator: (value) =>
+                                                  value.isEmpty
+                                                      ? "fill the description"
+                                                      : null,
+                                              maxLines: (height * 0.008)
                                                   .ceilToDouble()
                                                   .toInt(),
                                               decoration: InputDecoration(
@@ -201,8 +207,10 @@ class addPage extends State<AddPage> {
                                                 border: UnderlineInputBorder(
                                                     borderSide: new BorderSide(
                                                         color: Colors.black54,
-                                                        width: sizeW(weidth, 0.8),
-                                                        style: BorderStyle.none)),
+                                                        width:
+                                                            sizeW(weidth, 0.8),
+                                                        style:
+                                                            BorderStyle.none)),
                                               ),
                                             ),
                                           ),
@@ -215,10 +223,11 @@ class addPage extends State<AddPage> {
                                             child: TextFormField(
                                               onChanged: (value) =>
                                                   ingredients = value,
-                                              validator: (value) => value.isEmpty
-                                                  ? "fill the ingredients"
-                                                  : null,
-                                              maxLines: (height*0.008)
+                                              validator: (value) =>
+                                                  value.isEmpty
+                                                      ? "fill the ingredients"
+                                                      : null,
+                                              maxLines: (height * 0.008)
                                                   .ceilToDouble()
                                                   .toInt(),
                                               decoration: InputDecoration(
@@ -226,8 +235,10 @@ class addPage extends State<AddPage> {
                                                 border: UnderlineInputBorder(
                                                     borderSide: new BorderSide(
                                                         color: Colors.black54,
-                                                        width: sizeW(weidth, 0.8),
-                                                        style: BorderStyle.none)),
+                                                        width:
+                                                            sizeW(weidth, 0.8),
+                                                        style:
+                                                            BorderStyle.none)),
                                               ),
                                             ),
                                           ),
@@ -238,11 +249,13 @@ class addPage extends State<AddPage> {
                                                 left: 16,
                                                 right: 16),
                                             child: TextFormField(
-                                              onChanged: (value) => step = value,
-                                              validator: (value) => value.isEmpty
-                                                  ? "fill the steps"
-                                                  : null,
-                                              maxLines: (height*0.008)
+                                              onChanged: (value) =>
+                                                  step = value,
+                                              validator: (value) =>
+                                                  value.isEmpty
+                                                      ? "fill the steps"
+                                                      : null,
+                                              maxLines: (height * 0.008)
                                                   .ceilToDouble()
                                                   .toInt(),
                                               decoration: InputDecoration(
@@ -250,8 +263,10 @@ class addPage extends State<AddPage> {
                                                 border: UnderlineInputBorder(
                                                     borderSide: new BorderSide(
                                                         color: Colors.black54,
-                                                        width: sizeW(weidth, 0.8),
-                                                        style: BorderStyle.none)),
+                                                        width:
+                                                            sizeW(weidth, 0.8),
+                                                        style:
+                                                            BorderStyle.none)),
                                               ),
                                             ),
                                           ),
@@ -264,17 +279,21 @@ class addPage extends State<AddPage> {
                                             child: TextFormField(
                                               onChanged: (value) =>
                                                   duration = int.parse(value),
-                                              validator: (value) => value.isEmpty
-                                                  ? "fill the duration"
-                                                  : null,
+                                              validator: (value) =>
+                                                  value.isEmpty
+                                                      ? "fill the duration"
+                                                      : null,
                                               // maxLines: 1,
                                               decoration: InputDecoration(
-                                                hintText: "Enter recipe duration",
+                                                hintText:
+                                                    "Enter recipe duration",
                                                 border: UnderlineInputBorder(
                                                     borderSide: new BorderSide(
                                                         color: Colors.black54,
-                                                        width: sizeW(weidth, 0.8),
-                                                        style: BorderStyle.none)),
+                                                        width:
+                                                            sizeW(weidth, 0.8),
+                                                        style:
+                                                            BorderStyle.none)),
                                               ),
                                             ),
                                           ),
@@ -302,16 +321,20 @@ class addPage extends State<AddPage> {
                                                 2)),
                                         Container(
                                             margin: EdgeInsets.all(3),
-                                            child: chip(cat[3],
-                                                "assets/Salads_icon@3x.png", 3)),
+                                            child: chip(
+                                                cat[3],
+                                                "assets/Salads_icon@3x.png",
+                                                3)),
                                         Container(
                                             margin: EdgeInsets.all(3),
                                             child: chip(cat[4],
                                                 "assets/Soup_icon@3x.png", 4)),
                                         Container(
                                             margin: EdgeInsets.all(3),
-                                            child: chip(cat[5],
-                                                "assets/Sweets_icon@3x.png", 5)),
+                                            child: chip(
+                                                cat[5],
+                                                "assets/Sweets_icon@3x.png",
+                                                5)),
                                       ],
                                     ),
                                   ],
