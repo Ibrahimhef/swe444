@@ -151,7 +151,7 @@ class addPage extends State<AddPage> {
                                         child: Image(
                                           //image Path
                                           image: _image != null
-                                              ? AssetImage(_image.path)
+                                              ? AssetImage("${_image.path}")
                                               : AssetImage(
                                                   'assets/AddPic@3x.png'),
                                         ),

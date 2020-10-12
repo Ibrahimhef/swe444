@@ -1,23 +1,23 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:swe444/models/meals.dart';
 
 class DetildPage extends StatefulWidget {
   final double weidth, height;
-
-  DetildPage(this.weidth, this.height);
+  final Meal meal;
+  DetildPage(this.weidth, this.height, this.meal);
 
   @override
   State<StatefulWidget> createState() {
-    return detildPage(weidth, height);
+    return detildPage(weidth, height, meal);
   }
 }
 
 class detildPage extends State<DetildPage> {
   final double weidth, height;
-
-
-  detildPage(this.weidth, this.height,);
+  final Meal meal;
+  detildPage(this.weidth, this.height, this.meal);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class detildPage extends State<DetildPage> {
         appBar: AppBar(
           backgroundColor: Color(0xfff2b705),
           title: Text(
-            "Recipename",
+            "${meal.title}",
             style: TextStyle(
                 color: Colors.black,
                 fontSize: 25,
@@ -55,13 +55,11 @@ class detildPage extends State<DetildPage> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
-                                  margin: EdgeInsets.only(top: 8, bottom: 3),
-                                  width: sizeW(weidth, 0.8),
-                                  height: sizeh(height),
-                                  child: Image(
-                                    image: AssetImage(
-                                        "assets/Appetizers_icon@3x.png"),
-                                  )),
+                                margin: EdgeInsets.only(top: 8, bottom: 3),
+                                width: sizeW(weidth, 0.8),
+                                height: sizeh(height),
+                                child: Image.network("${meal.imageURL}"),
+                              ),
                               Container(
                                 alignment: Alignment.topLeft,
                                 margin: EdgeInsets.only(
@@ -70,8 +68,8 @@ class detildPage extends State<DetildPage> {
                                   width: sizeW(weidth, 0.8),
                                   height: sizeh(height),
                                   child: AutoSizeText(
-                                    "Recipe Descraption",
-                                    style: TextStyle(fontSize: weidth *0.08),
+                                    "${meal.description}",
+                                    style: TextStyle(fontSize: weidth * 0.08),
                                   ),
                                 ),
                               ),
@@ -83,8 +81,8 @@ class detildPage extends State<DetildPage> {
                                   width: sizeW(weidth, 0.8),
                                   height: sizeh(height),
                                   child: AutoSizeText(
-                                    "Recipe Ingredints",
-                                    style: TextStyle(fontSize: weidth *0.08),
+                                    "${meal.ingredients}",
+                                    style: TextStyle(fontSize: weidth * 0.08),
                                   ),
                                 ),
                               ),
@@ -96,8 +94,8 @@ class detildPage extends State<DetildPage> {
                                   width: sizeW(weidth, 0.8),
                                   height: sizeh(height),
                                   child: AutoSizeText(
-                                    "Recipe Steps",
-                                    style: TextStyle(fontSize: weidth *0.08),
+                                    "${meal.step}",
+                                    style: TextStyle(fontSize: weidth * 0.08),
                                   ),
                                 ),
                               ),
@@ -107,10 +105,10 @@ class detildPage extends State<DetildPage> {
                                     top: 8, bottom: 8, right: 5, left: 5),
                                 child: SizedBox(
                                   width: sizeW(weidth, 0.8),
-                                  height: height*0.05,
+                                  height: height * 0.05,
                                   child: AutoSizeText(
-                                    "Recipe Deuration",
-                                    style: TextStyle(fontSize: weidth *0.03),
+                                    "${meal.duration}",
+                                    style: TextStyle(fontSize: weidth * 0.03),
                                   ),
                                 ),
                               )
@@ -135,6 +133,7 @@ class detildPage extends State<DetildPage> {
     } else
       return 900 * ratio;
   }
+
   double sizeh(double height) {
     if (height <= 569) {
       return 582 * 0.18;
@@ -142,9 +141,9 @@ class detildPage extends State<DetildPage> {
       return 740 * 0.18;
     } else if (height > 812 && height < 896) {
       return 882 * 0.19;
-    } else if (height > 896 && height <= 1024){
+    } else if (height > 896 && height <= 1024) {
       return 992 * 0.19;
-  }
-    else return 1100* 0.19;
+    } else
+      return 1100 * 0.19;
   }
 }

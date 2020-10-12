@@ -38,8 +38,8 @@ class catogory extends State<Catogory> {
   @override
   Widget build(BuildContext context) {
     setState(() {
-      listInfo.category=0;
-      addPage.index=0;
+      // listInfo.category=0;
+      addPage.index = 0;
     });
 
     return StreamProvider<List<Meal>>.value(
@@ -91,10 +91,11 @@ class catogory extends State<Catogory> {
       ),
     );
   }
+
   void selepage(int index) {
     print("email:${user.email}");
     setState(
-          () {
+      () {
         if (index < 6) {
           setState(() {
             listInfo.category = index;
