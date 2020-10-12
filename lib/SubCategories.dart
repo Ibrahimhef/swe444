@@ -39,6 +39,7 @@ class catogory extends State<Catogory> {
   Widget build(BuildContext context) {
     setState(() {
       listInfo.category=0;
+      addPage.index=0;
     });
 
     return StreamProvider<List<Meal>>.value(
