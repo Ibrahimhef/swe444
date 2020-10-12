@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
-
 class DetildPage extends StatefulWidget {
   final double weidth, height;
   final String Recipename;
@@ -38,8 +37,8 @@ class detildPage extends State<DetildPage> {
         body: SingleChildScrollView(
           child: Center(
             child: Container(
-                height: height- (height*0.2),
-                width: weidth - (weidth*0.2),
+                height: height - (height * 0.2),
+                width: weidth - (weidth * 0.2),
                 child: FittedBox(
                   child: Material(
                     color: Colors.white,
@@ -59,39 +58,43 @@ class detildPage extends State<DetildPage> {
                                   width: (weidth * 0.85),
                                   height: height * 0.3,
                                   child: Image(
-                                    image:
-                                        AssetImage("assets/Appetizers_icon@3x.png"),
+                                    image: AssetImage(
+                                        "assets/Appetizers_icon@3x.png"),
                                   )),
                               Container(
                                 alignment: Alignment.topLeft,
                                 child: AutoSizeText(
                                   "Descraption",
-                                  style: TextStyle(fontSize: weidth *0.05),
+                                  style: TextStyle(fontSize: weidth * 0.05),
                                 ),
                               ),
                               Container(
                                 alignment: Alignment.topLeft,
-                                margin: EdgeInsets.only(top: 10 , bottom: 10 , right: 5, left: 5),
+                                margin: EdgeInsets.only(
+                                    top: 10, bottom: 10, right: 5, left: 5),
                                 child: AutoSizeText(
                                   "ingradents",
-                                  style: TextStyle(fontSize: weidth *0.05),
+                                  style: TextStyle(fontSize: weidth * 0.05),
                                 ),
                               ),
-                  Container(
-                    alignment: Alignment.topLeft,
-                    margin: EdgeInsets.only(top: 10 , bottom: 10 , right: 5, left: 5),
-                    child: Text(
-                      "steps",
-                      style: TextStyle(fontSize: 20),
-                    ),
-                  ),
-                  Container(
-                    alignment: Alignment.topLeft,
-                    margin: EdgeInsets.only(top: 10 , bottom: 10 , right: 5, left: 5),
-                    child: Text(
-                      "deuration",
-                      style: TextStyle(fontSize: weidth *0.05),
-                    ),)
+                              Container(
+                                alignment: Alignment.topLeft,
+                                margin: EdgeInsets.only(
+                                    top: 10, bottom: 10, right: 5, left: 5),
+                                child: Text(
+                                  "steps",
+                                  style: TextStyle(fontSize: 20),
+                                ),
+                              ),
+                              Container(
+                                alignment: Alignment.topLeft,
+                                margin: EdgeInsets.only(
+                                    top: 10, bottom: 10, right: 5, left: 5),
+                                child: Text(
+                                  "deuration",
+                                  style: TextStyle(fontSize: weidth * 0.05),
+                                ),
+                              )
                             ],
                           ),
                         ),

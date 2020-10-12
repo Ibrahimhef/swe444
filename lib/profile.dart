@@ -60,6 +60,7 @@ class profile extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     collectInfo();
+    ListOwnRec.clear();
     return loading
         ? Loading()
         : Scaffold(

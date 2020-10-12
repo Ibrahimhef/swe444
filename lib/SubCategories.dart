@@ -80,10 +80,10 @@ class catogory extends State<Catogory> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            Navigator.push(
-                context,
-                new MaterialPageRoute(
-                    builder: (context) => new AddPage(weidth, height, user)));
+            // Navigator.push(
+            //     context,
+            //     new MaterialPageRoute(
+            //         builder: (context) => new AddPage(weidth, height, user)));
           },
           backgroundColor: Color(0xfff2780c),
           child: Icon(Icons.add),
@@ -104,7 +104,8 @@ class catogory extends State<Catogory> {
           // bottomOpacity: 0,
         ),
         body: Container(
-          child: new ListInfo(weidth, height),
+          child:listView,
+          // new ListInfo(weidth, height),
         ),
       ),
     );
