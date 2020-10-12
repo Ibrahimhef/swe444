@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:swe444/Services/auth.dart';
 import 'package:swe444/main.dart';
 import 'TextStyle.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'shared/loading.dart';
+// import 'package:firebase/firebase.dart';
 
 class Login extends StatefulWidget {
   final Function toggleView;
@@ -28,6 +30,7 @@ class Loginstate extends State<Login> {
   static String email = '';
   static String password = '';
   String error = '';
+  static Text errorMessage = new Text("");
   static final _formKey = GlobalKey<FormState>();
   bool loading = false;
   @override
@@ -65,20 +68,59 @@ class Loginstate extends State<Login> {
                                   highlightColor: Colors.transparent,
                                   splashColor: Colors.transparent,
                                   onTap: () async {
-                                    if (_formKey.currentState.validate()) {
-                                      setState(() {
-                                        loading = true;
-                                      });
+                                    try {
+                                      if (_formKey.currentState.validate()) {
+                                        setState(() {
+                                          loading = true;
+                                        });
 
-                                      dynamic result = await _authServices
-                                          .SingInWithEmailAndPassword(
-                                              email, password);
-                                      if (result == null) {
+                                        dynamic result = await _authServices
+                                            .SingInWithEmailAndPassword(
+                                                email, password);
+
+                                        // print(result.toString());
+                                        // if (result == null) {
+
+                                        //   setState(() {
+                                        //     loading = false;
+                                        //     error = "email is invalid";
+                                        //     errorMessage = Text(error,
+                                        //         style:
+                                        //             textStyle().style5(weidth));
+                                        //   });
+                                        // } else {}
+                                      }
+                                    } catch (e) {
+                                      // if (e is PlatformException) {
+                                      if (e.code == "ERROR_WRONG_PASSWORD" ||
+                                          e.code == "ERROR_USER_NOT_FOUND") {
+                                        // print("this email already exist");
                                         setState(() {
                                           loading = false;
-                                          error = "email is invalid";
+                                          error =
+                                              'this email/password incorrect';
+                                          errorMessage = Text(error,
+                                              style:
+                                                  textStyle().style5(weidth));
                                         });
-                                      } else {}
+                                      }
+                                      if (e.code == "ERROR_INVALID_EMAIL") {
+                                        // print("here");
+                                        setState(() {
+                                          loading = false;
+                                          error = 'invalid email';
+                                          errorMessage = Text(error,
+                                              style:
+                                                  textStyle().style5(weidth));
+                                        });
+                                      }
+                                      // } else {
+                                      // setState(() {
+                                      //   loading = false;
+                                      // });
+
+                                      print(e.toString());
+                                      // }
                                     }
                                   },
                                   child: Image(
@@ -160,6 +202,9 @@ class Loginstate extends State<Login> {
                                       // border: InputBorder.none,
                                       hintText: "password"),
                                 ),
+                              ),
+                              Container(
+                                child: errorMessage,
                               )
                             ],
                           ),
