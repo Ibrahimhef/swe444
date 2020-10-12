@@ -56,7 +56,7 @@ class listInfo extends State<ListInfo> {
                     context,
                     new MaterialPageRoute(
                         builder: (context) =>
-                            new DetildPage(weidth, height, "Test")));
+                            new DetildPage(weidth, height)));
               },
               child: Padding(
                 padding: const EdgeInsets.only(left: 8, right: 8),

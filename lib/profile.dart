@@ -35,7 +35,6 @@ class profile extends State<Profile> {
   Future collectInfo() async {
     final user = Provider.of<User>(context);
     Stream<List<profile1>> users = await DatabaseService(uid: user.uid).users;
-
     users.listen((event) {
       event.forEach((element) {
         if (element.uid == user.uid) {
@@ -60,7 +59,6 @@ class profile extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     collectInfo();
-    ListOwnRec.clear();
     return loading
         ? Loading()
         : Scaffold(
