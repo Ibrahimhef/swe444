@@ -13,52 +13,31 @@ import 'package:swe444/models/profile.dart';
 class Profile extends StatefulWidget {
   final double weidth, height;
   final List ListOfRecipeces;
-
-  Profile(this.weidth, this.height, this.ListOfRecipeces);
+  final String name;
+  final String email;
+  Profile(
+      this.weidth, this.height, this.ListOfRecipeces, this.email, this.name);
 
   @override
   State<StatefulWidget> createState() {
-    return profile(weidth, height, ListOfRecipeces);
+    return profile(weidth, height, ListOfRecipeces, this.email, this.name);
   }
 }
 
 class profile extends State<Profile> {
   final double weidth, height;
   final List ListOfRecipeces;
-
-  profile(this.weidth, this.height, this.ListOfRecipeces);
-  List ListOwnRec = [];
+  final String name;
+  final String email;
+  profile(
+      this.weidth, this.height, this.ListOfRecipeces, this.email, this.name);
+  // List ListOwnRec = [];
   final AuthServices _auth = AuthServices();
   bool loading = false;
-  String name = '';
-  String email = '';
-  Future collectInfo() async {
-    final user = Provider.of<User>(context);
-    Stream<List<profile1>> users = await DatabaseService(uid: user.uid).users;
-    users.listen((event) {
-      event.forEach((element) {
-        if (element.uid == user.uid) {
-          setState(() {
-            email = element.email;
-            name = element.name;
-          });
-        }
-      });
-    });
-    ListOwnRec.clear();
-    Stream<List<Meal>> meals = await DatabaseService(uid: user.uid).meals;
-    meals.listen((event) {
-      event.forEach((element) {
-        if (email == element.email) {
-          ListOwnRec.add(element);
-        }
-      });
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
-    collectInfo();
+    // collectInfo();
     return loading
         ? Loading()
         : Scaffold(
@@ -145,7 +124,7 @@ class profile extends State<Profile> {
                         width: weidth * 0.4,
                         height: height * 0.7,
                         child: ListOwnInfo(
-                            ListOwnRec, weidth * 0.8, height * 0.5)),
+                            ListOfRecipeces, weidth * 0.8, height * 0.5)),
                   )
                 ],
               ),

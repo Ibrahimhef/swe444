@@ -53,6 +53,9 @@ class AuthServices {
         AuthResult res = await _auth.signInWithCredential(authCredential);
 
         FirebaseUser user = await _auth.currentUser();
+        // print("email : ${user.email}   name: ${user.displayName}");
+        await DatabaseService(uid: user.uid)
+            .insertUser(user.uid, user.displayName, user.email, "password");
         return _userFormFireBaseUser(user, email: user.email);
       }
     } catch (e) {

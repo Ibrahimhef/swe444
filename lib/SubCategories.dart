@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:swe444/Services/database.dart';
 import 'package:swe444/models/meals.dart';
+import 'package:swe444/models/profile.dart';
 import 'package:swe444/models/user.dart';
 import 'package:swe444/profile.dart';
 import 'package:swe444/NewRecipe.dart';
@@ -38,7 +39,7 @@ class catogory extends State<Catogory> {
   @override
   Widget build(BuildContext context) {
     setState(() {
-      // listInfo.category=0;
+      // listInfo.category = 0;
       addPage.index = 0;
     });
 
@@ -102,10 +103,33 @@ class catogory extends State<Catogory> {
             _category = index;
           });
         } else {
-          Navigator.push(
-              context,
-              new MaterialPageRoute(
-                  builder: (context) => new Profile(weidth, height, [])));
+          List ListOwnRec = [];
+          String MyEmail = '';
+          String MyName = '';
+          final user = Provider.of<User>(context);
+          Stream<List<profile1>> users = DatabaseService(uid: user.uid).users;
+          users.listen((event) {
+            event.forEach((element) {
+              if (element.uid == user.uid) {
+                setState(() {
+                  MyEmail = element.email;
+                  MyName = element.name;
+                });
+              }
+            });
+          });
+          ListOwnRec.clear();
+          Stream<List<Meal>> meals = DatabaseService(uid: user.uid).meals;
+          meals.listen((event) {
+            event.forEach((element) {
+              if (MyEmail == element.email) {
+                ListOwnRec.add(element);
+              }
+            });
+          });
+          Navigator.push(context, new MaterialPageRoute(builder: (_) {
+            return Profile(weidth, height, ListOwnRec, MyEmail, MyName);
+          }));
         }
       },
     );
