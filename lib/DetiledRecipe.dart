@@ -47,19 +47,19 @@ class detildPage extends State<DetildPage> {
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.all(8),
-                    margin: EdgeInsets.only(top: 8, bottom: 8),
-                    width: sizeW(weidth, 0.4),
-                    height: sizeW(weidth, 0.4),
+                    margin: EdgeInsets.only(top: 10, bottom: 10, left: 5, right: 5),
+                    width: weidth,
+                    height: sizeW(height, 0.4),
+                    padding: EdgeInsets.all(5),
                     decoration: BoxDecoration(
-                      color: Color(0xffE1E1E1),
-                      borderRadius: BorderRadius.circular(25.0),
+                        borderRadius: BorderRadius.circular(10.0),
+                      color: Colors.white,
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 5,
-                          blurRadius: 7,
-                          offset: Offset(0, 3), // changes position of shadow
+                          spreadRadius: 3,
+                          blurRadius: 2,
+                          offset: Offset(3, 3), // changes position of shadow
                         ),
                       ],
                     ),
@@ -74,7 +74,8 @@ class detildPage extends State<DetildPage> {
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                     child: Center(
-                      child: Text(
+                      child:
+                      Text(
                         "Estimated time: " + meal.duration.toString() + " min.",
                         style: TextStyle(fontSize: 15),
                       ),
@@ -92,7 +93,7 @@ class detildPage extends State<DetildPage> {
                       child: SizedBox(
                         child: AutoSizeText(
                           "${meal.description}",
-                          style: TextStyle(fontSize: weidth * 0.07),
+                          style: TextStyle(fontSize: weidth * 0.06),
                         ),
                       ),
                     ),
@@ -108,18 +109,16 @@ class detildPage extends State<DetildPage> {
                     child: Column(
                       children: [
                         Container(
-                          margin: EdgeInsets.only(top: 10 , bottom: 10, left: 5 , right: 5),
-                          padding: EdgeInsets.all(4),
-
+                          margin: EdgeInsets.only(top: 10 , bottom: 15, ),
                           decoration: BoxDecoration(
                             color: Color(0xffE1E1E1),
-                            borderRadius: BorderRadius.circular(10.0),
+                            borderRadius: BorderRadius.circular(12.0),
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.grey.withOpacity(0.5),
                                 spreadRadius: 5,
                                 blurRadius: 7,
-                                offset: Offset(0, 3), // changes position of shadow
+                                offset: Offset(2, 5), // changes position of shadow
                               ),
                             ],
                           ),
@@ -139,7 +138,7 @@ class detildPage extends State<DetildPage> {
                                   },
                                 ),
                               ),
-                              VerticalDivider(color: Colors.black,),
+                              VerticalDivider(color: Colors.black, ),
                               Container(width: weidth/3,
                                 child: FlatButton(
                                   child: Text(
