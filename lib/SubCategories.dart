@@ -13,6 +13,7 @@ import 'package:swe444/NewRecipe.dart';
 class Catogory extends StatefulWidget {
   final double weidth, height;
   final User user;
+
   Catogory(this.weidth, this.height, this.user);
 
   @override
@@ -34,15 +35,13 @@ class catogory extends State<Catogory> {
     "assets/Sweets_page@3x.png"
   ];
   var cat1 = ["Juice", "Appetizers", "Main Dishes", "Salads", "Soup", "Sweets"];
+
   catogory(this.weidth, this.height, this._category, this.user);
+
   int mode = 0;
+
   @override
   Widget build(BuildContext context) {
-    setState(() {
-      // listInfo.category = 0;
-      addPage.index = 0;
-    });
-
     return StreamProvider<List<Meal>>.value(
       value: DatabaseService().meals,
       child: Scaffold(
@@ -139,7 +138,9 @@ class catogory extends State<Catogory> {
 class recipe {
   final String name, decraption, path, time;
   final int caterogry;
+
   recipe({this.name, this.decraption, this.path, this.time, this.caterogry});
+
   String getName() {
     return this.name;
   }

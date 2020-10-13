@@ -21,9 +21,12 @@ class listInfo extends State<ListInfo> {
   static int category;
   List meal = [];
   listInfo(this.weidth, this.height);
-
+  initState(){
+    category=0;
+  }
   @override
   Widget build(BuildContext context) {
+
     try {
       meal.clear();
       final currentMeal = Provider.of<List<Meal>>(context);
