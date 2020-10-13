@@ -36,9 +36,11 @@ class addPage extends State<AddPage> {
   static String step;
   static int duration;
   static String email;
-  initState(){
-    category=0;
+
+  initState() {
+    category = 0;
   }
+
   Future chooseFile() async {
     await ImagePicker.pickImage(source: ImageSource.gallery).then((image) {
       setState(() {
