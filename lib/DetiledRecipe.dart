@@ -19,15 +19,20 @@ class detildPage extends State<DetildPage> {
   final double weidth, height;
   final Meal meal;
   String TextIngOrSteps;
+  String TextSteps;
+  String TextIng;
 
   detildPage(this.weidth, this.height, this.meal);
-
+  void initState(){
+    TextIngOrSteps = "${meal.step}";
+  }
   @override
   Widget build(BuildContext context) {
-    TextIngOrSteps = "${meal.step}";
-    return Scaffold(
+    TextIng= "${meal.ingredients}";
+    TextSteps= "${meal.step}";
 
-        body: Container(
+    return Scaffold(
+          body: Container(
           width: weidth,
           height: height,
           child: Padding(
@@ -133,7 +138,7 @@ class detildPage extends State<DetildPage> {
                                   ),
                                   onPressed: () {
                                     setState(() {
-                                      TextIngOrSteps = "${meal.step}";
+                                      TextIngOrSteps = TextSteps;
                                     });
                                   },
                                 ),
@@ -147,7 +152,7 @@ class detildPage extends State<DetildPage> {
                                   ),
                                   onPressed: () {
                                     setState(() {
-                                      TextIngOrSteps = "${meal.ingredients}";
+                                      TextIngOrSteps = TextIng;
                                     });
                                   },
                                 ),
@@ -160,7 +165,7 @@ class detildPage extends State<DetildPage> {
                           alignment: Alignment.topLeft,
                           margin: EdgeInsets.only(top: 8, bottom: 8, right: 5, left: 5),
                           child: SizedBox(
-                            child: AutoSizeText(
+                            child: Text(
                               TextIngOrSteps,
                               style: TextStyle(fontSize: weidth * 0.07),
                             ),
