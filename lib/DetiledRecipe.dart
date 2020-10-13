@@ -23,9 +23,11 @@ class detildPage extends State<DetildPage> {
   String TextIng;
 
   detildPage(this.weidth, this.height, this.meal);
-  void initState(){
+
+  void initState() {
     TextIngOrSteps = "${meal.step}";
   }
+
   @override
   Widget build(BuildContext context) {
     TextIng= "${meal.ingredients}";
