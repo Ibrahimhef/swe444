@@ -30,158 +30,146 @@ class detildPage extends State<DetildPage> {
 
   @override
   Widget build(BuildContext context) {
-    TextIng= "${meal.ingredients}";
-    TextSteps= "${meal.step}";
+    TextIng = "${meal.ingredients}";
+    TextSteps = "${meal.step}";
 
     return Scaffold(
-          body: Container(
-          width: weidth,
-          height: height,
-          child: Padding(
-            padding: const EdgeInsets.all(32.0),
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(top: 10, bottom: 30),
-                    alignment: Alignment.topLeft,
-                    child: SizedBox(
-                      child: AutoSizeText(
-                        "${meal.title}" + ",",
-                        style:
-                            TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 10, bottom: 10, left: 5, right: 5),
-                    width: weidth,
-                    height: sizeW(height, 0.4),
-                    padding: EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10.0),
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 3,
-                          blurRadius: 2,
-                          offset: Offset(3, 3), // changes position of shadow
-                        ),
-                      ],
-                    ),
-                    child: Image.network(meal.imageURL.toString()),
-                  ),
-                  Container(
-                    width: sizeW(weidth, 0.4),
-                    padding: EdgeInsets.all(8),
-                    margin: EdgeInsets.only(top: 10, bottom: 10),
-                    decoration: BoxDecoration(
-                      color: Color(0xffCBDCC3),
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: Center(
-                      child:
-                      Text(
-                        "Estimated time: " + meal.duration.toString() + " min.",
-                        style: TextStyle(fontSize: 15),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    alignment: Alignment.topLeft,
-                    margin: EdgeInsets.only(top: 8, bottom: 8, right: 5, left: 5),
-                    decoration: BoxDecoration(
-                        color: Colors.black12,
-                        borderRadius: BorderRadius.circular(12.0),
-                        border: Border.all(color: Colors.transparent)),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: SizedBox(
-                        child: AutoSizeText(
-                          "${meal.description}",
-                          style: TextStyle(fontSize: weidth * 0.06),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(10),
-                    margin: EdgeInsets.only(top: 8, bottom: 8, right: 5, left: 5),
-                    decoration: BoxDecoration(
-                      color: Colors.black12,
-                      border: Border.all(color: Colors.transparent),
-                      borderRadius: BorderRadius.circular(16.0),
-                                        ),
-                    child: Column(
-                      children: [
-                        Container(
-                          margin: EdgeInsets.only(top: 10 , bottom: 15, ),
-                          decoration: BoxDecoration(
-                            color: Color(0xffE1E1E1),
-                            borderRadius: BorderRadius.circular(12.0),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 5,
-                                blurRadius: 7,
-                                offset: Offset(2, 5), // changes position of shadow
-                              ),
-                            ],
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Container(width: weidth/3,
-                                child: FlatButton(
-                                  child: Text(
-                                    "Steps",
-                                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                                  ),
-                                  onPressed: () {
-                                    setState(() {
-                                      TextIngOrSteps = TextSteps;
-                                    });
-                                  },
-                                ),
-                              ),
-                              VerticalDivider(color: Colors.black, ),
-                              Container(width: weidth/3,
-                                child: FlatButton(
-                                  child: Text(
-                                    "Ingredients",
-                                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                                  ),
-                                  onPressed: () {
-                                    setState(() {
-                                      TextIngOrSteps = TextIng;
-                                    });
-                                  },
-                                ),
-                              ),
-                            ],
+      body: Container(
+        width: weidth,
+        height: height,
+        child: Padding(
+          padding: const EdgeInsets.all(0.0),
+          child: Stack(
+            children: [
+              Positioned(
+                child: Container(
+                  width: weidth,
+                  height: height/2.5,
+                  child: Image.network(meal.imageURL.toString(),width: weidth,
+                  height: height/2.5,fit: BoxFit.fill,),
+                ),
+              ),
+              Positioned(
+                top: height/2.45,
+                right: 15,
+                left: 15,
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(top: 10, bottom: 5),
+                        alignment: Alignment.center,
+                        child: SizedBox(
+                          child: AutoSizeText(
+                            "${meal.title}" ,
+                            style:
+                                TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                           ),
                         ),
-
-                        Container(
-                          alignment: Alignment.topLeft,
-                          margin: EdgeInsets.only(top: 8, bottom: 8, right: 5, left: 5),
+                      ),
+                      Container(
+                        width: sizeW(weidth, 0.5),
+                        padding: EdgeInsets.all(8),
+                        margin: EdgeInsets.only(top: 10, bottom: 5),
+                        child: Center(
+                          child: Text(
+                            "Estimated time: " + meal.duration.toString() + " min.",
+                            style: TextStyle(fontSize: 15, color: Colors.lightGreen, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment.topLeft,
+                        margin: EdgeInsets.only(top: 8, bottom: 8, right: 5, left: 5),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
                           child: SizedBox(
-                            child: Text(
-                              TextIngOrSteps,
-                              style: TextStyle(fontSize: weidth * 0.07),
+                            child: AutoSizeText(
+                              "${meal.description}",
+                              style: TextStyle(fontSize: 20),
                             ),
                           ),
-                        )
-                      ],
-                    ),
-                  )
-                ],
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(10),
+                        margin: EdgeInsets.only(top: 8, bottom: 8, right: 5, left: 5),
+                        child: Column(
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(
+                                top: 10,
+                                bottom: 15,
+                              ),
+                              decoration: BoxDecoration(
+                                color: Colors.lightGreen,
+                                borderRadius: BorderRadius.circular(12.0),
+
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Container(
+                                    width: weidth / 3,
+                                    child: FlatButton(
+                                      child: Text(
+                                        "Steps",
+                                        style: TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold,
+                                        color: Colors.white),
+                                      ),
+                                      onPressed: () {
+                                        setState(() {
+                                          TextIngOrSteps = TextSteps;
+                                        });
+                                      },
+                                    ),
+                                  ),
+                                  VerticalDivider(
+                                    color: Colors.black,
+                                  ),
+                                  Container(
+                                    width: weidth / 3,
+                                    child: FlatButton(
+                                      child: Text(
+                                        "Ingredients",
+                                        style: TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold,color: Colors.white),
+                                      ),
+                                      onPressed: () {
+                                        setState(() {
+                                          TextIngOrSteps = TextIng;
+                                        });
+                                      },
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Container(
+                              alignment: Alignment.topLeft,
+                              margin: EdgeInsets.only(
+                                  top: 8, bottom: 8, right: 5, left: 5),
+                              child: SizedBox(
+                                child: Text(
+                                  TextIngOrSteps,
+                                  style: TextStyle(fontSize: 20),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
               ),
-            ),
+            ],
           ),
         ),
-
+      ),
     );
   }
 
