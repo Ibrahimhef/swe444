@@ -46,6 +46,19 @@ class catogory extends State<Catogory> {
       value: DatabaseService().meals,
       child: Scaffold(
         backgroundColor: Color(0xffF5F5F5),
+        appBar: AppBar(
+          backgroundColor: Color(0xfff2b705),
+          title: Center(
+            child: Text(
+              cat1[_category],
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'OleoScript'),
+            ),
+          ),
+        ),
         bottomNavigationBar: CurvedNavigationBar(
           backgroundColor: Color.fromRGBO(242, 171, 39, 1),
           height: 50,
@@ -69,21 +82,6 @@ class catogory extends State<Catogory> {
           },
           backgroundColor: Color(0xfff2780c),
           child: Icon(Icons.add),
-        ),
-        appBar: AppBar(
-          title: Center(
-            child: Text(
-              cat1[_category],
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'OleoScript'),
-            ),
-          ),
-          backgroundColor: Color(0xfff2b705),
-          // elevation: 0,
-          // bottomOpacity: 0,
         ),
         body: Container(
           child: new ListInfo(weidth, height),
