@@ -146,6 +146,7 @@ class addPage extends State<AddPage> {
                     ),
                     // name
                     Container(
+                      width: sizeW(weidth, 0.875),
                       padding: EdgeInsets.only(
                           top: 10, left: 7, right: 7, bottom: 5),
                       margin: EdgeInsets.symmetric(horizontal: weidth * 0.03),
@@ -169,6 +170,7 @@ class addPage extends State<AddPage> {
                     ),
                     //Duration
                     Container(
+                      width: sizeW(weidth, 0.875),
                       padding: EdgeInsets.only(
                           top: 10, left: 7, right: 7, bottom: 5),
                       margin: EdgeInsets.symmetric(horizontal: weidth * 0.03),
@@ -190,6 +192,7 @@ class addPage extends State<AddPage> {
                     ),
                     //Ingredients
                     Container(
+                      width: sizeW(weidth, 0.875),
                       padding: EdgeInsets.only(
                           top: 10, left: 7, right: 7, bottom: 5),
                       margin: EdgeInsets.symmetric(horizontal: weidth * 0.03),
@@ -214,6 +217,7 @@ class addPage extends State<AddPage> {
                     ),
                     //Description
                     Container(
+                      width: sizeW(weidth, 0.875),
                       padding: EdgeInsets.only(
                           top: 10, left: 7, right: 7, bottom: 5),
                       margin: EdgeInsets.symmetric(horizontal: weidth * 0.03),
@@ -238,6 +242,7 @@ class addPage extends State<AddPage> {
                     ),
                     //Steps
                     Container(
+                      width: sizeW(weidth, 0.875),
                       padding: EdgeInsets.only(
                           top: 10, left: 7, right: 7, bottom: 5),
                       margin: EdgeInsets.symmetric(horizontal: weidth * 0.03),
