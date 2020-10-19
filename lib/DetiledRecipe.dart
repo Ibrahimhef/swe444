@@ -108,7 +108,7 @@ class detildPage extends State<DetildPage> {
                 ),
                 //Recipe description
                 Container(
-                  alignment: Alignment.center,
+                  alignment: Alignment.topLeft,
                   padding:
                       EdgeInsets.only(right: 25, left: 25, bottom: 15, top: 15),
                   child: AutoSizeText(
