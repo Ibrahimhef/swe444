@@ -112,8 +112,7 @@ class detildPage extends State<DetildPage> {
                   padding:
                       EdgeInsets.only(right: 25, left: 25, bottom: 15, top: 15),
                   child: AutoSizeText(
-                    // "${meal.description}",
-                    'jhijkhkjh\nljkhjhkhj\nj,hhjkgjhgkjhg\ngkjhgjhghg',
+                    "${meal.description}",
                     style: TextStyle(
                       fontSize: 18,
                     ),
