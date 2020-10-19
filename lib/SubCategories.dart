@@ -47,14 +47,14 @@ class catogory extends State<Catogory> {
       child: Scaffold(
         backgroundColor: Color(0xffF5F5F5),
         appBar: AppBar(
-          backgroundColor: Color(0xfff2b705),
+          backgroundColor: Color(0xffd97904),
           title: Center(
             child: Text(
               cat1[_category],
               style: TextStyle(
-                  color: Colors.black,
+                  // color: Colors.black,
                   fontSize: 25,
-                  fontWeight: FontWeight.bold,
+                  // fontWeight: FontWeight.bold,
                   fontFamily: 'OleoScript'),
             ),
           ),

@@ -115,330 +115,343 @@ class addPage extends State<AddPage> {
         ),
       ),
       body: SingleChildScrollView(
-        child: Container(
-          // color: Color(0xffF5F5F5),
-          height: height * 1.75,
-          width: weidth,
-          child: Stack(
-            children: [
-              Form(
-                key: _formKey2,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    //Img
-                    Container(
-                      decoration: BoxDecoration(
-                          color: Color(0xffE1E1E1),
-                          borderRadius: BorderRadius.all(Radius.circular(10))),
-                      margin: EdgeInsets.only(bottom: 5),
-                      width: sizeW(weidth, 0.875),
-                      height: height * 0.25,
-                      child: InkWell(
-                        onTap: chooseFile,
-                        child: Image(
-                          //image Path
-                          image: _image != null
-                              ? AssetImage("${_image.path}")
-                              : AssetImage('assets/Upload_pic.png'),
-                        ),
+        child: Stack(
+          children: [
+            Form(
+              key: _formKey2,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  //Img
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xffE1E1E1),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10),
                       ),
                     ),
-                    // name
-                    Container(
-                      width: sizeW(weidth, 0.875),
-                      padding: EdgeInsets.only(
-                          top: 10, left: 7, right: 7, bottom: 5),
-                      margin: EdgeInsets.symmetric(horizontal: weidth * 0.03),
-                      height: 70,
-                      decoration: BoxDecoration(
-                        color: Color(0xffC4C4C4),
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                      ),
-                      child: TextFormField(
-                        onChanged: (value) => title = value,
-                        validator: (value) =>
-                            value.isEmpty ? "fill the Name of Recipe" : null,
-                        textInputAction: TextInputAction.next,
-                        onFieldSubmitted: (_) =>
-                            FocusScope.of(context).nextFocus(),
-                        decoration: InputDecoration(
-                          hintText: "Name:",
-                          border: InputBorder.none,
-                        ),
+                    margin: EdgeInsets.symmetric(vertical: 10),
+                    width: sizeW(weidth, 0.875),
+                    height: height * 0.25,
+                    child: InkWell(
+                      onTap: chooseFile,
+                      child: Image(
+                        //image Path
+                        image: _image != null
+                            ? AssetImage("${_image.path}")
+                            : AssetImage('assets/Upload_pic.png'),
                       ),
                     ),
-                    //Duration
-                    Container(
-                      width: sizeW(weidth, 0.875),
-                      padding: EdgeInsets.only(
-                          top: 10, left: 7, right: 7, bottom: 5),
-                      margin: EdgeInsets.symmetric(horizontal: weidth * 0.03),
-                      height: 70,
-                      decoration: BoxDecoration(
-                        color: Color(0xffC4C4C4),
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                      ),
-                      child: TextFormField(
-                        onChanged: (value) => duration = int.parse(value),
-                        validator: (value) =>
-                            value.isEmpty ? "fill the duration" : null,
-                        // maxLines: 1,
-                        decoration: InputDecoration(
-                          hintText: "Est. cooking time:",
-                          border: InputBorder.none,
-                        ),
+                  ),
+                  // name
+                  Container(
+                    width: sizeW(weidth, 0.875),
+                    padding:
+                        EdgeInsets.only(top: 10, left: 7, right: 7, bottom: 5),
+                    margin: EdgeInsets.symmetric(
+                        horizontal: weidth * 0.03, vertical: 2.5),
+                    height: 70,
+                    decoration: BoxDecoration(
+                      color: Color(0xffC4C4C4),
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                    ),
+                    child: TextFormField(
+                      onChanged: (value) => title = value,
+                      validator: (value) =>
+                          value.isEmpty ? "fill the Name of Recipe" : null,
+                      textInputAction: TextInputAction.next,
+                      onFieldSubmitted: (_) =>
+                          FocusScope.of(context).nextFocus(),
+                      decoration: InputDecoration(
+                        hintText: "Name:",
+                        border: InputBorder.none,
                       ),
                     ),
-                    //Ingredients
-                    Container(
-                      width: sizeW(weidth, 0.875),
-                      padding: EdgeInsets.only(
-                          top: 10, left: 7, right: 7, bottom: 5),
-                      margin: EdgeInsets.symmetric(horizontal: weidth * 0.03),
-                      height: 200,
-                      decoration: BoxDecoration(
-                        color: Color(0xffE0E0E0),
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                      ),
-                      child: TextFormField(
-                        onChanged: (value) => ingredients = value,
-                        validator: (value) =>
-                            value.isEmpty ? "fill the ingredients" : null,
-                        textInputAction: TextInputAction.next,
-                        onFieldSubmitted: (_) =>
-                            FocusScope.of(context).nextFocus(),
-                        maxLines: (height * 0.008).ceilToDouble().toInt(),
-                        decoration: InputDecoration(
-                          hintText: "Ingredients:",
-                          border: InputBorder.none,
-                        ),
+                  ),
+                  //Duration
+                  Container(
+                    width: sizeW(weidth, 0.875),
+                    padding:
+                        EdgeInsets.only(top: 10, left: 7, right: 7, bottom: 5),
+                    margin: EdgeInsets.symmetric(
+                        horizontal: weidth * 0.03, vertical: 2.5),
+                    height: 70,
+                    decoration: BoxDecoration(
+                      color: Color(0xffC4C4C4),
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                    ),
+                    child: TextFormField(
+                      onChanged: (value) => duration = int.parse(value),
+                      validator: (value) =>
+                          value.isEmpty ? "fill the duration" : null,
+                      // maxLines: 1,
+                      decoration: InputDecoration(
+                        hintText: "Est. cooking time:",
+                        border: InputBorder.none,
                       ),
                     ),
-                    //Description
-                    Container(
-                      width: sizeW(weidth, 0.875),
-                      padding: EdgeInsets.only(
-                          top: 10, left: 7, right: 7, bottom: 5),
-                      margin: EdgeInsets.symmetric(horizontal: weidth * 0.03),
-                      height: 200,
-                      decoration: BoxDecoration(
-                        color: Color(0xffE0E0E0),
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                      ),
-                      child: TextFormField(
-                        onChanged: (value) => description = value,
-                        validator: (value) =>
-                            value.isEmpty ? "fill the description" : null,
-                        textInputAction: TextInputAction.next,
-                        onFieldSubmitted: (_) =>
-                            FocusScope.of(context).nextFocus(),
-                        maxLines: (height * 0.008).ceilToDouble().toInt(),
-                        decoration: InputDecoration(
-                          hintText: "Description:",
-                          border: InputBorder.none,
-                        ),
-                      ),
+                  ),
+                  //Description
+                  Container(
+                    width: sizeW(weidth, 0.875),
+                    padding:
+                        EdgeInsets.only(top: 10, left: 7, right: 7, bottom: 5),
+                    margin: EdgeInsets.symmetric(
+                        horizontal: weidth * 0.03, vertical: 2.5),
+                    height: 200,
+                    decoration: BoxDecoration(
+                      color: Color(0xffE0E0E0),
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
                     ),
-                    //Steps
-                    Container(
-                      width: sizeW(weidth, 0.875),
-                      padding: EdgeInsets.only(
-                          top: 10, left: 7, right: 7, bottom: 5),
-                      margin: EdgeInsets.symmetric(horizontal: weidth * 0.03),
-                      height: 200,
-                      decoration: BoxDecoration(
-                        color: Color(0xffE0E0E0),
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                      ),
-                      child: TextFormField(
-                        onChanged: (value) => step = value,
-                        validator: (value) =>
-                            value.isEmpty ? "fill the steps" : null,
-                        textInputAction: TextInputAction.next,
-                        onFieldSubmitted: (_) =>
-                            FocusScope.of(context).nextFocus(),
-                        maxLines: (height * 0.008).ceilToDouble().toInt(),
-                        decoration: InputDecoration(
-                          hintText: "Steps:",
-                          border: InputBorder.none,
-                        ),
+                    child: TextFormField(
+                      onChanged: (value) => description = value,
+                      validator: (value) =>
+                          value.isEmpty ? "fill the description" : null,
+                      textInputAction: TextInputAction.next,
+                      onFieldSubmitted: (_) =>
+                          FocusScope.of(context).nextFocus(),
+                      maxLines: (height * 0.008).ceilToDouble().toInt(),
+                      decoration: InputDecoration(
+                        hintText: "Description:",
+                        border: InputBorder.none,
                       ),
                     ),
-                    //Choose category divider
-                    Row(
-                      children: <Widget>[
-                        Expanded(
-                          child: Divider(
-                            thickness: 2,
-                          ),
-                        ),
-                        Text(
-                          '     Choose category     ',
-                          style: TextStyle(
-                              fontFamily: 'OleoScript',
-                              color: Colors.black,
-                              fontSize: 20),
-                        ),
-                        Expanded(
-                          child: Divider(
-                            thickness: 2,
-                          ),
-                        ),
-                      ],
+                  ),
+                  //Ingredients
+                  Container(
+                    width: sizeW(weidth, 0.875),
+                    padding:
+                        EdgeInsets.only(top: 10, left: 7, right: 7, bottom: 5),
+                    margin: EdgeInsets.symmetric(
+                        horizontal: weidth * 0.03, vertical: 2.5),
+                    height: 200,
+                    decoration: BoxDecoration(
+                      color: Color(0xffE0E0E0),
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
                     ),
-                    //Category selection
-                    Wrap(
-                      alignment: WrapAlignment.spaceEvenly,
-                      children: [
-                        Container(
-                          margin: EdgeInsets.all(3),
-                          child: chip(cat[0], "assets/Juice_icon@3x.png", 0),
-                        ),
-                        Container(
-                          margin: EdgeInsets.all(3),
-                          child:
-                              chip(cat[1], "assets/Appetizers_icon@3x.png", 1),
-                        ),
-                        Container(
-                          margin: EdgeInsets.all(3),
-                          child:
-                              chip(cat[2], "assets/Main Dishes_icon@3x.png", 2),
-                        ),
-                        Container(
-                          margin: EdgeInsets.all(3),
-                          child: chip(cat[3], "assets/Salads_icon@3x.png", 3),
-                        ),
-                        Container(
-                          margin: EdgeInsets.all(3),
-                          child: chip(cat[4], "assets/Soup_icon@3x.png", 4),
-                        ),
-                        Container(
-                          margin: EdgeInsets.all(3),
-                          child: chip(cat[5], "assets/Sweets_icon@3x.png", 5),
-                        ),
-                      ],
+                    child: TextFormField(
+                      onChanged: (value) => ingredients = value,
+                      validator: (value) =>
+                          value.isEmpty ? "fill the ingredients" : null,
+                      textInputAction: TextInputAction.next,
+                      onFieldSubmitted: (_) =>
+                          FocusScope.of(context).nextFocus(),
+                      maxLines: (height * 0.008).ceilToDouble().toInt(),
+                      decoration: InputDecoration(
+                        hintText: "Ingredients:",
+                        border: InputBorder.none,
+                      ),
                     ),
-                    //Save button
-                    RaisedButton(
-                      elevation: 5,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          side: BorderSide(color: Colors.red)),
-                      color: Color(0xffDD7804),
-                      child: Padding(
-                        padding: const EdgeInsets.only(
-                            top: 8.0, bottom: 8.0, left: 20, right: 20),
-                        child: Text(
-                          'Save',
-                          style:
-                              TextStyle(fontFamily: 'OleoScript', fontSize: 25),
+                  ),
+                  //Steps
+                  Container(
+                    width: sizeW(weidth, 0.875),
+                    padding:
+                        EdgeInsets.only(top: 10, left: 7, right: 7, bottom: 5),
+                    margin: EdgeInsets.only(
+                        right: weidth * 0.03,
+                        left: weidth * 0.03,
+                        top: 2.5,
+                        bottom: 15),
+                    height: 200,
+                    decoration: BoxDecoration(
+                      color: Color(0xffE0E0E0),
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                    ),
+                    child: TextFormField(
+                      onChanged: (value) => step = value,
+                      validator: (value) =>
+                          value.isEmpty ? "fill the steps" : null,
+                      textInputAction: TextInputAction.next,
+                      onFieldSubmitted: (_) =>
+                          FocusScope.of(context).nextFocus(),
+                      maxLines: (height * 0.008).ceilToDouble().toInt(),
+                      decoration: InputDecoration(
+                        hintText: "Steps:",
+                        border: InputBorder.none,
+                      ),
+                    ),
+                  ),
+                  //Choose category divider
+                  Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: Divider(
+                          thickness: 2,
                         ),
                       ),
-                      onPressed: () async {
-                        if (_formKey2.currentState.validate() &&
-                            _image != null) {
-                          // return fileURL;
-                          uploadFile();
-                          // uploadFile().then((value) =>
-                          //     DatabaseService(uid: user.uid).insertMeals(
-                          //         category,
-                          //         title,
-                          //         description,
-                          //         ingredients,
-                          //         step,
-                          //         duration,
-                          //         email,
-                          //         uploadedFileURL));
-                          // uploadFile().whenComplete(() => {
-                          //       DatabaseService(uid: user.uid).insertMeals(
-                          //           category,
-                          //           title,
-                          //           description,
-                          //           ingredients,
-                          //           step,
-                          //           duration,
-                          //           email,
-                          //           uploadedFileURL)
-                          //     });
-                          // uploadFile();
-                          print(user.uid);
-                          //   DatabaseService(uid: user.uid).insertMeals(
-                          //       category,
-                          //       title,
-                          //       description,
-                          //       ingredients,
-                          //       step,
-                          //       duration,
-                          //       user.email,
-                          //       uploadedFileURL);
-                          // }
-                        }
-                      },
+                      Text(
+                        '     Choose category     ',
+                        style: TextStyle(
+                            fontFamily: 'OleoScript',
+                            color: Colors.black,
+                            fontSize: 20),
+                      ),
+                      Expanded(
+                        child: Divider(
+                          thickness: 2,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  //Category selection
+                  Wrap(
+                    alignment: WrapAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        margin: EdgeInsets.all(3),
+                        child: chip(cat[0], "assets/Juice_icon@3x.png", 0),
+                      ),
+                      Container(
+                        margin: EdgeInsets.all(3),
+                        child: chip(cat[1], "assets/Appetizers_icon@3x.png", 1),
+                      ),
+                      Container(
+                        margin: EdgeInsets.all(3),
+                        child:
+                            chip(cat[2], "assets/Main Dishes_icon@3x.png", 2),
+                      ),
+                      Container(
+                        margin: EdgeInsets.all(3),
+                        child: chip(cat[3], "assets/Salads_icon@3x.png", 3),
+                      ),
+                      Container(
+                        margin: EdgeInsets.all(3),
+                        child: chip(cat[4], "assets/Soup_icon@3x.png", 4),
+                      ),
+                      Container(
+                        margin: EdgeInsets.all(3),
+                        child: chip(cat[5], "assets/Sweets_icon@3x.png", 5),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  //Save button
+                  RaisedButton(
+                    elevation: 5,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        side: BorderSide(color: Colors.red)),
+                    color: Color(0xffDD7804),
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          top: 8.0, bottom: 8.0, left: 20, right: 20),
+                      child: Text(
+                        'Save',
+                        style:
+                            TextStyle(fontFamily: 'OleoScript', fontSize: 25),
+                      ),
                     ),
-                  ],
-                ),
+                    onPressed: () async {
+                      if (_formKey2.currentState.validate() && _image != null) {
+                        // return fileURL;
+                        uploadFile();
+                        // uploadFile().then((value) =>
+                        //     DatabaseService(uid: user.uid).insertMeals(
+                        //         category,
+                        //         title,
+                        //         description,
+                        //         ingredients,
+                        //         step,
+                        //         duration,
+                        //         email,
+                        //         uploadedFileURL));
+                        // uploadFile().whenComplete(() => {
+                        //       DatabaseService(uid: user.uid).insertMeals(
+                        //           category,
+                        //           title,
+                        //           description,
+                        //           ingredients,
+                        //           step,
+                        //           duration,
+                        //           email,
+                        //           uploadedFileURL)
+                        //     });
+                        // uploadFile();
+                        print(user.uid);
+                        //   DatabaseService(uid: user.uid).insertMeals(
+                        //       category,
+                        //       title,
+                        //       description,
+                        //       ingredients,
+                        //       step,
+                        //       duration,
+                        //       user.email,
+                        //       uploadedFileURL);
+                        // }
+                      }
+                    },
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                ],
               ),
-              // Positioned(
-              //   top: height * 0.9,
-              //   right: 15,
-              //   left: 15,
-              //   child: Container(
-              //     alignment: Alignment.center,
-              //     width: sizeW(weidth, 0.5),
-              //     child: FlatButton(
-              //       highlightColor: Colors.transparent,
-              //       splashColor: Colors.transparent,
-              //       onPressed: () async {
-              //         if (_formKey2.currentState.validate() && _image != null) {
-              //           // return fileURL;
-              //           uploadFile();
-              //           // uploadFile().then((value) =>
-              //           //     DatabaseService(uid: user.uid).insertMeals(
-              //           //         category,
-              //           //         title,
-              //           //         description,
-              //           //         ingredients,
-              //           //         step,
-              //           //         duration,
-              //           //         email,
-              //           //         uploadedFileURL));
-              //           // uploadFile().whenComplete(() => {
-              //           //       DatabaseService(uid: user.uid).insertMeals(
-              //           //           category,
-              //           //           title,
-              //           //           description,
-              //           //           ingredients,
-              //           //           step,
-              //           //           duration,
-              //           //           email,
-              //           //           uploadedFileURL)
-              //           //     });
-              //           // uploadFile();
+            ),
+            // Positioned(
+            //   top: height * 0.9,
+            //   right: 15,
+            //   left: 15,
+            //   child: Container(
+            //     alignment: Alignment.center,
+            //     width: sizeW(weidth, 0.5),
+            //     child: FlatButton(
+            //       highlightColor: Colors.transparent,
+            //       splashColor: Colors.transparent,
+            //       onPressed: () async {
+            //         if (_formKey2.currentState.validate() && _image != null) {
+            //           // return fileURL;
+            //           uploadFile();
+            //           // uploadFile().then((value) =>
+            //           //     DatabaseService(uid: user.uid).insertMeals(
+            //           //         category,
+            //           //         title,
+            //           //         description,
+            //           //         ingredients,
+            //           //         step,
+            //           //         duration,
+            //           //         email,
+            //           //         uploadedFileURL));
+            //           // uploadFile().whenComplete(() => {
+            //           //       DatabaseService(uid: user.uid).insertMeals(
+            //           //           category,
+            //           //           title,
+            //           //           description,
+            //           //           ingredients,
+            //           //           step,
+            //           //           duration,
+            //           //           email,
+            //           //           uploadedFileURL)
+            //           //     });
+            //           // uploadFile();
 
-              //           print(user.uid);
-              //           //   DatabaseService(uid: user.uid).insertMeals(
-              //           //       category,
-              //           //       title,
-              //           //       description,
-              //           //       ingredients,
-              //           //       step,
-              //           //       duration,
-              //           //       user.email,
-              //           //       uploadedFileURL);
-              //           // }
-              //         }
-              //       },
-              //       child: Image(
-              //         image: AssetImage('assets/AddButton@3x.png'),
-              //         width: weidth * 0.4,
-              //         height: weidth * 0.2,
-              //       ),
-              //     ),
-              //   ),
-              // ),
-            ],
-          ),
+            //           print(user.uid);
+            //           //   DatabaseService(uid: user.uid).insertMeals(
+            //           //       category,
+            //           //       title,
+            //           //       description,
+            //           //       ingredients,
+            //           //       step,
+            //           //       duration,
+            //           //       user.email,
+            //           //       uploadedFileURL);
+            //           // }
+            //         }
+            //       },
+            //       child: Image(
+            //         image: AssetImage('assets/AddButton@3x.png'),
+            //         width: weidth * 0.4,
+            //         height: weidth * 0.2,
+            //       ),
+            //     ),
+            //   ),
+            // ),
+          ],
         ),
       ),
     );

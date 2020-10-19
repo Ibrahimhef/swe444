@@ -89,8 +89,11 @@ class MealItem extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Color(0xffE1E1E1),
                       borderRadius: BorderRadius.circular(25.0),
+                      image: DecorationImage(
+                        image: NetworkImage(meal.imageURL.toString()),
+                        fit: BoxFit.fitWidth,
+                      ),
                     ),
-                    child: Image.network(meal.imageURL.toString()),
                   )
                 ],
               ),
