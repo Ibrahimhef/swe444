@@ -77,6 +77,7 @@ class addPage extends State<AddPage> {
                   duration,
                   element.email,
                   fileURL);
+              Navigator.of(context).pop();
               // print("email email : $email");
             }
           });
@@ -349,41 +350,7 @@ class addPage extends State<AddPage> {
                     ),
                     onPressed: () async {
                       if (_formKey2.currentState.validate() && _image != null) {
-                        // return fileURL;
                         uploadFile();
-                        // uploadFile().then((value) =>
-                        //     DatabaseService(uid: user.uid).insertMeals(
-                        //         category,
-                        //         title,
-                        //         description,
-                        //         ingredients,
-                        //         step,
-                        //         duration,
-                        //         email,
-                        //         uploadedFileURL));
-                        // uploadFile().whenComplete(() => {
-                        //       DatabaseService(uid: user.uid).insertMeals(
-                        //           category,
-                        //           title,
-                        //           description,
-                        //           ingredients,
-                        //           step,
-                        //           duration,
-                        //           email,
-                        //           uploadedFileURL)
-                        //     });
-                        // uploadFile();
-                        print(user.uid);
-                        //   DatabaseService(uid: user.uid).insertMeals(
-                        //       category,
-                        //       title,
-                        //       description,
-                        //       ingredients,
-                        //       step,
-                        //       duration,
-                        //       user.email,
-                        //       uploadedFileURL);
-                        // }
                       }
                     },
                   ),

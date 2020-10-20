@@ -29,7 +29,7 @@ class DatabaseService {
     Random random = new Random();
     int randomNumber = random.nextInt(1000000000);
     return await mealCollection.document("$randomNumber").setData({
-      'id': randomNumber,
+      'id': "$randomNumber",
       "category": category,
       'title': title,
       'description': description,

@@ -6,6 +6,7 @@ import 'package:swe444/Services/database.dart';
 import 'package:swe444/models/meals.dart';
 import 'package:swe444/models/profile.dart';
 import 'package:swe444/models/user.dart';
+import 'package:cool_alert/cool_alert.dart';
 
 class DetildPage extends StatefulWidget {
   final double weidth, height;
@@ -67,8 +68,21 @@ class detildPage extends State<DetildPage> {
                   padding: EdgeInsets.only(right: 20.0),
                   child: GestureDetector(
                     onTap: () {
-                      DatabaseService().removeMeal(meal.id);
-                      Navigator.of(context).pop();
+                      CoolAlert.show(
+                          context: context,
+                          type: CoolAlertType.confirm,
+                          text:
+                              "This recipe will be deleted immediately. You can not undo this action",
+                          title:
+                              "Are you sure you want to delete '${meal.title}'",
+                          confirmBtnText: "Delete",
+                          cancelBtnText: "Cancel",
+                          onConfirmBtnTap: () {
+                            DatabaseService().removeMeal(meal.id);
+                            Navigator.of(context).pop();
+                          });
+                      //DatabaseService().removeMeal(meal.id);
+                      //Navigator.of(context).pop();
                     },
                     child: Icon(Icons.delete),
                   ),
