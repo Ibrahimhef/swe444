@@ -47,7 +47,7 @@ class catogory extends State<Catogory> {
       child: Scaffold(
         backgroundColor: Color(0xffF5F5F5),
         appBar: AppBar(
-          backgroundColor: Color(0xffd97904),
+          backgroundColor: Color(0xff262523),
           title: Center(
             child: Text(
               cat1[_category],
