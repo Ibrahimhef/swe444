@@ -1,4 +1,5 @@
 class Meal {
+  final String id;
   final int category;
   final String title;
   final String description;
@@ -9,7 +10,8 @@ class Meal {
   final String imageURL;
 
   Meal(
-      {this.category,
+      {this.id,
+      this.category,
       this.title,
       this.description,
       this.ingredients,

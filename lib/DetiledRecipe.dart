@@ -1,7 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:provider/provider.dart';
+import 'package:swe444/Services/database.dart';
 import 'package:swe444/models/meals.dart';
+import 'package:swe444/models/profile.dart';
+import 'package:swe444/models/user.dart';
 
 class DetildPage extends StatefulWidget {
   final double weidth, height;
@@ -28,11 +32,24 @@ class detildPage extends State<DetildPage> {
     TextIngOrSteps = "${meal.step}";
   }
 
+  String MyEmail = "";
   @override
   Widget build(BuildContext context) {
+    final user = Provider.of<User>(context);
+    Stream<List<profile1>> users = DatabaseService(uid: user.uid).users;
+    users.listen((event) {
+      event.forEach((element) {
+        if (element.uid == user.uid) {
+          setState(() {
+            MyEmail = element.email;
+            // print(MyEmail + "=={");
+          });
+        }
+      });
+    });
     TextIng = "${meal.ingredients}";
     TextSteps = "${meal.step}";
-
+    print(MyEmail + "<email>");
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xfff2780c),
@@ -44,15 +61,20 @@ class detildPage extends State<DetildPage> {
           ),
         ),
         //delete button in app bar
-        actions: [
-          Padding(
-            padding: EdgeInsets.only(right: 20.0),
-            child: GestureDetector(
-              onTap: () {},
-              child: Icon(Icons.delete),
-            ),
-          ),
-        ],
+        actions: meal.email == MyEmail
+            ? [
+                Padding(
+                  padding: EdgeInsets.only(right: 20.0),
+                  child: GestureDetector(
+                    onTap: () {
+                      DatabaseService().removeMeal(meal.id);
+                      Navigator.of(context).pop();
+                    },
+                    child: Icon(Icons.delete),
+                  ),
+                ),
+              ]
+            : null,
       ),
       body: SingleChildScrollView(
         child: Stack(

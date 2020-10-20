@@ -29,6 +29,7 @@ class DatabaseService {
     Random random = new Random();
     int randomNumber = random.nextInt(1000000000);
     return await mealCollection.document("$randomNumber").setData({
+      'id': randomNumber,
       "category": category,
       'title': title,
       'description': description,
@@ -40,10 +41,15 @@ class DatabaseService {
     });
   }
 
+  Future removeMeal(String id) {
+    mealCollection.document(id).delete();
+  }
+
 // method for display list of meals info into screen(private)
   List<Meal> _mealListFromSnapShot(QuerySnapshot snapshot) {
     return snapshot.documents.map((doc) {
       return Meal(
+          id: doc.data['id'] ?? '',
           title: doc.data['title'] ?? '',
           description: doc.data['description'] ?? '',
           category: doc.data['category'] ?? 0,
