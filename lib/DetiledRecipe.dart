@@ -114,7 +114,7 @@ class detildPage extends State<DetildPage> {
                     ],
                     image: DecorationImage(
                       image: NetworkImage(meal.imageURL.toString()),
-                      fit: BoxFit.fitWidth,
+                      fit: BoxFit.fill,
                     ),
                   ),
                 ),
@@ -246,7 +246,7 @@ class detildPage extends State<DetildPage> {
                           topRight: Radius.circular(12)),
                       color: Color.fromRGBO(242, 171, 39, 1),
                     ),
-                    child: Text(
+                    child: AutoSizeText(
                       "${meal.title}",
                       style: TextStyle(
                           fontSize: 25,
