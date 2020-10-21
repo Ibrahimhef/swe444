@@ -10,6 +10,8 @@ import 'package:path/path.dart' as Path;
 import 'package:swe444/Services/database.dart';
 import 'package:swe444/models/profile.dart';
 import 'package:swe444/models/user.dart';
+import 'package:cool_alert/cool_alert.dart';
+
 
 class AddPage extends StatefulWidget {
   final double weidth, height;
@@ -106,12 +108,11 @@ class addPage extends State<AddPage> {
     ];
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xfff2780c),
+        backgroundColor: Color.fromRGBO(242, 171, 39, 1),
         title: Text(
           'Add Recipe',
           style: TextStyle(
             fontSize: 25,
-            fontFamily: 'OleoScript',
           ),
         ),
       ),
@@ -162,7 +163,7 @@ class addPage extends State<AddPage> {
                           value.isEmpty ? "fill the Name of Recipe" : null,
                       textInputAction: TextInputAction.next,
                       onFieldSubmitted: (_) =>
-                          FocusScope.of(context).nextFocus(),
+                          FocusScope.of(context).focusedChild,
                       decoration: InputDecoration(
                         hintText: "Name:",
                         border: InputBorder.none,
@@ -182,10 +183,15 @@ class addPage extends State<AddPage> {
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                     ),
                     child: TextFormField(
-                      onChanged: (value) => duration = int.parse(value),
+                                            onChanged: (value) => duration = int.parse(value),
                       validator: (value) =>
                           value.isEmpty ? "fill the duration" : null,
                       // maxLines: 1,
+                      keyboardType: TextInputType.number,
+                      maxLength: 3,
+                      textInputAction: TextInputAction.next,
+                      onFieldSubmitted: (_) =>
+                      FocusScope.of(context).focusedChild,
                       decoration: InputDecoration(
                         hintText: "Est. cooking time:",
                         border: InputBorder.none,
@@ -210,8 +216,7 @@ class addPage extends State<AddPage> {
                           value.isEmpty ? "fill the description" : null,
                       textInputAction: TextInputAction.next,
                       onFieldSubmitted: (_) =>
-                          FocusScope.of(context).nextFocus(),
-                      maxLines: (height * 0.008).ceilToDouble().toInt(),
+                          FocusScope.of(context).focusedChild,
                       decoration: InputDecoration(
                         hintText: "Description:",
                         border: InputBorder.none,
@@ -234,10 +239,12 @@ class addPage extends State<AddPage> {
                       onChanged: (value) => ingredients = value,
                       validator: (value) =>
                           value.isEmpty ? "fill the ingredients" : null,
-                      textInputAction: TextInputAction.next,
+                      textInputAction: TextInputAction.newline,
                       onFieldSubmitted: (_) =>
                           FocusScope.of(context).nextFocus(),
-                      maxLines: (height * 0.008).ceilToDouble().toInt(),
+                      keyboardType: TextInputType.multiline,
+                      minLines: 1,
+                      maxLines: 100,
                       decoration: InputDecoration(
                         hintText: "Ingredients:",
                         border: InputBorder.none,
@@ -263,10 +270,12 @@ class addPage extends State<AddPage> {
                       onChanged: (value) => step = value,
                       validator: (value) =>
                           value.isEmpty ? "fill the steps" : null,
-                      textInputAction: TextInputAction.next,
+                      textInputAction: TextInputAction.newline,
                       onFieldSubmitted: (_) =>
                           FocusScope.of(context).nextFocus(),
-                      maxLines: (height * 0.008).ceilToDouble().toInt(),
+                      keyboardType: TextInputType.multiline,
+                      minLines: 1,
+                      maxLines: 100,
                       decoration: InputDecoration(
                         hintText: "Steps:",
                         border: InputBorder.none,
@@ -284,7 +293,6 @@ class addPage extends State<AddPage> {
                       Text(
                         '     Choose category     ',
                         style: TextStyle(
-                            fontFamily: 'OleoScript',
                             color: Colors.black,
                             fontSize: 20),
                       ),
@@ -345,12 +353,23 @@ class addPage extends State<AddPage> {
                       child: Text(
                         'Save',
                         style:
-                            TextStyle(fontFamily: 'OleoScript', fontSize: 25),
+                            TextStyle( fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white),
                       ),
                     ),
                     onPressed: () async {
                       if (_formKey2.currentState.validate() && _image != null) {
-                        uploadFile();
+                        CoolAlert.show(
+                            context: context,
+                            type: CoolAlertType.success,
+                            confirmBtnColor:  Color(0xfff2780c),
+                            confirmBtnText: "Done",
+                            text: "Your recipe is added",
+                            barrierDismissible: false,
+                            onConfirmBtnTap: (){
+                              Navigator.of(context).pop();
+                              uploadFile();
+                            },
+                        );
                       }
                     },
                   ),
@@ -360,64 +379,6 @@ class addPage extends State<AddPage> {
                 ],
               ),
             ),
-            // Positioned(
-            //   top: height * 0.9,
-            //   right: 15,
-            //   left: 15,
-            //   child: Container(
-            //     alignment: Alignment.center,
-            //     width: sizeW(weidth, 0.5),
-            //     child: FlatButton(
-            //       highlightColor: Colors.transparent,
-            //       splashColor: Colors.transparent,
-            //       onPressed: () async {
-            //         if (_formKey2.currentState.validate() && _image != null) {
-            //           // return fileURL;
-            //           uploadFile();
-            //           // uploadFile().then((value) =>
-            //           //     DatabaseService(uid: user.uid).insertMeals(
-            //           //         category,
-            //           //         title,
-            //           //         description,
-            //           //         ingredients,
-            //           //         step,
-            //           //         duration,
-            //           //         email,
-            //           //         uploadedFileURL));
-            //           // uploadFile().whenComplete(() => {
-            //           //       DatabaseService(uid: user.uid).insertMeals(
-            //           //           category,
-            //           //           title,
-            //           //           description,
-            //           //           ingredients,
-            //           //           step,
-            //           //           duration,
-            //           //           email,
-            //           //           uploadedFileURL)
-            //           //     });
-            //           // uploadFile();
-
-            //           print(user.uid);
-            //           //   DatabaseService(uid: user.uid).insertMeals(
-            //           //       category,
-            //           //       title,
-            //           //       description,
-            //           //       ingredients,
-            //           //       step,
-            //           //       duration,
-            //           //       user.email,
-            //           //       uploadedFileURL);
-            //           // }
-            //         }
-            //       },
-            //       child: Image(
-            //         image: AssetImage('assets/AddButton@3x.png'),
-            //         width: weidth * 0.4,
-            //         height: weidth * 0.2,
-            //       ),
-            //     ),
-            //   ),
-            // ),
           ],
         ),
       ),

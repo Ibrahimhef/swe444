@@ -43,6 +43,7 @@ class DatabaseService {
 
   Future removeMeal(String id) {
     mealCollection.document(id).delete();
+
   }
 
 // method for display list of meals info into screen(private)

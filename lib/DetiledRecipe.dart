@@ -58,7 +58,6 @@ class detildPage extends State<DetildPage> {
           '${meal.title}',
           style: TextStyle(
             fontSize: 25,
-            fontFamily: 'OleoScript',
           ),
         ),
         //delete button in app bar
@@ -77,8 +76,10 @@ class detildPage extends State<DetildPage> {
                               "Are you sure you want to delete '${meal.title}'",
                           confirmBtnText: "Delete",
                           cancelBtnText: "Cancel",
+                          confirmBtnColor:  Color(0xfff2780c),
                           onConfirmBtnTap: () {
                             DatabaseService().removeMeal(meal.id);
+                            Navigator.of(context).pop();
                             Navigator.of(context).pop();
                           });
                       //DatabaseService().removeMeal(meal.id);
@@ -108,7 +109,7 @@ class detildPage extends State<DetildPage> {
                         color: Colors.grey.withOpacity(0.5),
                         spreadRadius: 5,
                         blurRadius: 7,
-                        offset: Offset(0, 3), // changes position of shadow
+                        offset: Offset(0, 2), // changes position of shadow
                       ),
                     ],
                     image: DecorationImage(
@@ -131,7 +132,6 @@ class detildPage extends State<DetildPage> {
                     Text(
                       '     Description     ',
                       style: TextStyle(
-                          fontFamily: 'OleoScript',
                           color: Colors.black,
                           fontSize: 25),
                     ),
@@ -167,7 +167,6 @@ class detildPage extends State<DetildPage> {
                     Text(
                       '     Ingredients     ',
                       style: TextStyle(
-                          fontFamily: 'OleoScript',
                           color: Colors.grey,
                           fontSize: 25),
                     ),
@@ -202,7 +201,6 @@ class detildPage extends State<DetildPage> {
                     Text(
                       '     Steps     ',
                       style: TextStyle(
-                          fontFamily: 'OleoScript',
                           color: Colors.grey,
                           fontSize: 25),
                     ),
@@ -252,7 +250,6 @@ class detildPage extends State<DetildPage> {
                       "${meal.title}",
                       style: TextStyle(
                           fontSize: 25,
-                          fontFamily: 'OleoScript',
                           color: Colors.white),
                     ),
                   ),

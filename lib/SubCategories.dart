@@ -55,12 +55,12 @@ class catogory extends State<Catogory> {
                   // color: Colors.black,
                   fontSize: 25,
                   // fontWeight: FontWeight.bold,
-                  fontFamily: 'OleoScript'),
+                  ),
             ),
           ),
         ),
         bottomNavigationBar: CurvedNavigationBar(
-          backgroundColor: Color.fromRGBO(242, 171, 39, 1),
+          backgroundColor: Color(0xff262523),
           height: 50,
           items: [
             Image.asset('assets/Juice_icon@3x.png'),
@@ -80,7 +80,7 @@ class catogory extends State<Catogory> {
                 new MaterialPageRoute(
                     builder: (context) => new AddPage(weidth, height, user)));
           },
-          backgroundColor: Color(0xfff2780c),
+          backgroundColor: Color(0xff262523),
           child: Icon(Icons.add),
         ),
         body: Container(
