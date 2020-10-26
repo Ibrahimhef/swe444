@@ -78,7 +78,7 @@ class addPage extends State<AddPage> {
                   description,
                   ingredients,
                   step,
-                  duration,
+                  _duration.inMinutes,
                   element.email,
                   fileURL);
               Navigator.of(context).pop();
@@ -173,38 +173,23 @@ class addPage extends State<AddPage> {
                     ),
                   ),
                   //Duration
+                  Text("Est. cooking time:"),
                   Container(
                     width: sizeW(weidth, 0.875),
                     padding:
-                        EdgeInsets.only(top: 10, left: 7, right: 7, bottom: 5),
+                        EdgeInsets.only(top: 15, left: 7, right: 7, bottom: 5),
                     margin: EdgeInsets.symmetric(
                         horizontal: weidth * 0.03, vertical: 2.5),
-                    height: 70,
+                    height: 250,
                     decoration: BoxDecoration(
-                      color: Color(0xffC4C4C4),
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                     ),
-                    // child: TextFormField(
-                    //                         onChanged: (value) => duration = int.parse(value),
-                    //   validator: (value) =>
-                    //       value.isEmpty ? "fill the duration" : null,
-                    //   // maxLines: 1,
-                    //   keyboardType: TextInputType.number,
-                    //   maxLength: 3,
-                    //   textInputAction: TextInputAction.next,
-                    //   onFieldSubmitted: (_) =>
-                    //   FocusScope.of(context).focusedChild,
-                    //   decoration: InputDecoration(
-                    //     hintText: "Est. cooking time:",
-                    //     border: InputBorder.none,
-                    //   ),
-                    // ),
                     child: DurationPicker(
                       duration: _duration,
                       onChange: (val) {
                         this.setState(() => _duration = val);
                       },
-                      snapToMins: 2.0,
+                      snapToMins: 1.0,
                     )
                   ),
                   //Description
