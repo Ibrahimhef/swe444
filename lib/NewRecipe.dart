@@ -11,6 +11,7 @@ import 'package:swe444/Services/database.dart';
 import 'package:swe444/models/profile.dart';
 import 'package:swe444/models/user.dart';
 import 'package:cool_alert/cool_alert.dart';
+import 'package:flutter_duration_picker/flutter_duration_picker.dart';
 
 
 class AddPage extends StatefulWidget {
@@ -26,6 +27,7 @@ class AddPage extends StatefulWidget {
 }
 
 class addPage extends State<AddPage> {
+  Duration _duration = Duration(hours: 0, minutes: 0);
   final AuthServices _auth = AuthServices();
   final User user;
   static final _formKey2 = GlobalKey<FormState>();
@@ -182,21 +184,28 @@ class addPage extends State<AddPage> {
                       color: Color(0xffC4C4C4),
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                     ),
-                    child: TextFormField(
-                                            onChanged: (value) => duration = int.parse(value),
-                      validator: (value) =>
-                          value.isEmpty ? "fill the duration" : null,
-                      // maxLines: 1,
-                      keyboardType: TextInputType.number,
-                      maxLength: 3,
-                      textInputAction: TextInputAction.next,
-                      onFieldSubmitted: (_) =>
-                      FocusScope.of(context).focusedChild,
-                      decoration: InputDecoration(
-                        hintText: "Est. cooking time:",
-                        border: InputBorder.none,
-                      ),
-                    ),
+                    // child: TextFormField(
+                    //                         onChanged: (value) => duration = int.parse(value),
+                    //   validator: (value) =>
+                    //       value.isEmpty ? "fill the duration" : null,
+                    //   // maxLines: 1,
+                    //   keyboardType: TextInputType.number,
+                    //   maxLength: 3,
+                    //   textInputAction: TextInputAction.next,
+                    //   onFieldSubmitted: (_) =>
+                    //   FocusScope.of(context).focusedChild,
+                    //   decoration: InputDecoration(
+                    //     hintText: "Est. cooking time:",
+                    //     border: InputBorder.none,
+                    //   ),
+                    // ),
+                    child: DurationPicker(
+                      duration: _duration,
+                      onChange: (val) {
+                        this.setState(() => _duration = val);
+                      },
+                      snapToMins: 2.0,
+                    )
                   ),
                   //Description
                   Container(

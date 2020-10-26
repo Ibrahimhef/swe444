@@ -25,6 +25,7 @@ dependencies:
   curved_navigation_bar: ^0.3.4
   animated_splash_screen: ^1.0.1
   auto_size_text: ^2.1.0
+  flutter_duration_picker: "^1.0.0"
   flutter:
     sdk: flutter
   google_sign_in: ^4.2.4
