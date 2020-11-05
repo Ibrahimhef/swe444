@@ -9,6 +9,7 @@ import 'package:swe444/models/meals.dart';
 import 'package:swe444/models/user.dart';
 import 'package:swe444/shared/loading.dart';
 import 'package:swe444/models/profile.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class Profile extends StatefulWidget {
   final double weidth, height;
@@ -77,12 +78,14 @@ class profile extends State<Profile> {
                           Icons.account_circle,
                           size: 80,
                         ),
-                        Text(
+                        AutoSizeText(
                           'Aziz Alarfaj',
                           style: TextStyle(
                             fontSize: 40,
                             fontFamily: 'OleoScript',
                           ),
+                          maxLines: 2,
+                          minFontSize: 30,
                         ),
                         Text(
                           'We will miss you',

@@ -48,16 +48,29 @@ class catogory extends State<Catogory> {
         backgroundColor: Color(0xffF5F5F5),
         appBar: AppBar(
           backgroundColor: Color(0xff262523),
-          title: Center(
-            child: Text(
-              cat1[_category],
-              style: TextStyle(
-                  // color: Colors.black,
-                  fontSize: 25,
-                  // fontWeight: FontWeight.bold,
-                  ),
+          title: Text(
+            cat1[_category],
+            style: TextStyle(
+              fontSize: 25,
             ),
           ),
+          //action buttons in app bar
+          // actions: [
+          //   Padding(
+          //     padding: EdgeInsets.only(right: 20.0),
+          //     child: GestureDetector(
+          //       onTap: () {},
+          //       child: Icon(Icons.search),
+          //     ),
+          //   ),
+          //   Padding(
+          //     padding: EdgeInsets.only(right: 20.0),
+          //     child: GestureDetector(
+          //       onTap: () {},
+          //       child: Icon(Icons.more_vert),
+          //     ),
+          //   ),
+          // ],
         ),
         bottomNavigationBar: CurvedNavigationBar(
           backgroundColor: Color(0xff262523),

@@ -76,14 +76,14 @@ class detildPage extends State<DetildPage> {
                               "Are you sure you want to delete '${meal.title}'",
                           confirmBtnText: "Delete",
                           cancelBtnText: "Cancel",
-                          confirmBtnColor:  Color(0xfff2780c),
+                          confirmBtnColor: Color(0xfff2780c),
                           onConfirmBtnTap: () {
                             DatabaseService().removeMeal(meal.id);
                             Navigator.of(context).pop();
                             Navigator.of(context).pop();
                           });
-                      //DatabaseService().removeMeal(meal.id);
-                      //Navigator.of(context).pop();
+                      // DatabaseService().removeMeal(meal.id);
+                      // Navigator.of(context).pop();
                     },
                     child: Icon(Icons.delete),
                   ),
@@ -106,7 +106,7 @@ class detildPage extends State<DetildPage> {
                         bottomRight: Radius.circular(24)),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
+                        color: Colors.grey.withOpacity(0.4),
                         spreadRadius: 5,
                         blurRadius: 7,
                         offset: Offset(0, 2), // changes position of shadow
@@ -114,7 +114,7 @@ class detildPage extends State<DetildPage> {
                     ],
                     image: DecorationImage(
                       image: NetworkImage(meal.imageURL.toString()),
-                      fit: BoxFit.fill,
+                      fit: BoxFit.fitWidth,
                     ),
                   ),
                 ),
@@ -131,9 +131,7 @@ class detildPage extends State<DetildPage> {
                     ),
                     Text(
                       '     Description     ',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 25),
+                      style: TextStyle(color: Colors.black, fontSize: 25),
                     ),
                     Expanded(
                       child: Divider(
@@ -166,9 +164,7 @@ class detildPage extends State<DetildPage> {
                     ),
                     Text(
                       '     Ingredients     ',
-                      style: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 25),
+                      style: TextStyle(color: Colors.grey, fontSize: 25),
                     ),
                     Expanded(
                       child: Divider(
@@ -200,9 +196,7 @@ class detildPage extends State<DetildPage> {
                     ),
                     Text(
                       '     Steps     ',
-                      style: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 25),
+                      style: TextStyle(color: Colors.grey, fontSize: 25),
                     ),
                     Expanded(
                       child: Divider(
@@ -249,8 +243,10 @@ class detildPage extends State<DetildPage> {
                     child: AutoSizeText(
                       "${meal.title}",
                       style: TextStyle(
-                          fontSize: 25,
-                          color: Colors.white),
+                        fontSize: 25,
+                        color: Colors.white,
+                      ),
+                      maxLines: 1,
                     ),
                   ),
                   Container(
