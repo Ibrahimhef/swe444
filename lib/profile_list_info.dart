@@ -1,37 +1,58 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:provider/provider.dart';
-import 'package:swe444/DetiledRecipe.dart';
+import 'package:swe444/Services/database.dart';
 import 'package:swe444/meal_item.dart';
 import 'package:swe444/models/meals.dart';
+import 'package:swe444/models/profile.dart';
+import 'package:swe444/models/user.dart';
 
 class ListInfo_profile extends StatefulWidget {
   final double weidth, height;
-  final List meal;
-  ListInfo_profile(this.weidth, this.height, this.meal);
+  int cat;
+  final List ListOfRecipeces;
+
+  ListInfo_profile(this.weidth, this.height, this.ListOfRecipeces);
 
   @override
   State<StatefulWidget> createState() {
-    return listInfo_pro(weidth, height,meal);
+    return listInfo_pro(weidth, height, ListOfRecipeces);
   }
 }
 
 class listInfo_pro extends State<ListInfo_profile> {
   final double weidth, height;
-  final List meal;
-  listInfo_pro(this.weidth, this.height, this.meal);
+  final List ListOfRecipeces;
+  String MyEmail = '';
+  static int cat;
+
+  listInfo_pro(this.weidth, this.height, this.ListOfRecipeces);
+
+  @override
+  void initState() {
+    cat = 0;
+  }
+
   @override
   Widget build(BuildContext context) {
+    Stream<List<Meal>> meal_cat = DatabaseService().meals;
+    List meal;
+    meal_cat.listen((event) {
+      for (int i=0 ; i<event.length; i++){
+        if (cat == event[i].category){
+          meal.add(event[i]);
+        }
+      }
+    });
     return GlowingOverscrollIndicator(
       color: Color(0xfff2b705),
       axisDirection: AxisDirection.down,
       child: ListView.builder(
           itemCount: meal.length,
           itemBuilder: (context, index) {
-            return MealItem(weidth, height, meal[index]);
+            print(cat);
+              return MealItem(weidth, height, meal[index]);
           }),
     );
   }
-
-
 }
