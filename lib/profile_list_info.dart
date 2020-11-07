@@ -5,39 +5,24 @@ import 'package:swe444/DetiledRecipe.dart';
 import 'package:swe444/meal_item.dart';
 import 'package:swe444/models/meals.dart';
 
-class ListInfo extends StatefulWidget {
+class ListInfo_profile extends StatefulWidget {
   final double weidth, height;
-
-  ListInfo(this.weidth, this.height);
+  final List meal;
+  ListInfo_profile(this.weidth, this.height, this.meal);
 
   @override
   State<StatefulWidget> createState() {
-    return listInfo(weidth, height);
+    return listInfo_pro(weidth, height,meal);
   }
 }
 
-class listInfo extends State<ListInfo> {
+class listInfo_pro extends State<ListInfo_profile> {
   final double weidth, height;
-  static int category;
-  List meal = [];
-  listInfo(this.weidth, this.height);
-  initState(){
-    category=0;
-  }
+  final List meal;
+  List meal_cat;
+  listInfo_pro(this.weidth, this.height, this.meal);
   @override
   Widget build(BuildContext context) {
-
-    try {
-      meal.clear();
-      final currentMeal = Provider.of<List<Meal>>(context);
-      for (int i = 0; i < currentMeal.length; i++) {
-        if (currentMeal[i].category == category) {
-          meal.add(currentMeal[i]);
-        }
-      }
-    } catch (e) {
-      print(e.toString());
-    }
     return GlowingOverscrollIndicator(
       color: Color(0xfff2b705),
       axisDirection: AxisDirection.down,

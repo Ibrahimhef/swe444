@@ -1,15 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:swe444/Profile_list.dart';
 import 'package:swe444/Services/auth.dart';
-import 'package:swe444/ListOwnRecipe.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:swe444/Services/database.dart';
-import 'package:swe444/models/meals.dart';
-import 'package:swe444/models/user.dart';
 import 'package:swe444/shared/loading.dart';
-import 'package:swe444/models/profile.dart';
+import 'Profile_list.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+
 
 class Profile extends StatefulWidget {
   final double weidth, height;
@@ -32,7 +29,7 @@ class profile extends State<Profile> {
   final String email;
   profile(
       this.weidth, this.height, this.ListOfRecipeces, this.email, this.name);
-  // List ListOwnRec = [];
+  List ListOwnRec = [];
   final AuthServices _auth = AuthServices();
   bool loading = false;
 
@@ -79,7 +76,7 @@ class profile extends State<Profile> {
                           size: 80,
                         ),
                         AutoSizeText(
-                          'Aziz Alarfaj',
+                          name,
                           style: TextStyle(
                             fontSize: 40,
                             fontFamily: 'OleoScript',
@@ -100,114 +97,61 @@ class profile extends State<Profile> {
                           height: 20,
                         ),
                         //--------
-                        RaisedButton(
-                          elevation: 5,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              side: BorderSide(color: Colors.red)),
-                          color: Color(0xffDD7804),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              'Log out',
-                              style: TextStyle(
-                                  fontFamily: 'OleoScript', fontSize: 25),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            RaisedButton(
+                              elevation: 5,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  side: BorderSide(color: Colors.red)),
+                              color: Color(0xffDD7804),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: AutoSizeText(
+                                  'Log out',
+                                  style: TextStyle(
+                                      fontFamily: 'OleoScript', fontSize: 20),
+                                ),
+                              ),
+                              onPressed: () async {
+                                setState(() {
+                                  loading = true;
+                                });
+                                await _auth.SignOut();
+                                Navigator.of(context).pop();
+                              },
                             ),
-                          ),
-                          onPressed: () async {
-                            setState(() {
-                              loading = true;
-                            });
-                            await _auth.SignOut();
-                            Navigator.of(context).pop();
-                          },
+                            RaisedButton(
+                              elevation: 5,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  side: BorderSide(color: Colors.red)),
+                              color: Color(0xffDD7804),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: AutoSizeText(
+                                  'Your Recipes',
+                                  style: TextStyle(
+                                      fontFamily: 'OleoScript', fontSize: 20),
+                                ),
+                              ),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    new MaterialPageRoute(
+                                        builder: (context) =>
+                                        new Profile_list(weidth, height, ListOfRecipeces)));
+                              },
+                            ),
+                          ],
                         ),
+
                       ],
                     ),
                   ),
                 ),
-                // Positioned(
-                //   right: 0,
-                //   top: -7,
-                //   child: Image(
-                //     image: AssetImage('assets/ProfileHead@3x.png'),
-                //     width: weidth,
-                //     height: height / 4.5,
-                //     fit: BoxFit.fill,
-                //   ),
-                // ),
-                // Positioned(
-                //   top: height * 0.89,
-                //   left: 100,
-                //   right: 100,
-                //   child: Container(
-                //     alignment: Alignment.center,
-                //     // color: Colors.black,
-                //     width: weidth / 5,
-                //     height: weidth / 5,
-                //     child: InkWell(
-                //         highlightColor: Colors.transparent,
-                //         splashColor: Colors.transparent,
-                //         onTap: () async {
-                //           setState(() {
-                //             // loading = true;
-                //           });
-                //           await _auth.SignOut();
-                //           Navigator.of(context).pop();
-                //         },
-                //         child: Image(
-                //           width: weidth * 0.4,
-                //           height: weidth * 0.2,
-                //           image: AssetImage('assets/LogOutBouttin@3x.png'),
-                //         )),
-                //   ),
-                // ),
-                // Positioned(
-                //     top: height / 4.5,
-                //     left: 25,
-                //     child: Container(
-                //       width: weidth * 0.8,
-                //       child: Material(
-                //         color: Colors.white,
-                //         elevation: 5.0,
-                //         borderRadius: BorderRadius.circular(25.0),
-                //         child: Padding(
-                //           padding: const EdgeInsets.all(16),
-                //           child: Column(
-                //             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                //             children: [
-                //               Container(
-                //                 margin: EdgeInsets.only(bottom: 7),
-                //                 alignment: Alignment.centerLeft,
-                //                 child: Text(
-                //                   "$name",
-                //                   style: TextStyle(
-                //                       fontSize: 18,
-                //                       fontWeight: FontWeight.bold),
-                //                 ),
-                //               ),
-                //               Container(
-                //                 alignment: Alignment.centerLeft,
-                //                 child: Text(
-                //                   "$email",
-                //                   style: TextStyle(fontSize: 18),
-                //                 ),
-                //               ),
-                //             ],
-                //           ),
-                //         ),
-                //       ),
-                //     ),),
-                // Positioned(
-                //   top: height / 4,
-                //   left: 15,
-                //   right: 15,
-                //   child: Container(
-                //       width: weidth * 0.4,
-                //       height: height * 0.7,
-                //       child: ListOwnInfo(
-                //           ListOfRecipeces, weidth * 0.8, height * 0.5)),
-                // ),
+
               ],
             ),
           );

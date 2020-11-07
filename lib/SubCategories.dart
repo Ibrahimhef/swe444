@@ -54,23 +54,6 @@ class catogory extends State<Catogory> {
               fontSize: 25,
             ),
           ),
-          //action buttons in app bar
-          // actions: [
-          //   Padding(
-          //     padding: EdgeInsets.only(right: 20.0),
-          //     child: GestureDetector(
-          //       onTap: () {},
-          //       child: Icon(Icons.search),
-          //     ),
-          //   ),
-          //   Padding(
-          //     padding: EdgeInsets.only(right: 20.0),
-          //     child: GestureDetector(
-          //       onTap: () {},
-          //       child: Icon(Icons.more_vert),
-          //     ),
-          //   ),
-          // ],
         ),
         bottomNavigationBar: CurvedNavigationBar(
           backgroundColor: Color(0xff262523),
