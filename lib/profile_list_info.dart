@@ -19,7 +19,6 @@ class ListInfo_profile extends StatefulWidget {
 class listInfo_pro extends State<ListInfo_profile> {
   final double weidth, height;
   final List meal;
-  List meal_cat;
   listInfo_pro(this.weidth, this.height, this.meal);
   @override
   Widget build(BuildContext context) {

@@ -1,14 +1,6 @@
-import 'package:provider/provider.dart';
-import 'package:swe444/List_info.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:swe444/Services/database.dart';
-import 'package:swe444/models/meals.dart';
-import 'package:swe444/models/profile.dart';
-import 'package:swe444/models/user.dart';
-import 'package:swe444/profile.dart';
-import 'package:swe444/NewRecipe.dart';
 import 'package:swe444/profile_list_info.dart';
 
 class Profile_list extends StatefulWidget {
@@ -23,7 +15,8 @@ class Profile_list extends StatefulWidget {
 
 class profile_list extends State<Profile_list> {
   final double weidth, height;
-  final List meal;
+  List meal = [];
+  List meal_cat;
   int _category;
   var cat = [
     "assets/Juice_page@3x.png",
@@ -42,29 +35,29 @@ class profile_list extends State<Profile_list> {
         appBar: AppBar(
           backgroundColor: Color(0xff262523),
           title: Text(
-            cat1[_category],
+            "Your Recipes",
             style: TextStyle(
               fontSize: 25,
             ),
           ),
         ),
-        bottomNavigationBar: CurvedNavigationBar(
-          backgroundColor: Color(0xff262523),
-          height: 50,
-          items: [
-            Image.asset('assets/Juice_icon@3x.png'),
-            Image.asset('assets/Appetizers_icon@3x.png'),
-            Image.asset('assets/Main Dishes_icon@3x.png'),
-            Image.asset('assets/Salads_icon@3x.png'),
-            Image.asset('assets/Soup_icon@3x.png'),
-            Image.asset('assets/Sweets_icon@3x.png'),
-          ],
-          onTap: (int index){
-            setState(() {
-              _category = index;
-            });
-          },
-        ),
+        // bottomNavigationBar: CurvedNavigationBar(
+        //   backgroundColor: Color(0xff262523),
+        //   height: 50,
+        //   items: [
+        //     Image.asset('assets/Juice_icon@3x.png'),
+        //     Image.asset('assets/Appetizers_icon@3x.png'),
+        //     Image.asset('assets/Main Dishes_icon@3x.png'),
+        //     Image.asset('assets/Salads_icon@3x.png'),
+        //     Image.asset('assets/Soup_icon@3x.png'),
+        //     Image.asset('assets/Sweets_icon@3x.png'),
+        //   ],
+        //   onTap: (int index){
+        //     setState(() {
+        //       _category = index;
+        //     });
+        //   },
+        // ),
         body: Container(
           child: new ListInfo_profile(weidth, height,meal),
         ),
