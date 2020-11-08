@@ -141,7 +141,7 @@ class profile extends State<Profile> {
                                     context,
                                     new MaterialPageRoute(
                                         builder: (context) =>
-                                        new Profile_list(weidth, height, ListOfRecipeces)));
+                                        new Profile_list(weidth, height, ListOfRecipeces,email)));
                               },
                             ),
                           ],
