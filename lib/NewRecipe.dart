@@ -13,7 +13,6 @@ import 'package:swe444/models/user.dart';
 import 'package:cool_alert/cool_alert.dart';
 import 'package:flutter_duration_picker/flutter_duration_picker.dart';
 
-
 class AddPage extends StatefulWidget {
   final double weidth, height;
   final User user;
@@ -59,7 +58,8 @@ class addPage extends State<AddPage> {
         .child('recipes/${Path.basename(_image.path)}}');
     StorageUploadTask uploadTask = storageReference.putFile(_image);
     await uploadTask.onComplete;
-    print('File Uploaded');
+    //
+    //print('File Uploaded');
     storageReference.getDownloadURL().then((fileURL) {
       setState(() {
         uploadedFileURL = fileURL;
@@ -71,7 +71,7 @@ class addPage extends State<AddPage> {
           event.forEach((element) {
             if (element.uid == user.uid) {
               email = element.email;
-              print("email: ${element.email}");
+              //print("email: ${element.email}");
               DatabaseService(uid: user.uid).insertMeals(
                   category,
                   title,
@@ -88,7 +88,7 @@ class addPage extends State<AddPage> {
         });
 
         // return fileURL;
-        print(uploadedFileURL);
+        //print(uploadedFileURL);
       });
     });
   }
@@ -175,23 +175,22 @@ class addPage extends State<AddPage> {
                   //Duration
                   Text("Est. cooking time:"),
                   Container(
-                    width: sizeW(weidth, 0.875),
-                    padding:
-                        EdgeInsets.only(top: 15, left: 7, right: 7, bottom: 5),
-                    margin: EdgeInsets.symmetric(
-                        horizontal: weidth * 0.03, vertical: 2.5),
-                    height: 250,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                    ),
-                    child: DurationPicker(
-                      duration: _duration,
-                      onChange: (val) {
-                        this.setState(() => _duration = val);
-                      },
-                      snapToMins: 1.0,
-                    )
-                  ),
+                      width: sizeW(weidth, 0.875),
+                      padding: EdgeInsets.only(
+                          top: 15, left: 7, right: 7, bottom: 5),
+                      margin: EdgeInsets.symmetric(
+                          horizontal: weidth * 0.03, vertical: 2.5),
+                      height: 250,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                      ),
+                      child: DurationPicker(
+                        duration: _duration,
+                        onChange: (val) {
+                          this.setState(() => _duration = val);
+                        },
+                        snapToMins: 1.0,
+                      )),
                   //Description
                   Container(
                     width: sizeW(weidth, 0.875),
@@ -286,9 +285,7 @@ class addPage extends State<AddPage> {
                       ),
                       Text(
                         '     Choose category     ',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20),
+                        style: TextStyle(color: Colors.black, fontSize: 20),
                       ),
                       Expanded(
                         child: Divider(
@@ -346,23 +343,25 @@ class addPage extends State<AddPage> {
                           top: 8.0, bottom: 8.0, left: 20, right: 20),
                       child: Text(
                         'Save',
-                        style:
-                            TextStyle( fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white),
+                        style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
                       ),
                     ),
                     onPressed: () async {
                       if (_formKey2.currentState.validate() && _image != null) {
                         CoolAlert.show(
-                            context: context,
-                            type: CoolAlertType.success,
-                            confirmBtnColor:  Color(0xfff2780c),
-                            confirmBtnText: "Done",
-                            text: "Your recipe is added",
-                            barrierDismissible: false,
-                            onConfirmBtnTap: (){
-                              Navigator.of(context).pop();
-                              uploadFile();
-                            },
+                          context: context,
+                          type: CoolAlertType.success,
+                          confirmBtnColor: Color(0xfff2780c),
+                          confirmBtnText: "Done",
+                          text: "Your recipe is added",
+                          barrierDismissible: false,
+                          onConfirmBtnTap: () {
+                            Navigator.of(context).pop();
+                            uploadFile();
+                          },
                         );
                       }
                     },
@@ -400,7 +399,7 @@ class addPage extends State<AddPage> {
         setState(() {
           index = IsSelected ? selectedIndex : null;
           category = index;
-          print(category);
+          //print(category);
         });
       },
       selectedColor: Color.fromRGBO(242, 201, 54, 1),

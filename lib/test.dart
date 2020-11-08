@@ -12,7 +12,7 @@ class _userListState extends State<userList> {
   Widget build(BuildContext context) {
     final datainf = Provider.of<QuerySnapshot>(context);
     for (var doc in datainf.documents) {
-      print(doc.data);
+      // print(doc.data);
     }
     return Container();
   }

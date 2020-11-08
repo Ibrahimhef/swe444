@@ -87,7 +87,7 @@ class catogory extends State<Catogory> {
   }
 
   void selepage(int index) {
-    print("email:${user.email}");
+    // print("email:${user.email}");
     setState(
       () {
         if (index < 6) {

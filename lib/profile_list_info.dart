@@ -48,7 +48,6 @@ class listInfo_pro extends State<ListInfo_profile> {
       child: ListView.builder(
           itemCount: meal.length,
           itemBuilder: (context, index) {
-            print(cat);
             return MealItem(weidth, height, meal[index]);
           }),
     );

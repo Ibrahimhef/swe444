@@ -12,7 +12,7 @@ class Wrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final user = Provider.of<User>(context);
-    print(user);
+    // print(user);
 //check if signin later next screen category otherwise next screen login page
     if (user == null) {
       return Authentcate();

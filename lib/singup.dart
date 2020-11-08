@@ -93,7 +93,7 @@ class Sing extends State<Singup> {
                                     });
                                   }
                                 } else {
-                                  print("iy shi");
+                                  // print("iy shi");
                                 }
                               } //catch
                             },

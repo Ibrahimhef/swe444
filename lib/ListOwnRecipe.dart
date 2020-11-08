@@ -9,7 +9,6 @@ class ListOwnInfo extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    print(ListOfRecipeces.length);
     return listOwnInfo(ListOfRecipeces, weidth, height);
   }
 }

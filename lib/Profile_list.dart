@@ -58,9 +58,8 @@ class profile_list extends State<Profile_list> {
         ],
         onTap: (int index) {
           setState(() {
-            print("ggg" + index.toString());
             _category = index;
-            listInfo_pro.cat=index;
+            listInfo_pro.cat = index;
           });
         },
       ),
@@ -69,6 +68,4 @@ class profile_list extends State<Profile_list> {
       ),
     );
   }
-
-
 }
