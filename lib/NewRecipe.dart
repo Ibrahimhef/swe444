@@ -39,9 +39,51 @@ class addPage extends State<AddPage> {
   static String step;
   static int duration;
   static String email;
+  List<Widget> list_ing = [];
+  List<String> list_ing_info = [];
+  List<Widget> list_step = [];
+  List<String> list_step_info = [];
+  double size_ing = 120.0;
+  double size_step = 120.0;
+  int list_ing_index = 2;
+  int list_step_index = 2;
 
+//asd
+  //a
+  //as
+  //asd
   initState() {
     category = 0;
+    list_ing.add(
+      TextFormField(
+        onChanged: (value) => ingredients= "1- " + value,
+        validator: (value) => value.isEmpty ? "fill the ingredient" : null,
+        textInputAction: TextInputAction.done,
+        onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
+        keyboardType: TextInputType.multiline,
+        minLines: 1,
+        maxLines: 100,
+        decoration: InputDecoration(
+          hintText:  "1 Ingredient:",
+          border: InputBorder.none,
+        ),
+      ),
+    );
+    list_step.add(
+      TextFormField(
+        onChanged: (value) => step= "1- " + value,
+        validator: (value) => value.isEmpty ? "fill the step" : null,
+        textInputAction: TextInputAction.done,
+        onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
+        keyboardType: TextInputType.multiline,
+        minLines: 1,
+        maxLines: 100,
+        decoration: InputDecoration(
+          hintText:  "1 step:",
+          border: InputBorder.none,
+        ),
+      ),
+    );
   }
 
   Future chooseFile() async {
@@ -218,32 +260,60 @@ class addPage extends State<AddPage> {
                   ),
                   //Ingredients
                   Container(
-                    width: sizeW(weidth, 0.875),
-                    padding:
-                        EdgeInsets.only(top: 10, left: 7, right: 7, bottom: 5),
-                    margin: EdgeInsets.symmetric(
-                        horizontal: weidth * 0.03, vertical: 2.5),
-                    height: 200,
-                    decoration: BoxDecoration(
-                      color: Color(0xffE0E0E0),
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                    ),
-                    child: TextFormField(
-                      onChanged: (value) => ingredients = value,
-                      validator: (value) =>
-                          value.isEmpty ? "fill the ingredients" : null,
-                      textInputAction: TextInputAction.newline,
-                      onFieldSubmitted: (_) =>
-                          FocusScope.of(context).nextFocus(),
-                      keyboardType: TextInputType.multiline,
-                      minLines: 1,
-                      maxLines: 100,
-                      decoration: InputDecoration(
-                        hintText: "Ingredients:",
-                        border: InputBorder.none,
+                      width: sizeW(weidth, 0.875),
+                      padding: EdgeInsets.only(
+                          top: 10, left: 7, right: 7, bottom: 5),
+                      margin: EdgeInsets.symmetric(
+                          horizontal: weidth * 0.03, vertical: 2.5),
+                      height: size_ing,
+                      decoration: BoxDecoration(
+                        color: Color(0xffE0E0E0),
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
                       ),
-                    ),
-                  ),
+                      child: Column(
+                        children: [
+                          Column(
+                            children: list_ing,
+                          ),
+                          RaisedButton(
+                            elevation: 5,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                                side: BorderSide(color: Colors.red)),
+                            color: Color(0xffDD7804),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                'Add',
+                                style: TextStyle(
+                                    fontFamily: 'OleoScript', fontSize: 20),
+                              ),
+                            ),
+                            onPressed: (){
+                              list_ing_info.add(ingredients);
+                              ingredients ="";
+                              addIng();
+                            },
+                          )
+                        ],
+                      )
+
+                      // TextFormField(
+                      //   onChanged: (value) => ingredients = value,
+                      //   validator: (value) =>
+                      //       value.isEmpty ? "fill the ingredients" : null,
+                      //   textInputAction: TextInputAction.newline,
+                      //   onFieldSubmitted: (_) =>
+                      //       FocusScope.of(context).nextFocus(),
+                      //   keyboardType: TextInputType.multiline,
+                      //   minLines: 1,
+                      //   maxLines: 100,
+                      //   decoration: InputDecoration(
+                      //     hintText: "Ingredients:",
+                      //     border: InputBorder.none,
+                      //   ),
+                      // ),
+                      ),
                   //Steps
                   Container(
                     width: sizeW(weidth, 0.875),
@@ -254,26 +324,38 @@ class addPage extends State<AddPage> {
                         left: weidth * 0.03,
                         top: 2.5,
                         bottom: 15),
-                    height: 200,
+                    height: size_step,
                     decoration: BoxDecoration(
                       color: Color(0xffE0E0E0),
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                     ),
-                    child: TextFormField(
-                      onChanged: (value) => step = value,
-                      validator: (value) =>
-                          value.isEmpty ? "fill the steps" : null,
-                      textInputAction: TextInputAction.newline,
-                      onFieldSubmitted: (_) =>
-                          FocusScope.of(context).nextFocus(),
-                      keyboardType: TextInputType.multiline,
-                      minLines: 1,
-                      maxLines: 100,
-                      decoration: InputDecoration(
-                        hintText: "Steps:",
-                        border: InputBorder.none,
-                      ),
-                    ),
+                    child: Column(
+                      children: [
+                        Column(
+                          children: list_step,
+                        ),
+                        RaisedButton(
+                          elevation: 5,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                              side: BorderSide(color: Colors.red)),
+                          color: Color(0xffDD7804),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              'Add',
+                              style: TextStyle(
+                                  fontFamily: 'OleoScript', fontSize: 20),
+                            ),
+                          ),
+                          onPressed: (){
+                            list_step_info.add(step);
+                            step ="";
+                            addstep();
+                          },
+                        )
+                      ],
+                    )
                   ),
                   //Choose category divider
                   Row(
@@ -351,6 +433,23 @@ class addPage extends State<AddPage> {
                     ),
                     onPressed: () async {
                       if (_formKey2.currentState.validate() && _image != null) {
+                        String ss= ingredients;
+                        for (int i = 0; i < list_ing_info.length ; i++){
+                          if (i != 0)
+                          ingredients =  (  ingredients + list_ing_info[i] + "\n" );
+                          else
+                            ingredients = (list_ing_info[i] + "\n" );
+                        }
+                        ingredients+=ss;
+                        print(list_step_info);
+                        String ff= step;
+                        for (int i = 0; i < list_step_info.length ; i++){
+                          if (i != 0)
+                            step =  (  step + list_step_info[i] + "\n" );
+                          else
+                            step = (list_step_info[i] + "\n" );
+                        }
+                        step+=ff;
                         CoolAlert.show(
                           context: context,
                           type: CoolAlertType.success,
@@ -429,4 +528,48 @@ class addPage extends State<AddPage> {
     } else
       return 1100 * 0.19;
   }
+
+  void addIng() {
+    setState(() {
+      list_ing.add(
+        TextFormField(
+          onChanged: (value) =>  ingredients= (list_ing_index-1).toString()+ "- "+ value,
+          validator: (value) => value.isEmpty ? "fill the ingredient" : null,
+          textInputAction: TextInputAction.done,
+          onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
+          keyboardType: TextInputType.multiline,
+          minLines: 1,
+          maxLines: 100,
+          decoration: InputDecoration(
+            hintText: list_ing_index.toString() + " Ingredient:",
+            border: InputBorder.none,
+          ),
+        ),
+      );
+      size_ing += 50;
+      list_ing_index++;
+    });
+  }
+  void addstep() {
+    setState(() {
+      list_step.add(
+        TextFormField(
+          onChanged: (value) =>  step= (list_step_index-1).toString()+ "- "+ value,
+          validator: (value) => value.isEmpty ? "fill the step" : null,
+          textInputAction: TextInputAction.done,
+          onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
+          keyboardType: TextInputType.multiline,
+          minLines: 1,
+          maxLines: 100,
+          decoration: InputDecoration(
+            hintText: list_step_index.toString() + " Step:",
+            border: InputBorder.none,
+          ),
+        ),
+      );
+      size_step += 50;
+      list_step_index++;
+    });
+  }
 }
+
