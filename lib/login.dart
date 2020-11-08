@@ -172,7 +172,7 @@ class Loginstate extends State<Login> {
                                       value.isEmpty ? "Enter an email" : null,
                                   textInputAction: TextInputAction.next,
                                   onFieldSubmitted: (_) =>
-                                      FocusScope.of(context).nextFocus(),
+                                      FocusScope.of(context).focusedChild,
                                   decoration: InputDecoration(
                                       icon: Icon(
                                         Icons.perm_identity,
@@ -190,6 +190,7 @@ class Loginstate extends State<Login> {
                                 width: weidth * 0.75,
                                 height: height / 20,
                                 child: TextFormField(
+                                  textInputAction: TextInputAction.done,
                                   onChanged: (value) => password = value,
                                   validator: (value) =>
                                       value.isEmpty ? "Enter a password" : null,

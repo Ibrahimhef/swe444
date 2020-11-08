@@ -127,7 +127,7 @@ class Sing extends State<Singup> {
                                       value.isEmpty ? "fill the name" : null,
                                   textInputAction: TextInputAction.next,
                                   onFieldSubmitted: (_) =>
-                                      FocusScope.of(context).nextFocus(),
+                                      FocusScope.of(context).focusedChild,
                                   decoration: InputDecoration(
                                       icon: Icon(
                                         Icons.perm_identity,
@@ -155,7 +155,7 @@ class Sing extends State<Singup> {
                                       value.isEmpty ? "Enter an email" : null,
                                   textInputAction: TextInputAction.next,
                                   onFieldSubmitted: (_) =>
-                                      FocusScope.of(context).nextFocus(),
+                                      FocusScope.of(context).focusedChild,
                                   decoration: InputDecoration(
                                       icon: Icon(
                                         Icons.mail_outline,
@@ -176,7 +176,7 @@ class Sing extends State<Singup> {
                                   obscureText: true,
                                   textInputAction: TextInputAction.next,
                                   onFieldSubmitted: (_) =>
-                                      FocusScope.of(context).nextFocus(),
+                                      FocusScope.of(context).focusedChild,
                                   decoration: InputDecoration(
                                       icon: Icon(
                                         Icons.lock,
@@ -201,6 +201,7 @@ class Sing extends State<Singup> {
                                     return null;
                                   },
                                   obscureText: true,
+                                  textInputAction: TextInputAction.done,
                                   decoration: InputDecoration(
                                       icon: Icon(
                                         Icons.lock,

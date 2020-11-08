@@ -58,9 +58,9 @@ class addPage extends State<AddPage> {
       TextFormField(
         onChanged: (value) => ingredients= "1- " + value,
         validator: (value) => value.isEmpty ? "fill the ingredient" : null,
-        textInputAction: TextInputAction.done,
-        onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
-        keyboardType: TextInputType.multiline,
+        textInputAction: TextInputAction.next,
+        onFieldSubmitted: (_) => FocusScope.of(context).focusedChild,
+        keyboardType: TextInputType.text,
         minLines: 1,
         maxLines: 100,
         decoration: InputDecoration(
@@ -73,9 +73,9 @@ class addPage extends State<AddPage> {
       TextFormField(
         onChanged: (value) => step= "1- " + value,
         validator: (value) => value.isEmpty ? "fill the step" : null,
-        textInputAction: TextInputAction.done,
-        onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
-        keyboardType: TextInputType.multiline,
+        textInputAction: TextInputAction.next,
+        onFieldSubmitted: (_) => FocusScope.of(context).focusedChild,
+        keyboardType: TextInputType.text,
         minLines: 1,
         maxLines: 100,
         decoration: InputDecoration(
@@ -533,9 +533,9 @@ class addPage extends State<AddPage> {
         TextFormField(
           onChanged: (value) =>  ingredients= (list_ing_index-1).toString()+ "- "+ value,
           validator: (value) => value.isEmpty ? "fill the ingredient" : null,
-          textInputAction: TextInputAction.done,
-          onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
-          keyboardType: TextInputType.multiline,
+          textInputAction: TextInputAction.next,
+          onFieldSubmitted: (_) => FocusScope.of(context).focusedChild,
+          keyboardType: TextInputType.text,
           minLines: 1,
           maxLines: 100,
           decoration: InputDecoration(
@@ -554,9 +554,9 @@ class addPage extends State<AddPage> {
         TextFormField(
           onChanged: (value) =>  step= (list_step_index-1).toString()+ "- "+ value,
           validator: (value) => value.isEmpty ? "fill the step" : null,
-          textInputAction: TextInputAction.done,
-          onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
-          keyboardType: TextInputType.multiline,
+          textInputAction: TextInputAction.next,
+          onFieldSubmitted: (_) => FocusScope.of(context).focusedChild,
+          keyboardType: TextInputType.text,
           minLines: 1,
           maxLines: 100,
           decoration: InputDecoration(

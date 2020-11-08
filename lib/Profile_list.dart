@@ -6,7 +6,7 @@ import 'package:swe444/models/meals.dart';
 
 class Profile_list extends StatefulWidget {
   final double weidth, height;
-  final List ListOfRecipeces;
+   List ListOfRecipeces;
 
   Profile_list(this.weidth, this.height, this.ListOfRecipeces);
   @override
@@ -18,7 +18,7 @@ class Profile_list extends StatefulWidget {
 class profile_list extends State<Profile_list> {
   final double weidth, height;
   int _category;
-  final List ListOfRecipeces;
+   List ListOfRecipeces;
 
   var cat = [
     "assets/Juice_page@3x.png",

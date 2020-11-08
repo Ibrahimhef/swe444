@@ -10,7 +10,7 @@ import 'package:swe444/models/user.dart';
 class ListInfo_profile extends StatefulWidget {
   final double weidth, height;
   int cat;
-  final List ListOfRecipeces;
+  List ListOfRecipeces;
 
   ListInfo_profile(this.weidth, this.height, this.ListOfRecipeces);
 
@@ -22,7 +22,7 @@ class ListInfo_profile extends StatefulWidget {
 
 class listInfo_pro extends State<ListInfo_profile> {
   final double weidth, height;
-  final List ListOfRecipeces;
+  List ListOfRecipeces;
   String MyEmail = '';
   static int cat;
 
