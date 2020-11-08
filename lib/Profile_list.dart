@@ -47,7 +47,7 @@ class profile_list extends State<Profile_list> {
       ),
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: Color(0xff262523),
-        height: 60,
+        height: 55,
         items: [
           Image.asset('assets/Juice_icon@3x.png'),
           Image.asset('assets/Appetizers_icon@3x.png'),
@@ -59,6 +59,7 @@ class profile_list extends State<Profile_list> {
         onTap: (int index) {
           setState(() {
             _category = index;
+            if(index != listInfo_pro.cat)
             listInfo_pro.cat = index;
           });
         },

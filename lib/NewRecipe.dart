@@ -426,9 +426,7 @@ class addPage extends State<AddPage> {
                       child: Text(
                         'Save',
                         style: TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
+                            fontFamily: 'OleoScript', fontSize: 25, fontWeight: FontWeight.bold),
                       ),
                     ),
                     onPressed: () async {
