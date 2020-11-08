@@ -33,15 +33,13 @@ class listInfo_pro extends State<ListInfo_profile> {
     cat = 0;
   }
 
+  List meal = [];
   @override
   Widget build(BuildContext context) {
-    Stream<List<Meal>> meal_cat = DatabaseService().meals;
-    List meal;
-    meal_cat.listen((event) {
-      for (int i=0 ; i<event.length; i++){
-        if (cat == event[i].category){
-          meal.add(event[i]);
-        }
+    meal.clear();
+    ListOfRecipeces.forEach((element) {
+      if (element.category == cat) {
+        meal.add(element);
       }
     });
     return GlowingOverscrollIndicator(
@@ -51,7 +49,7 @@ class listInfo_pro extends State<ListInfo_profile> {
           itemCount: meal.length,
           itemBuilder: (context, index) {
             print(cat);
-              return MealItem(weidth, height, meal[index]);
+            return MealItem(weidth, height, meal[index]);
           }),
     );
   }
