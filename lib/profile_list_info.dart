@@ -36,7 +36,7 @@ class listInfo_pro extends State<ListInfo_profile> {
   List meal = [];
   @override
   Widget build(BuildContext context) {
-    meal.clear();
+    meal = [];
     ListOfRecipeces.forEach((element) {
       if (element.category == cat) {
         meal.add(element);
