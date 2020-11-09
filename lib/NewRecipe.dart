@@ -31,6 +31,7 @@ class addPage extends State<AddPage> {
   final User user;
   static final _formKey2 = GlobalKey<FormState>();
   File _image;
+  final _picker = ImagePicker();
   static String uploadedFileURL;
   static int category;
   static String title;
@@ -87,11 +88,11 @@ class addPage extends State<AddPage> {
   }
 
   Future chooseFile() async {
-    await ImagePicker.pickImage(source: ImageSource.gallery).then((image) {
-      setState(() {
-        _image = image;
-      });
+    PickedFile image = await _picker.getImage(source: ImageSource.gallery);
+    setState(() {
+      _image = File(image.path);
     });
+
   }
 
   Future uploadFile() async {
@@ -184,7 +185,7 @@ class addPage extends State<AddPage> {
                       child: Image(
                         //image Path
                         image: _image != null
-                            ? AssetImage("${_image.path}")
+                            ? FileImage(_image)
                             : AssetImage('assets/Upload_pic.png'),
                       ),
                     ),
