@@ -56,13 +56,13 @@ class addPage extends State<AddPage> {
     category = 0;
     list_ing.add(
       TextFormField(
-        onChanged: (value) => ingredients= "1- " + value,
+        onChanged: (value) => ingredients= "1-  " + value,
         validator: (value) => value.isEmpty ? "fill the ingredient" : null,
         textInputAction: TextInputAction.next,
         onFieldSubmitted: (_) => FocusScope.of(context).focusedChild,
         keyboardType: TextInputType.text,
         minLines: 1,
-        maxLines: 100,
+        maxLines: 1,
         decoration: InputDecoration(
           hintText:  "1 Ingredient:",
           border: InputBorder.none,
@@ -71,13 +71,13 @@ class addPage extends State<AddPage> {
     );
     list_step.add(
       TextFormField(
-        onChanged: (value) => step= "1- " + value,
+        onChanged: (value) => step= "1-  " + value,
         validator: (value) => value.isEmpty ? "fill the step" : null,
         textInputAction: TextInputAction.next,
         onFieldSubmitted: (_) => FocusScope.of(context).focusedChild,
         keyboardType: TextInputType.text,
         minLines: 1,
-        maxLines: 100,
+        maxLines: 1,
         decoration: InputDecoration(
           hintText:  "1 step:",
           border: InputBorder.none,
@@ -438,6 +438,7 @@ class addPage extends State<AddPage> {
                           else
                             ingredients = (list_ing_info[i] + "\n" );
                         }
+                        if(list_ing_index != 2)
                         ingredients+=ss;
                         print(list_step_info);
                         String ff= step;
@@ -447,7 +448,8 @@ class addPage extends State<AddPage> {
                           else
                             step = (list_step_info[i] + "\n" );
                         }
-                        step+=ff;
+                        if(list_step_index != 2)
+                          step+=ff;
                         CoolAlert.show(
                           context: context,
                           type: CoolAlertType.success,
@@ -531,13 +533,13 @@ class addPage extends State<AddPage> {
     setState(() {
       list_ing.add(
         TextFormField(
-          onChanged: (value) =>  ingredients= (list_ing_index-1).toString()+ "- "+ value,
+          onChanged: (value) =>  ingredients= (list_ing_index-1).toString()+ "-  "+ value,
           validator: (value) => value.isEmpty ? "fill the ingredient" : null,
           textInputAction: TextInputAction.next,
           onFieldSubmitted: (_) => FocusScope.of(context).focusedChild,
           keyboardType: TextInputType.text,
           minLines: 1,
-          maxLines: 100,
+          maxLines: 1,
           decoration: InputDecoration(
             hintText: list_ing_index.toString() + " Ingredient:",
             border: InputBorder.none,
@@ -552,13 +554,13 @@ class addPage extends State<AddPage> {
     setState(() {
       list_step.add(
         TextFormField(
-          onChanged: (value) =>  step= (list_step_index-1).toString()+ "- "+ value,
+          onChanged: (value) =>  step= (list_step_index-1).toString()+ "-  "+ value,
           validator: (value) => value.isEmpty ? "fill the step" : null,
           textInputAction: TextInputAction.next,
           onFieldSubmitted: (_) => FocusScope.of(context).focusedChild,
           keyboardType: TextInputType.text,
           minLines: 1,
-          maxLines: 100,
+          maxLines: 1,
           decoration: InputDecoration(
             hintText: list_step_index.toString() + " Step:",
             border: InputBorder.none,
