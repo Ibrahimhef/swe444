@@ -57,7 +57,7 @@ class addPage extends State<AddPage> {
     category = 0;
     list_ing.add(
       TextFormField(
-        onChanged: (value) => ingredients= "1-  " + value,
+        onChanged: (value) => ingredients = "1-  " + value,
         validator: (value) => value.isEmpty ? "fill the ingredient" : null,
         textInputAction: TextInputAction.next,
         onFieldSubmitted: (_) => FocusScope.of(context).focusedChild,
@@ -65,14 +65,14 @@ class addPage extends State<AddPage> {
         minLines: 1,
         maxLines: 1,
         decoration: InputDecoration(
-          hintText:  "1 Ingredient:",
+          hintText: "1 Ingredient:",
           border: InputBorder.none,
         ),
       ),
     );
     list_step.add(
       TextFormField(
-        onChanged: (value) => step= "1-  " + value,
+        onChanged: (value) => step = "1-  " + value,
         validator: (value) => value.isEmpty ? "fill the step" : null,
         textInputAction: TextInputAction.next,
         onFieldSubmitted: (_) => FocusScope.of(context).focusedChild,
@@ -80,7 +80,7 @@ class addPage extends State<AddPage> {
         minLines: 1,
         maxLines: 1,
         decoration: InputDecoration(
-          hintText:  "1 step:",
+          hintText: "1 step:",
           border: InputBorder.none,
         ),
       ),
@@ -92,7 +92,6 @@ class addPage extends State<AddPage> {
     setState(() {
       _image = File(image.path);
     });
-
   }
 
   Future uploadFile() async {
@@ -266,7 +265,7 @@ class addPage extends State<AddPage> {
                           top: 10, left: 7, right: 7, bottom: 5),
                       margin: EdgeInsets.symmetric(
                           horizontal: weidth * 0.03, vertical: 2.5),
-                      height: size_ing,
+                      height: size_ing + 12,
                       decoration: BoxDecoration(
                         color: Color(0xffE0E0E0),
                         borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -290,9 +289,9 @@ class addPage extends State<AddPage> {
                                     fontFamily: 'OleoScript', fontSize: 20),
                               ),
                             ),
-                            onPressed: (){
+                            onPressed: () {
                               list_ing_info.add(ingredients);
-                              ingredients ="";
+                              ingredients = "";
                               addIng();
                             },
                           )
@@ -317,47 +316,46 @@ class addPage extends State<AddPage> {
                       ),
                   //Steps
                   Container(
-                    width: sizeW(weidth, 0.875),
-                    padding:
-                        EdgeInsets.only(top: 10, left: 7, right: 7, bottom: 5),
-                    margin: EdgeInsets.only(
-                        right: weidth * 0.03,
-                        left: weidth * 0.03,
-                        top: 2.5,
-                        bottom: 15),
-                    height: size_step,
-                    decoration: BoxDecoration(
-                      color: Color(0xffE0E0E0),
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                    ),
-                    child: Column(
-                      children: [
-                        Column(
-                          children: list_step,
-                        ),
-                        RaisedButton(
-                          elevation: 5,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              side: BorderSide(color: Colors.red)),
-                          color: Color(0xffDD7804),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              'Add',
-                              style: TextStyle(
-                                  fontFamily: 'OleoScript', fontSize: 20),
-                            ),
+                      width: sizeW(weidth, 0.875),
+                      padding: EdgeInsets.only(
+                          top: 10, left: 7, right: 7, bottom: 5),
+                      margin: EdgeInsets.only(
+                          right: weidth * 0.03,
+                          left: weidth * 0.03,
+                          top: 2.5,
+                          bottom: 15),
+                      height: size_step + 15,
+                      decoration: BoxDecoration(
+                        color: Color(0xffE0E0E0),
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                      ),
+                      child: Column(
+                        children: [
+                          Column(
+                            children: list_step,
                           ),
-                          onPressed: (){
-                            list_step_info.add(step);
-                            step ="";
-                            addstep();
-                          },
-                        )
-                      ],
-                    )
-                  ),
+                          RaisedButton(
+                            elevation: 5,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                                side: BorderSide(color: Colors.red)),
+                            color: Color(0xffDD7804),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                'Add',
+                                style: TextStyle(
+                                    fontFamily: 'OleoScript', fontSize: 20),
+                              ),
+                            ),
+                            onPressed: () {
+                              list_step_info.add(step);
+                              step = "";
+                              addstep();
+                            },
+                          )
+                        ],
+                      )),
                   //Choose category divider
                   Row(
                     children: <Widget>[
@@ -427,30 +425,31 @@ class addPage extends State<AddPage> {
                       child: Text(
                         'Save',
                         style: TextStyle(
-                            fontFamily: 'OleoScript', fontSize: 25, fontWeight: FontWeight.bold),
+                            fontFamily: 'OleoScript',
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
                     onPressed: () async {
                       if (_formKey2.currentState.validate() && _image != null) {
-                        String ss= ingredients;
-                        for (int i = 0; i < list_ing_info.length ; i++){
+                        String ss = ingredients;
+                        for (int i = 0; i < list_ing_info.length; i++) {
                           if (i != 0)
-                          ingredients =  (  ingredients + list_ing_info[i] + "\n" );
+                            ingredients =
+                                (ingredients + list_ing_info[i] + "\n");
                           else
-                            ingredients = (list_ing_info[i] + "\n" );
+                            ingredients = (list_ing_info[i] + "\n");
                         }
-                        if(list_ing_index != 2)
-                        ingredients+=ss;
+                        if (list_ing_index != 2) ingredients += ss;
                         print(list_step_info);
-                        String ff= step;
-                        for (int i = 0; i < list_step_info.length ; i++){
+                        String ff = step;
+                        for (int i = 0; i < list_step_info.length; i++) {
                           if (i != 0)
-                            step =  (  step + list_step_info[i] + "\n" );
+                            step = (step + list_step_info[i] + "\n");
                           else
-                            step = (list_step_info[i] + "\n" );
+                            step = (list_step_info[i] + "\n");
                         }
-                        if(list_step_index != 2)
-                          step+=ff;
+                        if (list_step_index != 2) step += ff;
                         CoolAlert.show(
                           context: context,
                           type: CoolAlertType.success,
@@ -534,7 +533,8 @@ class addPage extends State<AddPage> {
     setState(() {
       list_ing.add(
         TextFormField(
-          onChanged: (value) =>  ingredients= (list_ing_index-1).toString()+ "-  "+ value,
+          onChanged: (value) =>
+              ingredients = (list_ing_index - 1).toString() + "-  " + value,
           validator: (value) => value.isEmpty ? "fill the ingredient" : null,
           textInputAction: TextInputAction.next,
           onFieldSubmitted: (_) => FocusScope.of(context).focusedChild,
@@ -551,11 +551,13 @@ class addPage extends State<AddPage> {
       list_ing_index++;
     });
   }
+
   void addstep() {
     setState(() {
       list_step.add(
         TextFormField(
-          onChanged: (value) =>  step= (list_step_index-1).toString()+ "-  "+ value,
+          onChanged: (value) =>
+              step = (list_step_index - 1).toString() + "-  " + value,
           validator: (value) => value.isEmpty ? "fill the step" : null,
           textInputAction: TextInputAction.next,
           onFieldSubmitted: (_) => FocusScope.of(context).focusedChild,
@@ -573,4 +575,3 @@ class addPage extends State<AddPage> {
     });
   }
 }
-
